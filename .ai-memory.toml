@@ -1,0 +1,17 @@
+# Escopo do ai-memory neste repositório.
+#
+# Os nomes abaixo foram confirmados com `ai-memory doctor`, que resolve o
+# escopo a partir deste checkout:
+#     "Capture coverage for default/spark-gap-tesla-coil"
+#
+# Por que declarar explicitamente: sem este arquivo o plugin não envia
+# workspace/projeto e o servidor arquiva tudo no projeto genérico "scratch",
+# o que torna a captura e as consultas não determinísticas.
+#
+# Não acrescente uma seção de captura (com ignore_paths) aqui: a presença dela
+# muda o estado da política de captura de "inactive" (captura integral) para
+# "active" ou "invalid", e esta última rebaixa ferramentas de arquivo para
+# "metadata-only" (o conteúdo dos arquivos deixa de ser capturado).
+
+workspace = "default"
+project = "spark-gap-tesla-coil"

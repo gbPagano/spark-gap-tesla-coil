@@ -1,0 +1,57 @@
+# Referências bibliográficas — ABNT NBR 6023:2025, em formato Hayagriva.
+# Cada chave é o identificador usado no texto (ex.: @tesla1904).
+#
+# CONVENÇÃO IMPORTANTE — caixa do nome do autor:
+#   escreva o sobrenome em CAIXA MISTA (ex.: "Tesla, Nikola"), nunca em caixa
+#   alta. O estilo bibliográfico aplica caixa alta sozinho na LISTA de
+#   referências, mas na CITAÇÃO preserva o que está no dado — e a NBR 10520:2023
+#   pede a citação em maiúsculas e minúsculas:
+#     dado "Tesla, Nikola"  ->  citação (Tesla, 1904)   e  lista TESLA, Nikola
+#     dado "TESLA, Nikola"  ->  citação (TESLA, 1904)   ✗ não conforme
+#
+# Quatro ou mais autores: o estilo indica o primeiro seguido de "et al."
+# (permitido pela NBR 6023:2025). Liste todos aqui que ele resolve.
+#
+# Tipos comuns: Book, Article, Report, Thesis, Web, Chapter, Proceedings, Patent, Misc
+#
+# Substitua os exemplos abaixo pelas suas referências.
+
+tesla1904:
+  type: Book
+  author:
+    - "Tesla, Nikola"
+  title: "Experiments with Alternate Currents of High Potential and High Frequency"
+  publisher:
+    name: "McGraw-Hill"
+    location: "New York"
+  date: 1904
+
+# --- Referências de TESTE (Lorem ipsum): apague ao escrever o trabalho real ---
+
+lorem2026:
+  type: Book
+  author:
+    - "Lorem, Ipsum"
+  title: "Tratado de lorem ipsum dolor sit amet"
+  publisher:
+    name: "Editora Lorem"
+    location: "São Paulo"
+  date: 2026
+
+dolor2025:
+  type: Book
+  author:
+    - "Dolor, Sit"
+  title: "Consectetur adipiscing elit: sed do eiusmod tempor"
+  publisher:
+    name: "Editora Ipsum"
+    location: "Rio de Janeiro"
+  date: 2025
+
+amet2024:
+  type: Web
+  author:
+    - "Amet, Consectetur"
+  title: "Tempor incididunt ut labore et dolore"
+  url: "https://example.com/lorem-ipsum"
+  date: 2024
