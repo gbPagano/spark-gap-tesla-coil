@@ -1,57 +1,609 @@
-# Referências bibliográficas — ABNT NBR 6023:2025, em formato Hayagriva.
-# Cada chave é o identificador usado no texto (ex.: @tesla1904).
-#
-# CONVENÇÃO IMPORTANTE — caixa do nome do autor:
-#   escreva o sobrenome em CAIXA MISTA (ex.: "Tesla, Nikola"), nunca em caixa
-#   alta. O estilo bibliográfico aplica caixa alta sozinho na LISTA de
-#   referências, mas na CITAÇÃO preserva o que está no dado — e a NBR 10520:2023
-#   pede a citação em maiúsculas e minúsculas:
-#     dado "Tesla, Nikola"  ->  citação (Tesla, 1904)   e  lista TESLA, Nikola
-#     dado "TESLA, Nikola"  ->  citação (TESLA, 1904)   ✗ não conforme
-#
-# Quatro ou mais autores: o estilo indica o primeiro seguido de "et al."
-# (permitido pela NBR 6023:2025). Liste todos aqui que ele resolve.
-#
-# Tipos comuns: Book, Article, Report, Thesis, Web, Chapter, Proceedings, Patent, Misc
-#
-# Substitua os exemplos abaixo pelas suas referências.
+# Referências bibliográficas — ABNT NBR 6023:2025, formato Hayagriva.
+# Banco de consulta: somente obras citadas entram no PDF (full: false).
+# Usar a chave no texto, por exemplo @denicolai2001; preservar chaves em uso.
+# Autores em caixa mista: o estilo aplica caixa alta apenas na lista final.
+# Autores institucionais usam { name: "Nome completo" } para não serem
+# interpretados como nomes pessoais e reduzidos ao último sobrenome.
+# Listar todos os autores; o estilo controla o uso de et al.
+# Cadastro não significa leitura integral, aprovação de método ou uso no texto.
+# Fontes: docs/*.typ e memória do projeto; revisão em 12/10/2026.
+# Comentários guardam origem e pendências sem entrar na referência final.
+# date = publicação; url.date = acesso. Omitir dados não confirmados.
 
-tesla1904:
-  type: Book
-  author:
-    - "Tesla, Nikola"
-  title: "Experiments with Alternate Currents of High Potential and High Frequency"
-  publisher:
-    name: "McGraw-Hill"
-    location: "New York"
-  date: 1904
+# === Trabalhos correlatos: docs/trabalhos-correlatos.typ e fundamentacao.typ ===
 
-# --- Referências de TESTE (Lorem ipsum): apague ao escrever o trabalho real ---
+# Q06 — relato técnico; PDF p. 1–7, atualização em 24/08/2006.
+queiroz2006:
+  type: Report
+  author: "De Queiroz, Antônio Carlos M."
+  title: "Bobina de Tesla"
+  date: 2006-08-24
+  organization: "Universidade Federal do Rio de Janeiro"
+  language: pt-BR
+  url: { value: "https://www.coe.ufrj.br/~acmq/tesla/BobinadeTesla.pdf", date: 2026-10-12 }
 
-lorem2026:
-  type: Book
-  author:
-    - "Lorem, Ipsum"
-  title: "Tratado de lorem ipsum dolor sit amet"
-  publisher:
-    name: "Editora Lorem"
-    location: "São Paulo"
-  date: 2026
+# D01 — modelo concentrado/distribuído, projeto e caracterização; §§4–7.
+# Licentiate Thesis é pós-graduação, não licenciatura docente brasileira.
+denicolai2001:
+  type: Thesis
+  author: "Denicolai, Marco"
+  title: "Tesla transformer for experimentation and research"
+  date: 2001
+  genre: "Licentiate Thesis"
+  organization: "Helsinki University of Technology"
+  location: "Espoo"
+  publisher: { name: "Helsinki University of Technology", location: "Espoo" }
+  language: en
+  url: { value: "https://www.eltem.fi/lthesis.pdf", date: 2026-10-12 }
+# Registro: https://research.aalto.fi/en/publications/tesla-transformer-for-experimentation-and-research/
 
-dolor2025:
-  type: Book
-  author:
-    - "Dolor, Sit"
-  title: "Consectetur adipiscing elit: sed do eiusmod tempor"
-  publisher:
-    name: "Editora Ipsum"
-    location: "Rio de Janeiro"
-  date: 2025
+# C14 — autoria da folha de rosto: Richard Miles, não Ross M.
+# Modos superiores, terminal e Q; §§2.3, 4–6.
+craven2014:
+  type: Thesis
+  author: "Craven, Richard Miles"
+  title: "A study of secondary winding designs for the two-coil Tesla transformer"
+  date: 2014
+  genre: "Tese (Doutorado)"
+  organization: "Loughborough University"
+  location: "Loughborough"
+  publisher: { name: "Loughborough University", location: "Loughborough" }
+  language: en
+  url: { value: "https://repository.lboro.ac.uk/articles/thesis/A_study_of_secondary_winding_designs_for_the_two-coil_Tesla_transformer/9531926", date: 2026-10-12 }
+# PDF: https://ndownloader.figshare.com/files/17160773
 
-amet2024:
-  type: Web
-  author:
-    - "Amet, Consectetur"
-  title: "Tempor incididunt ut labore et dolore"
-  url: "https://example.com/lorem-ipsum"
+# V14 — modelo distribuído e carregamento da medição; não confundir com f±.
+voitkans2014:
+  type: Article
+  author: ["Voitkāns, Janis", "Voitkāns, Arnis"]
+  title: "Tesla coil theoretical model and its experimental verification"
+  date: 2014
+  page-range: 11-19
+  language: en
+  serial-number: { doi: "10.1515/ecce-2014-0018" }
+  parent:
+    type: Periodical
+    title: "Electrical, Control and Communication Engineering"
+    volume: 7
+    issue: 1
+  url: { value: "https://ecce-journals.rtu.lv/ecce/article/download/ecce-2014-0018/139/157", date: 2026-10-12 }
+
+# S24 — precedente nacional de SGTC rotativa e comparação de ferramentas.
+silva-soares2024:
+  type: Thesis
+  author: ["Silva Júnior, José Eurípedes Paulino da", "Soares, Pablo Anastácio"]
+  title: "Bobina de Tesla"
   date: 2024
+  genre: "Trabalho de Conclusão de Curso (Graduação em Engenharia Elétrica)"
+  organization: "Centro Universitário de Votuporanga"
+  location: "Votuporanga"
+  publisher: { name: "Centro Universitário de Votuporanga", location: "Votuporanga" }
+  language: pt-BR
+  url: { value: "https://repositorio.unifev.edu.br/handle/123456789/356", date: 2026-10-12 }
+# PDF: https://repositorio.unifev.edu.br/bitstreams/9a0e6e6e-a54c-4ffe-a3d8-7976a45d5577/download
+
+# G11 — metadados e resumo conferidos; leitura integral adiada pelo pesquisador.
+gurleyuk2011:
+  type: Article
+  author: ["Gürleyük, Sırrı Sunay", "Öztürk, Ertan", "Taşkın, Halit"]
+  title: "Frequency domain analysis of Tesla transformer as a coupled second order system"
+  date: 2011
+  page-range: 207-215
+  language: en
+  serial-number: { doi: "10.3233/JAE-2011-1360" }
+  parent:
+    type: Periodical
+    title: "International Journal of Applied Electromagnetics and Mechanics"
+    volume: 36
+    issue: 3
+  url: { value: "https://doi.org/10.3233/JAE-2011-1360", date: 2026-10-12 }
+
+# T24 — SSTC musical; cadastro bibliográfico conferido, integral não recuperado
+# nesta revisão. Memória gotchas/t24-tanwar-numeros-sem-origem.md alerta sobre
+# números em docs/trabalhos-correlatos.typ: reauditar contra PDF válido antes de citar.
+tanwar2024:
+  type: Article
+  author: ["Tanwar, Naman", "Kumar, M. Rajesh", "Naidu, Rani Chinnappa"]
+  title: "Design of solid state Tesla coil with music playback functionality"
+  date: 2024
+  page-range: 14285-14297
+  language: en
+  serial-number: { doi: "10.1109/ACCESS.2024.3357534" }
+  parent:
+    type: Periodical
+    title: "IEEE Access"
+    volume: 12
+  url: { value: "https://ieeexplore.ieee.org/document/10412057", date: 2026-10-12 }
+
+# W13 — relatório de Master of Engineering; §§3.3–3.5, 4.2–4.3, 7.1.
+wasatonic2013:
+  type: Thesis
+  author: "Wasatonic, Eric B."
+  title: "Comparison of Tesla coil driver topologies: rotary spark gap versus double resonant solid state"
+  date: 2013-07-11
+  genre: "Master of Engineering Paper (Electrical Engineering)"
+  organization: "The Pennsylvania State University"
+  publisher: "The Pennsylvania State University"
+  language: en
+  url: { value: "https://eric-wasatonic.squarespace.com/s/Comparison-of-Tesla-Coil-Driver-Topologies.pdf", date: 2026-10-12 }
+
+# O23 — DRSSTC; ensaio a 15 Vcc sem descarga, não demonstra meta de 1 m.
+obeidat2023:
+  type: Article
+  author: ["Obeidat, Mohammad A.", "Nehad, Mohammad", "Mahafzah, Khaled A.", "Mansour, Ayman M."]
+  title: "A comprehensive design of audio-modulated dual resonant solid state Tesla coil: mechanical and electrical aspects"
+  date: 2023-02-28
+  page-range: 173-178
+  language: en
+  serial-number: { doi: "10.18280/mmep.100119" }
+  parent:
+    type: Periodical
+    title: "Mathematical Modelling of Engineering Problems"
+    volume: 10
+    issue: 1
+  url: { value: "https://www.iieta.org/journals/mmep/paper/10.18280/mmep.100119", date: 2026-10-12 }
+
+# === Fontes históricas e acréscimos para dimensionamento ===
+
+# Substitui o exemplo tesla1904: folha de rosto transcrita indica New York, 1892.
+# Editora McGraw-Hill do exemplo não confirmada; e-book de 2004 não é ano da obra.
+tesla1892:
+  type: Book
+  author: "Tesla, Nikola"
+  title: "Experiments with alternate currents of high potential and high frequency"
+  date: 1892
+  location: "New York"
+  language: en
+  url: { value: "https://www.gutenberg.org/ebooks/13476", date: 2026-10-12 }
+
+# Referência primária da fórmula de indutância; metadados conferidos no IEEE/ADS.
+# Leitura integral pendente nesta revisão.
+wheeler1928:
+  type: Article
+  author: "Wheeler, Harold A."
+  title: "Simple inductance formulas for radio coils"
+  date: 1928-10
+  page-range: 1398-1400
+  language: en
+  serial-number: { doi: "10.1109/JRPROC.1928.221309" }
+  parent:
+    type: Periodical
+    title: "Proceedings of the IRE"
+    volume: 16
+    issue: 10
+  url: { value: "https://ieeexplore.ieee.org/document/1669896", date: 2026-10-12 }
+
+# Duas partes de Medhurst; metadados/digitalizações localizados no G3YNH.
+# Leitura integral pendente; não são estudos independentes.
+medhurst1947a:
+  type: Article
+  author: "Medhurst, R. G."
+  title: "H. F. resistance and self-capacitance of single-layer solenoids"
+  date: 1947-02
+  page-range: 35-43
+  language: en
+  parent:
+    type: Periodical
+    title: "Wireless Engineer"
+    volume: 24
+  url: { value: "https://g6yb.com/g3ynh/zdocs/refs/Medhurst/Med35-43.pdf", date: 2026-10-12 }
+
+medhurst1947b:
+  type: Article
+  author: "Medhurst, R. G."
+  title: "H. F. resistance and self-capacitance of single-layer solenoids"
+  date: 1947-03
+  page-range: 80-92
+  language: en
+  parent:
+    type: Periodical
+    title: "Wireless Engineer"
+    volume: 24
+  url: { value: "https://g6yb.com/g3ynh/zdocs/refs/Medhurst/Med80-92.pdf", date: 2026-10-12 }
+
+# Autocapacitância/modelos: PDF, folha de rosto e resumo conferidos.
+# Relatório do autor, não artigo de periódico; leitura integral pendente.
+knight2016:
+  type: Report
+  author: "Knight, David W."
+  title: "The self-resonance and self-capacitance of solenoid coils: applicable theory, models and calculation methods"
+  date: 2016-05-04
+  edition: "1.00"
+  language: en
+  serial-number: { doi: "10.13140/RG.2.1.1472.0887" }
+  url: { value: "https://g6yb.com/g3ynh/zdocs/magnetics/appendix/self_res/self-res.pdf", date: 2026-10-12 }
+
+# === Ferramentas e documentação: não equivalem a validação experimental ===
+
+# JTC — versão/data do cabeçalho da ferramenta; registrar entradas ao executar.
+javatc2020:
+  type: Web
+  author: "Anderson, Barton B."
+  title: "JavaTC"
+  date: 2020
+  edition: "13.6"
+  language: en
+  url: { value: "https://classictesla.com/java/javatc/javatc.html", date: 2026-10-12 }
+
+javatc-les:
+  type: Web
+  author: "Anderson, Barton B."
+  title: "JavaTC: effective secondary inductance (Les)"
+  language: en
+  url: { value: "https://classictesla.com/java/javatc/out9.html", date: 2026-10-08 }
+
+javatc-ces:
+  type: Web
+  author: "Anderson, Barton B."
+  title: "JavaTC: effective secondary capacitance (Ces)"
+  language: en
+  url: { value: "https://classictesla.com/java/javatc/out12.html", date: 2026-10-08 }
+
+javatc-q:
+  type: Web
+  author: "Anderson, Barton B."
+  title: "JavaTC: secondary quality factor (Q)"
+  language: en
+  url: { value: "https://classictesla.com/java/javatc/outQ.html", date: 2026-10-08 }
+
+# WinTesla e Tesla Coil CAD aparecem em S24, mas autoria, versão e fonte
+# primária das cópias a utilizar permanecem pendentes: cadastrar após conferência.
+
+# === Guias de construtores e mensagens históricas ===
+# docs/dimensionamento-secundario.typ e fontes-e-descargas.typ.
+# Regras empíricas/relatos de autor: não são normas nem ensaios homologados.
+
+deepfriedneon-guide:
+  type: Web
+  author: "DeepFriedNeon"
+  title: "Tesla Coils: guide"
+  language: en
+  url: { value: "https://deepfriedneon.com/tesla_guide.html", date: 2026-10-12 }
+
+# Texto de Quick reproduzido em Stefan's Tesla Pages. Notas/tabelas posteriores
+# do mantenedor não pertencem automaticamente ao original.
+quick1995:
+  type: Report
+  author: "Quick II, Richard T."
+  title: "COILBLD: graphical instructions for construction of high performance Tesla resonators"
+  date: 1995
+  archive: "Stefan's Tesla Pages"
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/stk/tc/coilbld.htm", date: 2026-10-12 }
+
+roys1995:
+  type: Post
+  author: "Roys, Steve"
+  title: "Re: Tesla coil DESIGN requirements"
+  date: 1995-12-28
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/1995/december/msg00024.html", date: 2026-10-12 }
+
+lau-design:
+  type: Web
+  author: "Lau, Gary"
+  title: "Steps to designing your own coil"
+  language: en
+  url: { value: "https://www.laushaus.com/tesla/howtodesign.htm", date: 2026-10-12 }
+
+lau-secondary:
+  type: Web
+  author: "Lau, Gary"
+  title: "My Secondary"
+  language: en
+  url: { value: "https://www.laushaus.com/tesla/secondary.htm", date: 2026-10-12 }
+
+lau-specs:
+  type: Web
+  author: "Lau, Gary"
+  title: "My coil's spec's"
+  language: en
+  url: { value: "https://www.laushaus.com/tesla/specs.htm", date: 2026-10-12 }
+# As três páginas de Lau registram versões diferentes: não fundir configurações.
+
+# Freau: comprimento de descarga, não altura do secundário; potência consumida,
+# não VA de placa. Fórmula ajustada às bobinas do próprio autor.
+freau1998:
+  type: Post
+  author: "Freau, John"
+  title: "Re: I have a few questions"
+  date: 1998-09-29
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://pupman.com/listarchives/1998/September/msg00983.html", date: 2026-10-12 }
+
+freau1999:
+  type: Post
+  author: "Freau, John"
+  title: "Re: HOW MUCH POWER NEEDED FOR A TC?"
+  date: 1999-01-20
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://pupman.com/listarchives/1999/January/msg00558.html", date: 2026-10-12 }
+
+burnett-pictures:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Tesla coil pictures"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/pictures.html", date: 2026-10-12 }
+
+low-tesla:
+  type: Web
+  author: "Low, Derek"
+  title: "1 million volt Tesla coil"
+  language: en
+  url: { value: "https://dereklow.co/1-million-volt-tesla-coil/", date: 2026-10-12 }
+# Título não comprova tensão medida; estimativa inicial não é descarga obtida.
+
+electronix-large-sgtc:
+  type: Web
+  author: "Electronix & More"
+  title: "Large spark gap Tesla coil"
+  language: en
+  url: { value: "https://www.electronixandmore.com/projects/tesla/largesgcoil.html", date: 2026-10-12 }
+
+# Origem indicada por Kevin Wilson, não a cópia não autorizada de
+# kevinsworkbench.com. Original não recuperado; acesso/leitura pendentes.
+wilson-design:
+  type: Web
+  author: "Wilson, Kevin"
+  title: "Tesla Coil Design"
+  language: en
+  url: "https://www.teslacoildesign.com/"
+
+# === Vídeos: demonstração visual, sem medição rastreável nesta coleta ===
+# Títulos/canais conferidos via YouTube oEmbed; datas de publicação pendentes.
+
+highvoltagehotdog-drivers:
+  type: Video
+  author: "High Voltage Hot Dog"
+  title: "(#0014) A Comparison of Two Tesla Coil Drivers - DRSSTC vs. Spark Gap #01"
+  language: en
+  parent: { type: Web, title: "YouTube" }
+  url: { value: "https://www.youtube.com/watch?v=HdwcZX07NFk", date: 2026-10-12 }
+
+hobley-nst:
+  type: Video
+  author: "Hobley, Stephen"
+  title: "60mA 12kV NST Tesla Coil"
+  language: en
+  parent: { type: Web, title: "YouTube" }
+  url: { value: "https://www.youtube.com/watch?v=GO9_vc49ZcU", date: 2026-10-12 }
+
+watson-nst:
+  type: Video
+  author: "Watson, Ben"
+  title: "15kv 30ma Tesla Coil"
+  language: en
+  parent: { type: Web, title: "YouTube" }
+  url: { value: "https://www.youtube.com/watch?v=aKzx-GMzTqY", date: 2026-10-12 }
+
+# === Metrologia: GUM do plano e complementos localizados no BIPM ===
+# Complementos para consulta; cadastro não indica análise executada/leitura integral.
+
+jcgm100-2008:
+  type: Report
+  author: { name: "Joint Committee for Guides in Metrology" }
+  title: "JCGM 100:2008: evaluation of measurement data — guide to the expression of uncertainty in measurement"
+  date: 2008
+  publisher: { name: "BIPM", location: "Sèvres" }
+  language: en
+  serial-number: { doi: "10.59161/JCGM100-2008E" }
+  url: { value: "https://doi.org/10.59161/JCGM100-2008E", date: 2026-10-12 }
+
+jcgm101-2008:
+  type: Report
+  author: { name: "Joint Committee for Guides in Metrology" }
+  title: "JCGM 101:2008: evaluation of measurement data — supplement 1 to the Guide to the expression of uncertainty in measurement — propagation of distributions using a Monte Carlo method"
+  date: 2008
+  publisher: { name: "BIPM", location: "Sèvres" }
+  language: en
+  serial-number: { doi: "10.59161/JCGM101-2008" }
+  url: { value: "https://doi.org/10.59161/JCGM101-2008", date: 2026-10-12 }
+
+jcgm200-2012:
+  type: Report
+  author: { name: "Joint Committee for Guides in Metrology" }
+  title: "JCGM 200:2012: international vocabulary of metrology — basic and general concepts and associated terms (VIM)"
+  date: 2012
+  edition: 3
+  publisher: { name: "BIPM", location: "Sèvres" }
+  language: en
+  serial-number: { doi: "10.59161/JCGM200-2012" }
+  url: { value: "https://doi.org/10.59161/JCGM200-2012", date: 2026-10-12 }
+
+jcgm-gum6-2020:
+  type: Report
+  author: { name: "Joint Committee for Guides in Metrology" }
+  title: "JCGM GUM-6:2020: guide to the expression of uncertainty in measurement — part 6: developing and using measurement models"
+  date: 2020
+  publisher: { name: "BIPM", location: "Sèvres" }
+  language: en
+  serial-number: { doi: "10.59161/JCGMGUM-6-2020" }
+  url: { value: "https://doi.org/10.59161/JCGMGUM-6-2020", date: 2026-10-12 }
+
+# === Segurança: docs/seguranca.typ; não constituem autorização de ensaio ===
+
+# Edição citada no plano. Conferir vigência e exigências institucionais ao usar.
+# docs/seguranca.typ registra transição prevista para nova redação em 01/06/2027.
+nr10-2019:
+  type: Report
+  author: { name: "Brasil. Ministério do Trabalho e Emprego" }
+  title: "NR-10: segurança em instalações e serviços em eletricidade"
+  date: 2019
+  language: pt-BR
+  url: { value: "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/arquivos/normas-regulamentadoras/nr-10-atualizada-2019-1.pdf", date: 2026-10-12 }
+
+illinois-electrical-safety:
+  type: Web
+  author: { name: "University of Illinois Urbana-Champaign. Division of Research Safety" }
+  title: "Electrical safety in the research laboratory"
+  language: en
+  url: { value: "https://drs.illinois.edu/Page/SafetyLibrary/ElectricalSafetyInTheResearchLaboratory", date: 2026-10-12 }
+
+arcattack-safety:
+  type: Web
+  author: "ArcAttack"
+  title: "Tesla coil safety"
+  language: en
+  url: { value: "https://arcattack.com/resources/tesla-coil-safety/", date: 2026-10-12 }
+
+# === Normalização e regras institucionais: recuperadas da memória ===
+# Não é obrigatório citar normas no texto apenas por usá-las na formatação.
+
+abnt14724-2024:
+  type: Report
+  author: { name: "Associação Brasileira de Normas Técnicas" }
+  title: "ABNT NBR 14724:2024: informação e documentação — trabalhos acadêmicos — apresentação"
+  date: 2024
+  edition: "4, versão corrigida em 01/04/2025"
+  publisher: "ABNT"
+  language: pt-BR
+
+abnt10520-2023:
+  type: Report
+  author: { name: "Associação Brasileira de Normas Técnicas" }
+  title: "ABNT NBR 10520:2023: informação e documentação — citações em documentos — apresentação"
+  date: 2023
+  publisher: "ABNT"
+  language: pt-BR
+
+abnt6023-2025:
+  type: Report
+  author: { name: "Associação Brasileira de Normas Técnicas" }
+  title: "ABNT NBR 6023:2025: informação e documentação — referências — elaboração"
+  date: 2025
+  publisher: "ABNT"
+  language: pt-BR
+
+abnt6024-2012:
+  type: Report
+  author: { name: "Associação Brasileira de Normas Técnicas" }
+  title: "ABNT NBR 6024:2012: informação e documentação — numeração progressiva das seções de um documento — apresentação"
+  date: 2012
+  publisher: "ABNT"
+  language: pt-BR
+
+abnt6027-2012:
+  type: Report
+  author: { name: "Associação Brasileira de Normas Técnicas" }
+  title: "ABNT NBR 6027:2012: informação e documentação — sumário — apresentação"
+  date: 2012
+  publisher: "ABNT"
+  language: pt-BR
+
+abnt6028-2021:
+  type: Report
+  author: { name: "Associação Brasileira de Normas Técnicas" }
+  title: "ABNT NBR 6028:2021: informação e documentação — resumo, resenha e recensão — apresentação"
+  date: 2021
+  publisher: "ABNT"
+  language: pt-BR
+
+ibge1993:
+  type: Book
+  author: { name: "Instituto Brasileiro de Geografia e Estatística" }
+  title: "Normas de apresentação tabular"
+  date: 1993
+  edition: 3
+  publisher: { name: "IBGE", location: "Rio de Janeiro" }
+  language: pt-BR
+
+# URLs dos anexos conferidas no portal da FEELT. Ano do currículo/data da página
+# não são automaticamente datas de publicação dos documentos.
+ufu-feelt-formatacao:
+  type: Report
+  author: { name: "Universidade Federal de Uberlândia. Faculdade de Engenharia Elétrica" }
+  title: "Formatação do Trabalho de Conclusão de Curso (TCC)"
+  language: pt-BR
+  url: { value: "https://feelt.ufu.br/system/files/conteudo/4_-_formatacao_trabalho_de_conclusao_de_curso_tcc_0_0.pdf", date: 2026-10-12 }
+
+ufu-feelt-normas-tcc:
+  type: Report
+  author: { name: "Universidade Federal de Uberlândia. Faculdade de Engenharia Elétrica" }
+  title: "Normas complementares do TCC — versão curricular 2020/2"
+  language: pt-BR
+  url: { value: "https://feelt.ufu.br/system/files/conteudo/normas_complementares_de_tcc_-_versao_curricular_2020-2_0.pdf", date: 2026-10-12 }
+
+ufu-template:
+  type: Web
+  author: { name: "Universidade Federal de Uberlândia. Sistema de Bibliotecas" }
+  title: "Template para trabalhos acadêmicos"
+  language: pt-BR
+  url: { value: "https://bibliotecas.ufu.br/servicos/template-para-trabalhos-academicos", date: 2026-10-12 }
+
+# === Fontes comerciais: consulta de materiais, não evidência acadêmica ===
+# docs/fontes-e-descargas.typ e cotacao-materiais.typ, 12/10/2026.
+# Venda não substitui datasheet; preço/estoque/compatibilidade não são garantidos.
+# Valores observados permanecem em docs/, não nos metadados bibliográficos.
+
+ballastshop-france15060:
+  type: Web
+  author: "BallastShop"
+  title: "France 15060 P5G-2UE ServiceMaster 68636 neon transformer: 15 kV, 60 mA, 120 V"
+  language: en
+  url: { value: "https://ballastshop.com/15060-p5g-2ue-france-servicemaster-68636-neon-transformer-15kv-60ma-120v/", date: 2026-10-12 }
+
+ballastshop-france12060:
+  type: Web
+  author: "BallastShop"
+  title: "France 12060 P5G-2E neon transformer: 12 kV, 60 mA, 120 V"
+  language: en
+  url: { value: "https://ballastshop.com/12060-p5g-2e-france-12kv-60ma-120v-neon-transformer/", date: 2026-10-12 }
+
+ballastshop-france15030:
+  type: Web
+  author: "BallastShop"
+  title: "France 15030 P5G-2UE ServiceMaster 38823 neon transformer: 15 kV, 30 mA, 120 V"
+  language: en
+  url: { value: "https://ballastshop.com/15030-p5g-2ue-france-servicemaster-38823-neon-transformer-15kv-30ma-120v/", date: 2026-10-12 }
+
+# Vendedores não identificados: não atribuir autoria à plataforma.
+mercadolivre-ebt15:
+  type: Web
+  title: "Transformador para neon — 15.000 V, 30 mA, bivolt — EBT 15"
+  language: pt-BR
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://www.mercadolivre.com.br/transformador-para-neon--15000-v-30ma-bivolt--ebt-15/up/MLBU1971366828", date: 2026-10-12 }
+# Apenas resultado indexado; página completa exige login, oferta não confirmada.
+
+olx-neon-belem:
+  type: Web
+  title: "Transformador para Gás Neon"
+  language: pt-BR
+  parent: { type: Web, title: "OLX" }
+  url: { value: "https://pa.olx.com.br/regiao-de-belem/para-a-sua-casa/iluminacao/transformador-para-gas-neon-1453074067", date: 2026-10-12 }
+# Usado, Belém/PA; placa registrada em docs/: 10 kV / 30 mA.
+
+agbrasil-neon:
+  type: Web
+  author: { name: "AG Brasil Comercial" }
+  title: "Transformadores para néon"
+  language: pt-BR
+  url: { value: "https://agbrasilcomercial.com.br/transformadores-para-neon", date: 2026-10-12 }
+
+tdklambda-highvoltage:
+  type: Web
+  author: "TDK-Lambda"
+  title: "High voltage power supplies"
+  language: en
+  url: { value: "https://www.us.lambda.tdk.com/products/high-voltage-power", date: 2026-10-12 }
+
+spellman-capacitorcharging:
+  type: Web
+  author: { name: "Spellman High Voltage Electronics" }
+  title: "Capacitor charging"
+  language: en
+  url: { value: "https://www.spellmanhv.com/en/Applications/Capacitor-Charging", date: 2026-10-12 }
+
+obramax-fortlev150:
+  type: Web
+  author: "Obramax"
+  title: "Tubo esgoto série normal PVC 3 metros Fortlev"
+  language: pt-BR
+  url: "https://www.obramax.com.br/tubo-esgoto-serie-normal-pvc-3-metros-fortlev/p?skuId=12407"
+# URL/variante de 150 mm informadas pelo pesquisador em 12/10/2026.
+# Consulta automatizada retornou 403; não registrar acesso ao conteúdo como feito.
+# DN não substitui diâmetro real medido.

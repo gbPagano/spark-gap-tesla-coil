@@ -172,9 +172,22 @@
 
 == Recomendações para trabalhos futuros
 
-// Ativar a bibliografia quando as referências reais estiverem cadastradas
-// em referencias.yml e citadas no texto; manter full: false.
+// O banco pode conter obras ainda não usadas: apenas as citadas entram no PDF.
 #titulo-sem-numero("Referências", sumario: true)
+#[
+  #set par(
+    leading: 1.15em - 0.693em,
+    spacing: 1.6em,
+    justify: false,
+    first-line-indent: 0em,
+  )
+  #bibliography(
+    "referencias.yml",
+    title: none,
+    full: false,
+    style: "associacao-brasileira-de-normas-tecnicas",
+  )
+]
 
 #apendice("A", "Derivações matemáticas", [])
 
