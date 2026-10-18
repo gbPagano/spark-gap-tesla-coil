@@ -1,0 +1,7 @@
+[toolchain]
+# ESP32-S3 é Xtensa: só a toolchain `esp` do esp-rs compila esse alvo
+# (o rustup upstream não distribui targets Xtensa).
+# Se `rustup toolchain list` não mostrar `esp`, instale com:
+#     cargo install espup && espup install
+channel = "esp"
+components = ["rust-src"]

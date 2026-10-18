@@ -1,0 +1,14 @@
+[build]
+target = "xtensa-esp32s3-none-elf"
+
+[resolver]
+incompatible-rust-versions = "fallback"
+
+[target.xtensa-esp32s3-none-elf]
+linker = "xtensa-esp32s3-elf-gcc"
+runner = "espflash flash --monitor --flash-size 4mb --flash-mode dio"
+rustflags = ["-C", "link-arg=-Wl,-Tlinkall.x", "-C", "link-arg=-nostartfiles", "-C", "force-frame-pointers"]
+
+# Bare metal: compilar apenas core; não há std, ESP-IDF ou alocador.
+[unstable]
+build-std = ["core"]
