@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enroladora · Monitor</title>
+  <link rel="stylesheet" href="/dashboard.css">
+  <script src="/dashboard.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">BOBINA SECUNDÁRIA / MONITOR LOCAL</p>
+      <h1>Enroladora</h1>
+      <p class="intro">Última amostra do Courier. Somente leitura.</p>
+    </header>
+
+    <section class="connection" aria-label="Estado da coleta" data-state="waiting">
+      <p id="connection" role="status">Aguardando primeira leitura…</p>
+      <p id="detail">Atualização a cada segundo.</p>
+    </section>
+
+    <section aria-label="Última amostra" class="readings">
+      <dl>
+        <div class="reading turns"><dt>Voltas líquidas</dt><dd id="turns">—</dd></div>
+        <div class="reading"><dt>Alvo do potenciômetro</dt><dd><span id="target">—</span> <span class="unit">rpm</span></dd></div>
+        <div class="reading"><dt>Tempo em movimento</dt><dd id="uptime">—</dd></div>
+      </dl>
+      <dl class="states">
+        <div><dt>Fase</dt><dd id="phase">—</dd></div>
+        <div><dt>Sentido</dt><dd id="direction">—</dd></div>
+        <div><dt>Play</dt><dd id="play">—</dd></div>
+        <div><dt>Contagem estimada</dt><dd id="estimated">—</dd></div>
+      </dl>
+    </section>
+
+    <footer>
+      <p>Última amostra: <time id="sample-time">—</time></p>
+      <p>Voltas e movimento são estimados pelo firmware, sem sensor no eixo.
+        O tempo acumula nos dois sentidos e congela quando o movimento comandado para.</p>
+    </footer>
+    <noscript>Ative o JavaScript para atualizar os dados do CSV.</noscript>
+  </main>
+</body>
+</html>

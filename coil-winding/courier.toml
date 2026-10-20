@@ -1,0 +1,24 @@
+# Executar a partir de coil-winding/; informar a URL exibida no monitor serial.
+# COIL_STATUS_URL='http://<IP-DA-ESP>/api/status' courier run --config courier.toml
+[[pipelines]]
+name = "coil-winding-api-csv"
+
+[pipelines.source]
+type = "api_poll"
+url = "${env:COIL_STATUS_URL}"
+interval_secs = 1
+
+[[pipelines.sinks]]
+type = "file"
+path = "${env:COIL_CSV_PATH:./out/coil-winding.csv}"
+format = "csv"
+columns = [
+    "meta.timestamp_ms",
+    "payload.estimated",
+    "payload.turns",
+    "payload.phase",
+    "payload.direction",
+    "payload.play_active",
+    "payload.target_rpm",
+    "payload.uptime_s",
+]

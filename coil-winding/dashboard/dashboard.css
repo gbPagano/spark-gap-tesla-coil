@@ -1,0 +1,48 @@
+:root {
+  color-scheme: light;
+  --paper: oklch(97.5% 0.007 85);
+  --ink: oklch(25% 0.012 85);
+  --secondary: oklch(46% 0.015 85);
+  --line: oklch(82% 0.012 85);
+  --wash: oklch(93% 0.009 85);
+  --ok: oklch(37% 0.07 155);
+  --warning: oklch(40% 0.075 60);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 860px; margin: 0 auto; padding: 52px 28px 32px; }
+.eyebrow { font-size: .6875rem; letter-spacing: .12em; font-weight: 650; color: var(--secondary); margin: 0 0 14px; }
+h1 { font-size: 2rem; line-height: 1.2; letter-spacing: -.025em; font-weight: 650; margin: 0; }
+.intro { color: var(--secondary); margin: 10px 0 30px; line-height: 1.5; }
+.connection { background: var(--wash); padding: 16px 20px; border-radius: 6px; margin-bottom: 32px; }
+.connection p { margin: 0; line-height: 1.5; }
+#connection { font-weight: 650; }
+#detail { color: var(--secondary); font-size: .875rem; margin-top: 3px; }
+.connection[data-state="live"] #connection { color: var(--ok); }
+.connection[data-state="stale"] #connection,
+.connection[data-state="error"] #connection { color: var(--warning); }
+dl { margin: 0; }
+.readings > dl:first-child { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+dt { color: var(--secondary); font-size: .8125rem; line-height: 1.5; }
+dd { margin: 10px 0 0; font-variant-numeric: tabular-nums; }
+.reading dd { font-size: 1.75rem; font-weight: 600; letter-spacing: -.025em; }
+.unit { font-size: .875rem; color: var(--secondary); font-weight: 400; }
+.states { margin-top: 32px; border-top: 1px solid var(--line); }
+.states > div { display: flex; justify-content: space-between; gap: 24px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.states dt { font-size: .9375rem; }
+.states dd { text-align: right; font-size: .9375rem; margin: 0; font-weight: 550; }
+footer { margin-top: 24px; font-size: .8125rem; line-height: 1.65; color: var(--secondary); }
+footer p { max-width: 70ch; margin: 0 0 12px; }
+time { color: var(--ink); font-variant-numeric: tabular-nums; }
+noscript { display: block; margin-top: 24px; }
+@media (max-width: 560px) {
+  main { padding: 28px 20px; }
+  .eyebrow { font-size: .625rem; }
+  .readings > dl:first-child { grid-template-columns: 1fr 1fr; gap: 22px 16px; }
+  .turns { grid-column: 1 / -1; }
+  .connection { margin-bottom: 24px; padding: 16px; }
+  .reading dd { font-size: 1.5rem; }
+}
