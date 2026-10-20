@@ -60,6 +60,9 @@
   // essa altura: 0,693 em = altura natural da Times New Roman.
   // Se a família mudar, remedir: Arial = 0,728 em · Liberation Serif = 0,655 em.
   // Alternativa LaTeX/abnTeX2 (18,0 pt): 1.5em - 0.693em.
+  // Recuo de 1,25 cm: convenção do estilo "ABNT parágrafo texto" do template
+  // atual da Biblioteca UFU (texto_5.docx, §1.5, Quadro 1), não valor fixado
+  // pela NBR 14724. Conferido também nas coordenadas do PDF do trabalho.
   set par(
     first-line-indent: (amount: 1.25cm, all: true),
     justify: true,
@@ -281,7 +284,7 @@
   outline(title: none, indent: 0em)
 
   // A partir daqui é a parte TEXTUAL: volta o recuo de primeira linha de 1,25 cm
-  // (§5.2 e convenção do template oficial).
+  // (convenção do template oficial da Biblioteca UFU).
   set par(first-line-indent: (amount: 1.25cm, all: true))
 
   // Numeração (§5.3, trabalho só no anverso): algarismos arábicos no canto
@@ -319,4 +322,3 @@
   
   doc
 }
-
