@@ -6,13 +6,15 @@
 # interpretados como nomes pessoais e reduzidos ao último sobrenome.
 # Listar todos os autores; o estilo controla o uso de et al.
 # Cadastro não significa leitura integral, aprovação de método ou uso no texto.
-# Fontes: docs/*.typ e memória do projeto; revisão em 12/10/2026.
+# Fontes: docs/*.typ, memória do projeto e portal do BIPM; revisão em 12/10/2026.
 # Comentários guardam origem e pendências sem entrar na referência final.
 # date = publicação; url.date = acesso. Omitir dados não confirmados.
 
 # === Trabalhos correlatos: docs/trabalhos-correlatos.typ e fundamentacao.typ ===
 
 # Q06 — relato técnico; PDF p. 1–7, atualização em 24/08/2006.
+# Introdução (12/10/2026): p. 1–2 e 6–7 do PDF original conferidas;
+# precedente de sintonia em baixa potência, não autorização de ensaio.
 queiroz2006:
   type: Report
   author: "De Queiroz, Antônio Carlos M."
@@ -24,6 +26,16 @@ queiroz2006:
 
 # D01 — modelo concentrado/distribuído, projeto e caracterização; §§4–7.
 # Licentiate Thesis é pós-graduação, não licenciatura docente brasileira.
+# Introdução (12/10/2026): leitura dirigida do PDF original, §§1.3–1.5,
+# 2.1, 6.1.1, 6.2 e 6.3.3–6.4; história, aplicações, modos e ajustes.
+# Trechos conferidos não significam leitura uniforme de toda a tese.
+# Revisão da introdução (19/10/2026): §1.5, p. 4, e referência [Tes91]
+# conferidas; o registro de 1891 remete à patente US 454.622 de Tesla.
+# §§2.1, p. 8–9, e 6.1.4, p. 59–60, consultados para o funcionamento,
+# os circuitos ressonantes acoplados e as contribuições capacitivas.
+# Comparação de fontes (18/10/2026): §§2.6 e 3.4, p. 16 e 20, consultados
+# sobre repetição, energia por pulso e crescimento das descargas; não é
+# comparação experimental entre NST e dois MOTs comerciais brasileiros.
 denicolai2001:
   type: Thesis
   author: "Denicolai, Marco"
@@ -39,6 +51,8 @@ denicolai2001:
 
 # C14 — autoria da folha de rosto: Richard Miles, não Ross M.
 # Modos superiores, terminal e Q; §§2.3, 4–6.
+# Introdução (12/10/2026): PDF original, §§2.1–2.4 e 5.1 conferidos;
+# modelos, capacitância do ambiente, topologias e Q carregado/não carregado.
 craven2014:
   type: Thesis
   author: "Craven, Richard Miles"
@@ -53,6 +67,8 @@ craven2014:
 # PDF: https://ndownloader.figshare.com/files/17160773
 
 # V14 — modelo distribuído e carregamento da medição; não confundir com f±.
+# Introdução (12/10/2026): PDF oficial, §§II, IV e XII, p. 12–13 e 17–18;
+# trechos sobre parâmetros distribuídos e carregamento capacitivo conferidos.
 voitkans2014:
   type: Article
   author: ["Voitkāns, Janis", "Voitkāns, Arnis"]
@@ -69,6 +85,15 @@ voitkans2014:
   url: { value: "https://ecce-journals.rtu.lv/ecce/article/download/ecce-2014-0018/139/157", date: 2026-10-12 }
 
 # S24 — precedente nacional de SGTC rotativa e comparação de ferramentas.
+# Quantidade de fio (13/10/2026): §3.1.1 usa 150 mm × 600 mm com AWG 24;
+# o memorial calcula 1.175 espiras e 553,75 m; o Anexo I orça 1 kg de fio
+# 24 AWG. O passo adotado é o diâmetro do cobre (0,5106 mm), sem esmalte —
+# o enrolamento físico tem passo maior; conferir antes de tratar 553,75 m
+# como comprimento real de fio.
+# Comparação de fontes (18/10/2026): leitura dirigida de §3.2, cap. 4 e
+# Anexo I. Dois transformadores de 2,1 kV e rotativo; comprimento quantitativo
+# de descarga não localizado. Potências do texto e do anexo são inconsistentes
+# e não foram tratadas como potência ativa medida ou especificação de MOT.
 silva-soares2024:
   type: Thesis
   author: ["Silva Júnior, José Eurípedes Paulino da", "Soares, Pablo Anastácio"]
@@ -116,6 +141,11 @@ tanwar2024:
   url: { value: "https://ieeexplore.ieee.org/document/10412057", date: 2026-10-12 }
 
 # W13 — relatório de Master of Engineering; §§3.3–3.5, 4.2–4.3, 7.1.
+# Introdução (12/10/2026): §§1.2–1.4, p. 2–9 do PDF do autor conferidos;
+# estrutura, acionamento SGTC/SSTC/DRSSTC e aplicações educacionais.
+# Comparação de fontes (18/10/2026): leitura dirigida de §4.3, p. 84;
+# máximo de 70 cm na série de descarga livre, limitado por streamers laterais.
+# Não interpretar esse resultado como limite universal de NST 15 kV / 60 mA.
 wasatonic2013:
   type: Thesis
   author: "Wasatonic, Eric B."
@@ -144,6 +174,101 @@ obeidat2023:
   url: { value: "https://www.iieta.org/journals/mmep/paper/10.18280/mmep.100119", date: 2026-10-12 }
 
 # === Fontes históricas e acréscimos para dimensionamento ===
+
+# Origem: Denicolai (2001), §2.1, p. 8, referência [Ter43].
+# Finalidade: base clássica para indutância mútua, circuitos ressonantes
+# acoplados e influência do acoplamento na resposta em frequência.
+# Consulta dirigida em 19/10/2026: folha de rosto e copyright da digitalização
+# abaixo conferidos (1943, 1ª edição, 10ª impressão); trechos de p. 149–150
+# e 154–155 consultados no OCR da cópia in.ernet.dli.2015.126496 do Internet Archive.
+# Não é leitura integral. O catálogo/OCR dessa outra cópia indica 1923;
+# essa data não foi adotada, pois diverge da folha de rosto conferida.
+# Pendência: conferir as equações e figuras na imagem antes de transcrevê-las.
+terman1943:
+  type: Book
+  author: "Terman, Frederick Emmons"
+  title: "Radio engineers' handbook"
+  date: 1943
+  edition: 1
+  publisher: "McGraw-Hill Book Company"
+  location: "New York"
+  language: en
+  url: { value: "https://electrooptical.net/OldBooks/Terman-RadioEngineersHandbook_1943.pdf", date: 2026-10-19 }
+
+# Origem: Denicolai (2001), §§1.5 e 2.1, referência [Smy50].
+# Finalidade: consultar a análise clássica de circuitos acoplados com perdas.
+# Consulta em 19/10/2026: apenas metadados da 2ª edição no Open Library;
+# texto dessa edição não consultado. Não tratar como fonte já lida do modelo.
+# Pendência: localizar a edição de 1950 e conferir as seções pertinentes.
+smythe1950:
+  type: Book
+  author: "Smythe, William Ralph"
+  title: "Static and dynamic electricity"
+  date: 1950
+  edition: 2
+  publisher: "McGraw-Hill"
+  location: "New York"
+  language: en
+  url: { value: "https://openlibrary.org/books/OL6072617M/Static_and_dynamic_electricity.", date: 2026-10-19 }
+
+# Origem: Denicolai (2001), §1.5, p. 4, referência [Obe95].
+# Finalidade: investigar a análise original dos circuitos nos experimentos de Tesla.
+# Consulta em 19/10/2026: somente metadados Crossref, DOI, título, autoria,
+# volume 291, número 8 e p. 623–632; o volume de série 55 aparece em Denicolai.
+# Original não lido; página da editora retornou 403. Não atribuir resultados
+# específicos diretamente ao artigo antes de conferi-lo. Mês não confirmado.
+oberbeck1895:
+  type: Article
+  author: "Oberbeck, A."
+  title: "Ueber den Verlauf der electrischen Schwingungen bei den Tesla'schen Versuchen"
+  date: 1895
+  page-range: 623-632
+  language: de
+  serial-number: { doi: "10.1002/andp.18952910808" }
+  parent:
+    type: Periodical
+    title: "Annalen der Physik"
+    volume: 291
+    issue: 8
+  url: { value: "https://doi.org/10.1002/andp.18952910808", date: 2026-10-19 }
+
+# Origem: busca por análises anteriores a Denicolai, 19/10/2026.
+# Finalidade: alternativa histórica em inglês para teoria de circuitos acoplados.
+# Consulta: metadados Crossref e registro DOI do NIST; apenas trecho inicial
+# indexado, que remete a Oberbeck. Não é leitura integral do artigo.
+# Crossref informa somente a página inicial 511; extensão total não cadastrada
+# sem conferência do PDF. Pendência: leitura das hipóteses e equações originais.
+cohen1909-coupled:
+  type: Article
+  author: "Cohen, L."
+  title: "The theory of coupled circuits"
+  date: 1909
+  language: en
+  serial-number: { doi: "10.6028/bulletin.122" }
+  parent:
+    type: Periodical
+    title: "Bulletin of the Bureau of Standards"
+    volume: 5
+    issue: 4
+  url: { value: "https://doi.org/10.6028/bulletin.122", date: 2026-10-19 }
+
+# Origem: Denicolai (2001), §1.5, p. 4, referência [Tes91].
+# Finalidade: fonte primária para o sistema de iluminação de Tesla de 1891;
+# evita atribuir à patente, isoladamente, prova de prioridade histórica absoluta.
+# Consulta em 19/10/2026: metadados, desenho (fig. 1), descrição do circuito
+# e reivindicação 3 conferidos na digitalização original via Google Patents.
+# PDF: https://patentimages.storage.googleapis.com/1b/4d/4b/f79faebe4756f6/US454622.pdf
+# Leitura dirigida, não análise integral de todas as reivindicações.
+# date registra a concessão; depósito em 25/04/1891 consta da especificação.
+tesla1891-lighting:
+  type: Patent
+  author: "Tesla, Nikola"
+  title: "System of electric lighting"
+  date: 1891-06-23
+  number: "US 454622 A"
+  organization: "United States Patent Office"
+  language: en
+  url: { value: "https://patents.google.com/patent/US454622A/en", date: 2026-10-19 }
 
 # Substitui o exemplo tesla1904: folha de rosto transcrita indica New York, 1892.
 # Editora McGraw-Hill do exemplo não confirmada; e-book de 2004 não é ano da obra.
@@ -299,8 +424,11 @@ lau-specs:
   author: "Lau, Gary"
   title: "My coil's spec's"
   language: en
-  url: { value: "https://www.laushaus.com/tesla/specs.htm", date: 2026-10-12 }
+  url: { value: "https://www.laushaus.com/tesla/specs.htm", date: 2026-10-18 }
 # As três páginas de Lau registram versões diferentes: não fundir configurações.
+# Reconsulta de fontes (18/10/2026): texto das especificações; máximo declarado
+# de 58 pol até alvo aterrado, com NST 15/60 modificado e gap estático ventilado.
+# Não é descarga livre repetível; modificações e proteções não homologadas.
 
 # Freau: comprimento de descarga, não altura do secundário; potência consumida,
 # não VA de placa. Fórmula ajustada às bobinas do próprio autor.
@@ -327,7 +455,10 @@ burnett-pictures:
   author: "Burnett, Richie"
   title: "Tesla coil pictures"
   language: en
-  url: { value: "https://www.richieburnett.co.uk/pictures.html", date: 2026-10-12 }
+  url: { value: "https://www.richieburnett.co.uk/pictures.html", date: 2026-10-18 }
+# Reconsulta (18/10/2026): legendas dos resultados com fixo e rotativo; 31 pol
+# até alvo no fixo e cerca de 36 pol com rotativo. Condições também mudaram;
+# não é comparação controlada. Não se mediram comprimentos pelas fotografias.
 
 low-tesla:
   type: Web
@@ -344,6 +475,139 @@ electronix-large-sgtc:
   language: en
   url: { value: "https://www.electronixandmore.com/projects/tesla/largesgcoil.html", date: 2026-10-12 }
 
+# Construções e fórum consultados em 13/10/2026 para a quantidade de fio do
+# secundário (orçamento em andamento). Relatos de construtor e discussão de
+# fórum: não são ensaios controlados nem datasheet; comprimentos e massas são
+# estimativas dos próprios autores.
+
+# Trecho consultado: secundário de 3,5" × 24" com ~950 espiras de #24.
+# Finalidade: precedente de construção com AWG 24. Pendência: a página reúne
+# montagens distintas; conferir a qual versão o trecho corresponde.
+dyer-coils:
+  type: Web
+  author: "Dyer, John"
+  title: "Tesla coils"
+  language: en
+  url: { value: "https://www.johndyer.com/coils.html", date: 2026-10-13 }
+
+# Diário de construção; autoria pessoal não identificada na página consultada.
+# Trecho: tubo acrílico de 4", ~21" enrolados, 900–1000 espiras de 24 AWG.
+# Finalidade: precedente quantitativo com AWG 24. Pendência: relato sem
+# medição de desempenho publicada; não usar como validação experimental.
+plasmafire-tesla-project:
+  type: Web
+  title: "The Tesla Coil Graduation Project"
+  language: en
+  parent: { type: Web, title: "PlasmaFire.org" }
+  url: { value: "https://www.plasmafire.org/projects/the-tesla-coil-graduation-project", date: 2026-10-13 }
+
+# Tópico com vários participantes: registrado sem autor individual para não
+# atribuir o conteúdo a uma só pessoa; a data é a da primeira mensagem.
+# Trechos: estimativa por comprimento × peso e compra do fio por libra.
+# Finalidade: prática corrente de compra de fio. Pendência: fórum, sem ensaio.
+eevblog-wire-thread:
+  type: Post
+  title: "How much wire do I need for tesla coil?"
+  date: 2014-01-08
+  language: en
+  parent: { type: Thread, title: "EEVblog Electronics Community Forum" }
+  url: { value: "https://www.eevblog.com/forum/projects/how-much-wire-do-i-need-for-tesla-coil/", date: 2026-10-13 }
+
+# Página distinta do guia já cadastrado (deepfriedneon-guide). Trecho: para
+# 6" × 24", ~1,3 kg de fio (exemplo com 0,71 mm) e vedação explícita a emenda
+# no meio do enrolamento. Pendência: o número não é do AWG 24; recalcular por
+# bitola antes de usar como regra quantitativa.
+deepfriedneon-secondary:
+  type: Web
+  author: "DeepFriedNeon"
+  title: "Tesla coils — secondary coil"
+  language: en
+  url: { value: "https://deepfriedneon.com/tesla_secondary.html", date: 2026-10-13 }
+
+# Origem: link do tutorial deepfriedneon-secondary; consulta em 13/10/2026.
+# Leitura: página e fotografia do acionamento, sem especificações técnicas.
+# Finalidade: exemplo de transmissão por correia/polias para girar o suporte.
+# Pendências: tipo/modelo do motor, tensão, rotação e torque não identificados;
+# não deduzir essas especificações apenas pela aparência da fotografia.
+deepfriedneon-secondary-motor:
+  type: Web
+  author: { name: "DeepFriedNeon" }
+  title: "Motor drive"
+  language: en
+  url: { value: "https://deepfriedneon.com/tesla_secondary_motor.html", date: 2026-10-13 }
+
+# Origem: busca de dispositivos para enrolar o secundário, 13/10/2026.
+# Leitura: README e listagem de arquivos consultados; CAD, circuito e código
+# não auditados. Finalidade: referência prática de suporte motorizado com
+# cones para tubos de 40–200 mm, pedal e ajuste de velocidade.
+# Pendências: licença não identificada na raiz consultada; verificar dimensões,
+# rigidez e capacidade para o tubo real antes de adaptar. Repositório público
+# não equivale, por si só, a projeto com licença open source.
+leclercq-tesla-winder:
+  type: Web
+  author: { name: "antonin-leclercq" }
+  title: "Tesla coil winding machine"
+  language: en
+  parent: { type: Web, title: "GitHub" }
+  url: { value: "https://github.com/antonin-leclercq/tesla-coil-winding-machine", date: 2026-10-13 }
+
+# Origem: referências já listadas em coil-winding/README.md; consulta para
+# protótipos mecânicos no FreeCAD, 14/10/2026.
+# Leitura: README.org e metadados/listagem da raiz; licença MIT identificada.
+# Finalidade: arquitetura de enroladora majoritariamente impressa, com G-code,
+# rotação e avanço. Pendências: CAD, STL e firmware não auditados; nenhuma
+# geometria foi copiada para os protótipos locais. Data de publicação não
+# confirmada; identificador do mantenedor preservado, sem inferir nome civil.
+owl-and-goat-coil-winder:
+  type: Web
+  author: { name: "owl-and-goat" }
+  title: "coil winder"
+  language: en
+  parent: { type: Web, title: "GitHub" }
+  url: { value: "https://github.com/owl-and-goat/coil-winder", date: 2026-10-14 }
+
+# Origem: coil-winding/README.md; consulta para protótipos, 14/10/2026.
+# Leitura: README e metadados/listagem da raiz; licença GPL-3.0 identificada.
+# Finalidade: referência de dois motores NEMA17, acoplamento e guia de fio.
+# Pendências: código, HMI e hardware não auditados; não comprova capacidade
+# para o tubo Ø100 x 700 mm. Sem cópia de geometria ou código. Data de
+# publicação e nome civil do mantenedor não confirmados.
+sandy9159-guitar-pickup-winder:
+  type: Web
+  author: { name: "sandy9159" }
+  title: "DIY-Arduino-based-Guitar-Pickup-Coil-Winder"
+  language: en
+  parent: { type: Web, title: "GitHub" }
+  url: { value: "https://github.com/sandy9159/DIY-Arduino-based-Guitar-Pickup-Coil-Winder", date: 2026-10-14 }
+
+# Origem: coil-winding/README.md; consulta para protótipos, 14/10/2026.
+# Leitura: README e metadados/listagem da raiz; licença GPL-3.0 identificada.
+# Finalidade: conceito de tensão por massa suspensa e desenrolamento
+# motorizado para fio fino, etapa futura não implementada nestes protótipos.
+# Autoria nominal indicada no README. Pendências: circuito, código e
+# hardware não auditados; publicação não confirmada; sem cópia local.
+grayston-winder:
+  type: Web
+  author: "Grayston, Rylan"
+  title: "winder"
+  language: en
+  parent: { type: Web, title: "GitHub" }
+  url: { value: "https://github.com/Rylangrayston/winder", date: 2026-10-14 }
+
+# Origem: busca comercial por motorredutor de baixa rotação, 13/10/2026.
+# Leitura: título e trecho do resultado de busca; a página exige login.
+# Finalidade: exemplo de oferta da família JGA25-370, variante 12 V / 30 rpm.
+# Pendências: confirmar variante, torque contínuo, corrente de partida,
+# preço final, frete e disponibilidade. Não equivale a datasheet verificado
+# nem comprova capacidade para o secundário adotado em 13/10/2026 (tubo de
+# 100 mm; a pendência anterior citava 150 mm).
+mercadolivre-jga25-370-30rpm:
+  type: Web
+  title: "Mk- Motorredutor Jga25 370 12v Cc 30rpm"
+  language: pt
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://www.mercadolivre.com.br/mk-motorredutor-jga25-370-12v-cc-30rpm/p/MLB2072861671", date: 2026-10-13 }
+
 # Origem indicada por Kevin Wilson, não a cópia não autorizada de
 # kevinsworkbench.com. Original não recuperado; acesso/leitura pendentes.
 wilson-design:
@@ -352,6 +616,490 @@ wilson-design:
   title: "Tesla Coil Design"
   language: en
   url: "https://www.teslacoildesign.com/"
+
+# Origem: comparação de fontes e associações de transformadores, 18/10/2026.
+# Leitura: trechos da página original recuperados pelo mecanismo de busca;
+# acesso direto retornou erro de transporte. Não se afirma leitura integral.
+# Finalidade: discussão técnica de NST magnético/eletrônico, proteções e
+# limitações da associação em série. Pendências: conferir integral/manual
+# da unidade escolhida. Não adotar sugestões de bypass de proteções nem
+# esquemas de aterramento como procedimento aprovado para este projeto.
+wilson-design-construction:
+  type: Web
+  author: "Wilson, Kevin"
+  title: "Tesla Coil Design, Construction and Operation Guide"
+  language: en
+  url: { value: "https://www.teslacoildesign.com/construction.html", date: 2026-10-18 }
+
+# Origem: comparação NST versus MOT, 18/10/2026; cópia hospedada no Hot-Streamer.
+# Leitura: texto da página consultado; esquemas e imagens vinculados não
+# examinados. Finalidade: relato histórico sobre tensão/corrente típicas de
+# MOTs e necessidade de limitação de corrente em SGTC, não evidência revisada
+# por pares nem instrução de montagem segura. Pendências: validar dados no
+# datasheet do modelo exato; não reproduzir improvisações construtivas,
+# associações, multiplicadores ou materiais de isolação descritos no relato.
+hunter-mot-power-supply:
+  type: Web
+  author: "Hunter, Gregory R."
+  title: "A Low-Cost, High-Performance Tesla Coil Power Supply based on Microwave Oven Transformers"
+  date: 2000-03
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/greg/MOTDOC.htm", date: 2026-10-18 }
+
+# === Evidências de fonte e centelhador: consulta em 18/10/2026 ===
+# Origem: arquivos TCML e links dos próprios construtores; relatório em
+# docs/evidencias-nst-mot-centelhador-2026-10-18.md. Relatos históricos não
+# equivalem a ensaio independente, datasheet ou autorização de construção.
+# Nas páginas sem data de publicação verificável, registrar somente o acesso.
+
+# Leitura: texto da mensagem. Finalidade: comparação do próprio autor entre
+# 36 pol no estático e 42 pol no rotativo síncrono com um NST 12/30.
+# Pendências: potência constante, alvo e repetibilidade não documentados;
+# tensão de entrada esclarecida na mensagem de dezembro, cadastrada abaixo.
+freau2000-nst-static-rotary:
+  type: Post
+  author: "Freau, John"
+  title: "Re: 12/30 NST results, was Haunted House Coil Use"
+  date: 2000-07-18
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2000/July/msg00282.html", date: 2026-10-18 }
+
+# Leitura: texto da mensagem. Finalidade: confirma uma unidade 12/30 e
+# variac com entrada elevada a 140 V; resultado menor a 120 V. Pendência:
+# não transferir esse desempenho à tensão nominal ou a outro modelo de NST.
+freau2000-nst-input-voltage:
+  type: Post
+  author: "Freau, John"
+  title: 'Re: 12/30 nst gives 42" sparks, was The barter system rules!'
+  date: 2000-12-18
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2000/December/msg00817.html", date: 2026-10-18 }
+
+# Leitura: texto da mensagem e especificações declaradas. Finalidade:
+# distinguir 1.080 W medidos pelo autor de 3.220 VA na entrada, com NST 12/60,
+# rotativo síncrono e máximo de 61 pol. Pendências: sem auditoria instrumental
+# ou definição completa do comprimento; sobrecarga discutida no seguimento.
+rosenstiel2001-efficiency:
+  type: Post
+  author: "Rosenstiel, Jon"
+  title: "Freau's efficiency theory=Success!"
+  date: 2001-06-04
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2001/June/msg00162.html", date: 2026-10-18 }
+
+# Leitura: texto da resposta. Finalidade: comentário sobre PFC reduzir VA
+# sem mudar substancialmente o desempenho. Pendência: não é ensaio de PFC.
+# Esta e a próxima entrada têm o mesmo assunto, mas são mensagens distintas,
+# com autores e URLs diferentes; não duplicatas da mensagem de Rosenstiel.
+freau2001-rosenstiel-response:
+  type: Post
+  author: "Freau, John"
+  title: "Re: Freau's efficiency theory=Success!"
+  date: 2001-06-05
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2001/June/msg00171.html", date: 2026-10-18 }
+
+# Leitura: texto da resposta. Finalidade: alerta de corrente excessiva nos
+# enrolamentos; PFC na rede não elimina essa sobrecarga interna. Pendência:
+# comentário técnico sobre números relatados, sem inspeção ou ensaio térmico.
+burnett2001-rosenstiel-response:
+  type: Post
+  author: "Burnett, Richie"
+  title: "Re: Freau's efficiency theory=Success!"
+  date: 2001-06-05
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2001/June/msg00202.html", date: 2026-10-18 }
+
+# Leitura: texto da página; título indicado no índice main.htm do autor.
+# Finalidade: dois MOTs sem condicionamento de tensão, cerca de 4,8 kV;
+# streamers de 36 pol e eventos de 48 pol até o teto. Pendências: potência
+# ativa não informada; gap limitava ensaios a 20–30 s. Não adotar a montagem
+# sem limitação externa nem demais improvisações como procedimento seguro.
+hunter-mot-direct:
+  type: Web
+  author: "Hunter, Gregory R."
+  title: "Low budget MOT experiment"
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/greg/motpwr.htm", date: 2026-10-18 }
+
+# Leitura: texto da página; título do índice main.htm. Finalidade: máximo
+# de 60 pol e 36–48 pol mais comuns com fonte twin MOT condicionada.
+# Pendências: secundário, capacitor e terminal também mudaram; não isola
+# efeito da fonte. Fotografias não usadas para medir comprimento.
+hunter-new-improved-coil:
+  type: Web
+  author: "Hunter, Gregory R."
+  title: "The New & Improved Junk Box Coil"
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/greg/newcoil.htm", date: 2026-10-18 }
+
+# Leitura: legenda textual, não análise dos quadros de vídeo; título do
+# índice main.htm. Finalidade: corroboração do relato de até 60 pol e mais
+# de 3 kVA, não 3 kW medidos. Pendência: mesma família de montagem da página
+# anterior, não resultado independente nem especificação elétrica rastreável.
+hunter-mot-coil-sparks:
+  type: Web
+  author: "Hunter, Gregory R."
+  title: "New & Improved Junk Box Coil captured video images"
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/greg/2KVA.htm", date: 2026-10-18 }
+
+# Leitura: texto da página; título do índice main.htm. Finalidade: identifica
+# o gap estático ventilado usado com NST e twin MOT. Pendências: relato de
+# aquecimento sem instrumentação ou ensaio térmico rastreável; construção,
+# materiais e controle do motor não avaliados nem homologados.
+hunter-vacuum-gap:
+  type: Web
+  author: "Hunter, Gregory R."
+  title: "Single Static Vacuum Spark Gap"
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/greg/vacgap.htm", date: 2026-10-18 }
+
+# Leitura: texto da página; esquemas/imagens não auditados. Finalidade:
+# histórico de falhas de diodos e retrabalho da fonte. Pendências: versão
+# distinta da fonte MOTDOC; não fundir dados nem adotar o circuito como projeto.
+hunter-mark-iii:
+  type: Web
+  author: "Hunter, Gregory R."
+  title: "Mark III Twin MOT Supply"
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/greg/Mark_III.htm", date: 2026-10-18 }
+
+# Leitura: texto da página. Finalidade: excluir atribuição indevida ao MOT;
+# resultados do rotativo usam transformador de distribuição 11,5 kV.
+# Pendências: sem análise elétrica/mecânica do rotor; não reproduzir montagem.
+hunter-rotary-gap:
+  type: Web
+  author: "Hunter, Gregory R."
+  title: "Rotary Spark Gap"
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/greg/RSG.htm", date: 2026-10-18 }
+
+# Leitura dirigida do texto: apresentações, síncrono/assíncrono e energia
+# por disparo. Finalidade: distinguir temporização de desempenho garantido.
+# Pendências: teoria de construtor, não validação dos componentes brasileiros.
+burnett-rotary:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Rotary spark gap overview"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/rotary.html", date: 2026-10-18 }
+
+# Leitura dirigida da seção Quenching e da discussão de sua importância.
+# Finalidade: extinção depende também de sintonia/carregamento; velocidade
+# de separação não assegura primeiro mínimo. Pendências: exemplos e conselhos
+# de operação não homologados; não é leitura integral de todas as seções.
+burnett-quenching:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Tesla coil operation (part 2)"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/operatn2.html", date: 2026-10-18 }
+
+# Leitura dirigida de texto/modelo: capacitor, ballast, taxa de disparos e FP.
+# Finalidade: mostrar interação entre circuito de carga e temporização.
+# Pendências: simulações do autor a 50 Hz, não reproduzidas; não transpor para
+# 60 Hz. Há aparente erro de sinal de escala: reduzir L e C à metade aumenta,
+# não reduz, a frequência natural. Não usar essa frase como base de cálculo.
+burnett-async:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Asynchronous rotary spark gap analysis"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/async.html", date: 2026-10-18 }
+
+# Leitura dirigida do texto: aquecimento, tensão de disparo e limitações.
+# Finalidade: base física da comparação com rotativo. Pendências: não adotar
+# sugestões de ajuste do gap como procedimento de otimização seguro.
+burnett-static:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Static spark gap analysis"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/static.html", date: 2026-10-18 }
+
+# Leitura do texto e resultados relatados, sem reproduzir simulações.
+# Finalidade: temporização de rotativo síncrono; ganho estimado de 10–15%
+# abaixo de 1.500 W ao mudar espaçamento. Pendências: comparação demorada
+# entre rotores, não ensaio controlado NST/MOT; exemplo de rede de 50 Hz.
+burnett-offset:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Offset 200BPS rotary gap"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/offset.html", date: 2026-10-18 }
+
+# Origem: Tesla Downunder, autoria indicada no site. Leitura dirigida de
+# introdução e fonte; quatro MOTs, não dois. Finalidade: excluir comparação
+# indevida com um par. Pendências: medidas e segurança não verificadas;
+# não adotar isolação, limitação ou rotor descritos como procedimentos.
+terren-4inch-coil:
+  type: Web
+  author: "Terren, Peter"
+  title: "Tesla coil 4 inch"
+  language: en
+  url: { value: "https://tesladownunder.com/tesla_coil_4inch.htm", date: 2026-10-18 }
+
+# Mesma origem. Leitura dirigida da seção Power: quatro MOTs. Finalidade:
+# separar os resultados dessa bobina do caso de dois MOTs. Pendências:
+# potência ativa, comprimento e condições não auditados independentemente.
+terren-6inch-coil:
+  type: Web
+  author: "Terren, Peter"
+  title: "Tesla coil 6 inch"
+  language: en
+  url: { value: "https://tesladownunder.com/tesla_coil_6inch.htm", date: 2026-10-18 }
+
+# Mesma origem. Leitura dirigida de legendas/descrições; sem medição pelas
+# imagens nem análise integral dos vídeos. Finalidade: não atribuir resultados
+# da galeria a dois MOTs. Pendências: versões e métodos de medição variam;
+# demonstrações com pessoas não adotadas como evidência de segurança.
+terren-coil-sparks:
+  type: Web
+  author: "Terren, Peter"
+  title: "Tesla Coil Sparks"
+  language: en
+  url: { value: "https://tesladownunder.com/tesla_coil_sparks.htm", date: 2026-10-18 }
+
+# Mesma origem. Leitura dirigida da evolução das montagens: relato de falha
+# de NST com rotativo assíncrono. Finalidade: limitação de integração, não
+# comparação de rendimento. Pendências: causa e proteção não auditadas.
+terren-coils-intro:
+  type: Web
+  author: "Terren, Peter"
+  title: "Tesla coils"
+  language: en
+  url: { value: "https://tesladownunder.com/Tesla_coils_intro.htm", date: 2026-10-18 }
+
+# Origem: ClassicTesla. Leitura dirigida do texto: NST 12/60 modificado e
+# gap estático. Finalidade: precedente de configuração. Pendências: distâncias
+# entre objetos de 53/55 pol não tratadas como comprimento medido sem examinar
+# fotografias e método; não adotar alterações do NST como procedimento.
+anderson-static-gap-45:
+  type: Web
+  author: "Anderson, Barton B."
+  title: "4.5 inch Static Gap Coil"
+  language: en
+  url: { value: "https://classictesla.com/home/4-5-static-gap-coil/", date: 2026-10-18 }
+
+# Origem: espelho das páginas de Terry Fritz no Hot-Streamer. Leitura do
+# texto/especificações: NST 9/30 e rotativo síncrono. Finalidade: precedente
+# de configuração; comprimento não informado. Pendências: esquema e fotos
+# não auditados; não comprova meta de descarga ou projeto aprovado.
+fritz-small-coil:
+  type: Web
+  author: "Fritz, Terry"
+  title: "Small Coil"
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/TeslaCoils/MyCoils/SmallCoil/SmallCoil.htm", date: 2026-10-18 }
+
+# === Blogs e discussões NST/MOT: consulta em 19/10/2026 ===
+# Origem: busca pedida pelo pesquisador após a recomendação de um construtor
+# por MOT + rotativo. Síntese em docs/discussoes-blogs-nst-mot-2026-10-19.md.
+# Relatos e opiniões não equivalem a comparação controlada ou projeto aprovado.
+
+# Origem: TCML. Leitura: texto da mensagem do autor, sem adotar os esquemas
+# e as instruções citados de outros participantes. Finalidade: precedente
+# próximo de dois MOTs e gap assíncrono, com arcos declarados de 5 pés.
+# Pendências: não informa potência ativa, geometria completa, método de medir
+# o arco ou repetibilidade. Não adotar a ausência de ballast ou a qualificação
+# informal de montagem "à prova de falhas" como orientação de segurança.
+bogard2016-twin-mot:
+  type: Post
+  author: "Bogard, Scott"
+  title: "Re: [TCML] Tesla coil setup using MOT"
+  date: 2016-12-23
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2016/Dec/msg00051.php", date: 2026-10-19 }
+
+# Mesma origem; mensagem distinta, não duplicata apesar do mesmo assunto.
+# Leitura: resposta textual à pergunta sobre dobradores. Finalidade: o próprio
+# Bogard confirma CA direta de cerca de 4 kV, sem dobrador, no caso anterior.
+# Pendências: não fornece dimensões do gap nem validação térmica/mecânica;
+# dúvida do autor sobre um estático nessa configuração não é impossibilidade
+# universal. Não copiar ajustes ou tratar robustez declarada como homologação.
+bogard2016-raw-ac:
+  type: Post
+  author: "Bogard, Scott"
+  title: "Re: [TCML] Tesla coil setup using MOT"
+  date: 2016-12-24
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2016/Dec/msg00054.php", date: 2026-10-19 }
+
+# Origem: DFRobot Maker Community; autoria pelo identificador visível, sem
+# inferir nome civil. Data do cabeçalho é Jun 08.2024, distinta de 01/08/2024
+# devolvida pelo índice da busca; adota-se a data da página original.
+# Leitura: texto do relato, sem auditoria dos esquemas/imagens ou do vídeo.
+# Finalidade: dois MOTs com condicionamento de tensão, descarga declarada
+# superior a 50 cm e sobreaquecimento do centelhador. Pendências: sem potência
+# ativa medida, sem comparação quantitativa controlada com o NST anterior;
+# tipo de gap não classificado apenas pelo texto. Lâmpada acesa a 2,5 m não
+# comprova arco de 2,5 m. Adaptações construtivas não homologadas.
+mircemk2024-dual-mot:
+  type: Web
+  author: { name: "mircemk" }
+  title: "Dual MOT (microwave oven transformer) Tesla Coil"
+  date: 2024-06-08
+  language: en
+  parent: { type: Web, title: "DFRobot Maker Community" }
+  url: { value: "https://community.dfrobot.com/makelog-314342.html", date: 2026-10-19 }
+
+# Origem: blog/projetos RMCybernetics. Leitura dirigida do texto de construção,
+# resultados e comentários, sem auditoria dos circuitos ou das fotografias.
+# Finalidade: NST 10 kV / 100 mA com rotativo síncrono, máximo declarado de
+# 74 cm e debate sobre capacitores/proteções. Pendências: texto mistura VA e W,
+# usa estimativa empírica como "limite teórico" e contém práticas de aterramento,
+# materiais e bypass de proteção não adotadas. Não assumir 1 kW medido.
+# Publicação não confirmada: índice informa 2017, mas há comentários desde
+# 2009; nem essa data do índice nem a pasta das imagens define a publicação.
+rmcybernetics-srsg-tesla-coil:
+  type: Web
+  author: { name: "RMCybernetics" }
+  title: "DIY SRSG Tesla Coil"
+  language: en
+  url: { value: "https://www.rmcybernetics.com/science/diy-devices/diy-srsg-tesla-coil", date: 2026-10-19 }
+
+# Origem: blog da NuWaves, autoria e data no cabeçalho. Leitura dirigida das
+# seções Power Transformer, Spark Gap e Coupling; demais especificações
+# consultadas, não auditadas. Finalidade: contraponto de construtor que escolhe
+# NST e estático por simplicidade/custo, reconhecendo potência dos MOTs e
+# necessidade de limitação externa. Pendências: nenhum comprimento comparativo;
+# preços/achados locais de 2020 não são cotação brasileira. Não adotar alterações
+# dos shunts, capacitor de partida em serviço inadequado ou conselhos de
+# aterramento. Afirmação ampla sobre quenching do rotativo não é prova de
+# extinção no primeiro mínimo; confrontar burnett-quenching.
+nuwaves2020-tesla-coil:
+  type: Web
+  author: { name: "Team NuWaves" }
+  title: "The Tesla Coil: A Basic RF Resonant Transformer"
+  date: 2020-05-20
+  language: en
+  parent: { type: Web, title: "NuWaves RF Solutions" }
+  url: { value: "https://nuwaves.com/the-tesla-coil-a-basic-rf-resonant-transformer", date: 2026-10-19 }
+
+# Origem: TCML, discussão de 2016. Leitura: texto da resposta. Finalidade:
+# bom resultado declarado com carga ressonante CC usando MOTs; o indutor de
+# carga de alta tensão é apontado como principal dificuldade. Pendências:
+# não traz comprimento/potência ou detalhamento integral da própria bobina;
+# não tratar a alternativa CC como simples troca de transformadores.
+smith2016-mot-resonant-charging:
+  type: Post
+  author: "Smith, Roger"
+  title: "Re: [TCML] Tesla coil setup using MOT"
+  date: 2016-12-22
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2016/Dec/msg00043.php", date: 2026-10-19 }
+
+# Origem: TCML. Leitura: texto da mensagem. Finalidade: autor relata a mesma
+# descarga de 62 pol com quatro MOTs e rotativo ao reduzir consumo de 6 kW
+# para 4,2 kW com ballast; demonstra que consumo maior não garante arco maior.
+# Pendências: método/instrumentação não informados; bobina posterior de 64 pol
+# a 1.570 W é outra montagem, cuja fonte não é identificada nesta mensagem.
+# Não atribuir esse segundo resultado a NST nem reproduzir núcleos energizados
+# ou ausência de limitação. Data é a do cabeçalho (02/05), não a pasta April.
+freau2000-mot-ballast:
+  type: Post
+  author: "Freau, John"
+  title: "Re: Microwave Oven Transformers (MOTs)"
+  date: 2000-05-02
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2000/April/msg00119.html", date: 2026-10-19 }
+
+# Origem: Electrical Engineering Stack Exchange. A página retornou 403;
+# pergunta e corpo completo da resposta 477689 foram recuperados pela API
+# pública oficial /2.3/questions/477645/answers?site=electronics&filter=withbody.
+# Leitura: texto, não o esquema. Finalidade: contraponto que critica MOT direto,
+# mas reconhece bom funcionamento de MOT + condicionamento/carga ressonante
+# CC + rotativo, com maior complexidade. Pendências: generalizações sobre
+# isolação de modelos modernos sem datasheet; alegações inseguras sobre roupas
+# como isolação e associações não adotadas. Nenhuma orientação de segurança
+# foi validada. Identificador preservado sem inferir nome civil.
+neil-uk2020-mot-tesla:
+  type: Post
+  author: { name: "Neil_UK" }
+  title: "How to unground microwave transformer"
+  date: 2020-01-24
+  language: en
+  parent: { type: Thread, title: "Electrical Engineering Stack Exchange" }
+  url: { value: "https://electronics.stackexchange.com/questions/477645/how-to-unground-microwave-transformer#477689", date: 2026-10-19 }
+
+# Origem: esquema de princípio de fonte com dois GAL-900E-4, 19/10/2026.
+# Leitura dirigida das seções HV Supply Transformer, Primary Tank Capacitor e
+# Spark Gap, sem auditoria da imagem do circuito ou das demais páginas ligadas.
+# Finalidade: interação de fonte, limitação, capacitor e gap; tensão do tanque
+# pode superar o pico da fonte, e o capacitor requer especificação para pulsos,
+# reversão e corrente RF. Pendências: não fornece dimensionamento do nosso MOT;
+# limites empíricos e construções descritas não constituem aprovação de projeto.
+burnett-tesla-components:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Tesla Coil components"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/parts.html", date: 2026-10-19 }
+
+# === Seleção de MOTs e associação de três unidades: 19/10/2026 ===
+
+# Origem: busca específica sobre série de MOTs para o projeto.
+# Leitura: texto integral da mensagem, distinguindo resposta e mensagem citada.
+# Finalidade: ligação de uma extremidade do secundário ao núcleo e risco de
+# ruptura da isolação núcleo/primário ao empilhar mais unidades. Pendências:
+# comentário técnico histórico, não ensaio dielétrico do modelo escolhido;
+# a expressão informal de facilidade com dois MOTs não certifica segurança.
+lux1999-mot-series-insulation:
+  type: Post
+  author: "Lux, Jim"
+  title: "Re: NST vs. MOT ???"
+  date: 1999-11-15
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/1999/November/msg00330.html", date: 2026-10-19 }
+
+# Origem: mesma busca. Autoria indicada no rodapé; sem data única para a página,
+# que reúne diário de 2004–2005 e revisões posteriores. Leitura dirigida das
+# seções de fonte, mudanças de dois para quatro MOTs e problemas de partida;
+# não leitura integral nem auditoria de esquemas/imagens. Finalidade: distinguir
+# fonte inicial com condicionamento da posterior de quatro MOTs em CA direta.
+# Pendências: potência útil e regime térmico não validados; não adotar óleo de
+# motor, conectores de áudio em AT, materiais improvisados ou proteções do relato.
+gao-tesla-coil2:
+  type: Web
+  author: "Gao, Guangyan"
+  title: '4" Tesla Coil 2'
+  language: en
+  url: { value: "https://www.loneoceans.com/labs/teslacoil2/", date: 2026-10-19 }
+
+# Origem: mesma busca. Leitura: somente trechos indexados; acesso direto ao
+# original retornou HTTP 429. Finalidade: localizar precedente explícito de três
+# MOTs em série, com ressalva do autor sobre um núcleo não aterrado e isolação.
+# Pendências: recuperar texto/esquema completos, autoria e data; título do índice
+# usa V, enquanto um trecho do corpo usa IV. Não inferir qualificação dielétrica
+# pela menção a plástico nem reproduzir retirada de aterramento como solução.
+danyk-sgtc-three-mots:
+  type: Web
+  title: "SGTC V. - My biggest TC"
+  language: en
+  parent: { type: Web, title: "Danyk.cz" }
+  url: { value: "https://danyk.cz/tesla5_en.html", date: 2026-10-19 }
+
+# Origem: resultado relacionado na mesma busca. Leitura: título/trecho indexados;
+# acesso direto retornou HTTP 429. Finalidade: pista adicional de fonte com dois
+# MOTs e limitação de corrente. Pendências: integral, autoria, data e validação
+# dos valores do título; não tratar 0,7 A como capacidade contínua de qualquer MOT.
+danyk-two-mot-supply:
+  type: Web
+  title: "Tesla Coil power supply with two MOTs (4200 Vac 0.7 A)"
+  language: en
+  parent: { type: Web, title: "Danyk.cz" }
+  url: { value: "https://danyk.cz/tc2moty_en.html", date: 2026-10-19 }
 
 # === Vídeos: demonstração visual, sem medição rastreável nesta coleta ===
 # Títulos/canais conferidos via YouTube oEmbed; datas de publicação pendentes.
@@ -378,11 +1126,102 @@ watson-nst:
   title: "15kv 30ma Tesla Coil"
   language: en
   parent: { type: Web, title: "YouTube" }
-  url: { value: "https://www.youtube.com/watch?v=aKzx-GMzTqY", date: 2026-10-12 }
+  url: { value: "https://www.youtube.com/watch?v=aKzx-GMzTqY", date: 2026-10-19 }
+# Reconsulta visual em 19/10/2026: título/canal via oEmbed e descrição integral
+# em videoDetails do HTML público. Confirma NST 15 kV / 30 mA, secundário de
+# 2,5 × 16 pol com ~1.000 espiras AWG 30 e gap estático de cinco intervalos.
+# Miniatura examinada, sem análise integral do vídeo ou comprimento medido.
+
+# Origem: playlist pública HomeDistiller's Tesla Coils, localizada na busca
+# visual de 19/10/2026. Títulos/canal via oEmbed e descrições via videoDetails
+# do HTML público; datas de publicação pelo campo publishDate dos metadados.
+# Miniaturas vistas não são comprovação de escala, exposição ou segurança.
+# Não houve reprodução/análise integral dos vídeos ou auditoria das montagens.
+
+# Finalidade: vídeo de descarga de um par de MOTs com RSG e dobrador, conforme
+# título/descrição. O autor diz ter recuperado o RSG e acrescentado diodos ao
+# dobrador. Não é o caso de dois MOTs em CA direta de Scott Bogard.
+# Pendências: potência ativa, alcance, escala e condições térmicas não medidos;
+# foto da capa não é necessariamente quadro do vídeo nem exposição única.
+homedistiller2011-dual-mot-rsg:
+  type: Video
+  author: { name: "HomeDistiller" }
+  title: 'quick run of the dual MOT 6" tesla coil'
+  date: 2011-11-01
+  language: en
+  parent: { type: Web, title: "YouTube" }
+  url: { value: "https://www.youtube.com/watch?v=Fw-pbZxqSAY", date: 2026-10-19 }
+
+# Finalidade: primeira operação declarada com twin MOT e RSG. Descrição
+# esclarece que o arco termina em alvo aterrado próximo, não um limite de
+# alcance livre. Pendências: não transferir medidas de outra versão da bobina;
+# o vídeo de teste do gap da mesma série declara um dobrador na alimentação.
+homedistiller2008-twin-mot-first-light:
+  type: Video
+  author: { name: "HomeDistiller" }
+  title: "Twin MOT Tesla coil with RSG first light"
+  date: 2008-02-10
+  language: en
+  parent: { type: Web, title: "YouTube" }
+  url: { value: "https://www.youtube.com/watch?v=rW6qYheiZaY", date: 2026-10-19 }
+
+# Finalidade: comprovação textual dos dois MOTs e do dobrador no teste do RSG
+# da série de 2008. É teste do gap, não demonstração de comprimento da descarga
+# do secundário. O autor relata aquecimento em operação com a bobina.
+# Pendências: não adotar montagem, ajustes ou regime como procedimento seguro.
+homedistiller2008-rsg-testing:
+  type: Video
+  author: { name: "HomeDistiller" }
+  title: "tesla coil RSG testing"
+  date: 2008-02-10
+  language: en
+  parent: { type: Web, title: "YouTube" }
+  url: { value: "https://www.youtube.com/watch?v=He_MDs4Gw6Q", date: 2026-10-19 }
+
+# Finalidade: apresentação do conjunto e da atualização de estático para RSG.
+# Descrição relata 45 pol com o estático anterior e expectativa de melhorar;
+# não comprova esse comprimento com rotativo. Pendências: sem medida de
+# potência ou verificação de desempenho; montagem ainda não conectada nessa
+# etapa, segundo o autor. Não somar dados entre versões como um só ensaio.
+homedistiller2008-bottom-deck:
+  type: Video
+  author: { name: "HomeDistiller" }
+  title: "tesla coil, bottom deck, DC charging"
+  date: 2008-02-09
+  language: en
+  parent: { type: Web, title: "YouTube" }
+  url: { value: "https://www.youtube.com/watch?v=_B4v44cHlKk", date: 2026-10-19 }
+
+# Finalidade: pista de falha real na versão reconstruída de 160 mm; a descrição
+# declara dano em lâmpada e fumaça no secundário, fonte twin MOT e multiplicador.
+# Pendências: causas e sequência não auditadas; não é evidência de confiabilidade
+# nem de segurança, e demonstrações de dano não são adotadas para o projeto.
+homedistiller2011-rebuilt-failure:
+  type: Video
+  author: { name: "HomeDistiller" }
+  title: 'My rebuilt 6" dual MOT Tesla coil + blown light and smoking coil'
+  date: 2011-09-28
+  language: en
+  parent: { type: Web, title: "YouTube" }
+  url: { value: "https://www.youtube.com/watch?v=5O07hOPtmb0", date: 2026-10-19 }
+
+# Courier — repositório indicado pelo usuário em 18/10/2026 para coleta da
+# enroladora. README e documentação de configuração (api_poll/file CSV)
+# consultados; leitura dirigida do código correspondente no checkout local,
+# não leitura integral. Finalidade: registrar JSON HTTP a 1 Hz em CSV.
+# Pendências: autoria formal, versão de publicação e data não confirmadas;
+# omitidas em vez de inferidas do proprietário do repositório.
+courier:
+  type: Repository
+  title: "Courier"
+  language: en
+  url: { value: "https://github.com/gbPagano/courier", date: 2026-10-18 }
 
 # === Metrologia: GUM do plano e complementos localizados no BIPM ===
 # Complementos para consulta; cadastro não indica análise executada/leitura integral.
 
+# Introdução (12/10/2026): PDF oficial, §§1, 3.1.1–3.1.2 e 5.2 conferidos;
+# especificação do mensurando, expressão do resultado e correlações.
 jcgm100-2008:
   type: Report
   author: { name: "Joint Committee for Guides in Metrology" }
@@ -393,6 +1232,21 @@ jcgm100-2008:
   serial-number: { doi: "10.59161/JCGM100-2008E" }
   url: { value: "https://doi.org/10.59161/JCGM100-2008E", date: 2026-10-12 }
 
+# Portal oficial do BIPM, 12/10/2026; folha de rosto e texto da emenda conferidos.
+# Relevância: não linearidade no modelo de medição e termos de ordem superior.
+# Emenda ao GUM, não modelo dinâmico não linear da bobina; aplicação ao orçamento
+# ainda a avaliar. DOI confirmado na página oficial, não inferido do nome da URL.
+jcgm100-amd1-2026:
+  type: Report
+  author: { name: "Joint Committee for Guides in Metrology" }
+  title: "JCGM 100:2008/Amd.1:2026: evaluation of measurement data — guide to the expression of uncertainty in measurement — amendment 1: nonlinearity in measurement models"
+  date: 2026
+  edition: 1
+  publisher: { name: "BIPM", location: "Sèvres" }
+  language: en
+  serial-number: { doi: "10.59161/PPDI3267" }
+  url: { value: "https://doi.org/10.59161/PPDI3267", date: 2026-10-12 }
+
 jcgm101-2008:
   type: Report
   author: { name: "Joint Committee for Guides in Metrology" }
@@ -402,6 +1256,32 @@ jcgm101-2008:
   language: en
   serial-number: { doi: "10.59161/JCGM101-2008" }
   url: { value: "https://doi.org/10.59161/JCGM101-2008", date: 2026-10-12 }
+
+# Portal oficial do BIPM, 12/10/2026; folha de rosto e metadados conferidos.
+# Consulta futura: frequências/amortecimentos como saídas correlacionadas;
+# suplemento multivariado, não leitura integral nem análise já executada.
+jcgm102-2011:
+  type: Report
+  author: { name: "Joint Committee for Guides in Metrology" }
+  title: "JCGM 102:2011: evaluation of measurement data — supplement 2 to the Guide to the expression of uncertainty in measurement — extension to any number of output quantities"
+  date: 2011-10
+  publisher: { name: "BIPM", location: "Sèvres" }
+  language: en
+  serial-number: { doi: "10.59161/JCGM102-2011" }
+  url: { value: "https://doi.org/10.59161/JCGM102-2011", date: 2026-10-12 }
+
+# Portal oficial do BIPM, 12/10/2026; folha de rosto, sumário e metadados.
+# Consulta futura: incerteza e regras de decisão; avaliação de conformidade
+# não se confunde com validação física do modelo. Leitura integral pendente.
+jcgm106-2012:
+  type: Report
+  author: { name: "Joint Committee for Guides in Metrology" }
+  title: "JCGM 106:2012: evaluation of measurement data — the role of measurement uncertainty in conformity assessment"
+  date: 2012-10
+  publisher: { name: "BIPM", location: "Sèvres" }
+  language: en
+  serial-number: { doi: "10.59161/JCGM106-2012" }
+  url: { value: "https://doi.org/10.59161/JCGM106-2012", date: 2026-10-12 }
 
 jcgm200-2012:
   type: Report
@@ -414,6 +1294,19 @@ jcgm200-2012:
   serial-number: { doi: "10.59161/JCGM200-2012" }
   url: { value: "https://doi.org/10.59161/JCGM200-2012", date: 2026-10-12 }
 
+# Portal oficial do BIPM, 12/10/2026; folha de rosto e metadados conferidos.
+# Introdução à família GUM para a futura metodologia; leitura integral pendente.
+jcgm-gum1-2023:
+  type: Report
+  author: { name: "Joint Committee for Guides in Metrology" }
+  title: "JCGM GUM-1:2023: guide to the expression of uncertainty in measurement — part 1: introduction"
+  date: 2023
+  edition: 1
+  publisher: { name: "BIPM", location: "Sèvres" }
+  language: en
+  serial-number: { doi: "10.59161/JCGMGUM-1-2023" }
+  url: { value: "https://doi.org/10.59161/JCGMGUM-1-2023", date: 2026-10-12 }
+
 jcgm-gum6-2020:
   type: Report
   author: { name: "Joint Committee for Guides in Metrology" }
@@ -423,6 +1316,20 @@ jcgm-gum6-2020:
   language: en
   serial-number: { doi: "10.59161/JCGMGUM-6-2020" }
   url: { value: "https://doi.org/10.59161/JCGMGUM-6-2020", date: 2026-10-12 }
+
+# Portal oficial do BIPM, 12/10/2026; folha de rosto, início do sumário e resumo
+# da página oficial. Exemplos para consulta na elaboração do orçamento;
+# leitura integral pendente. DOI confirmado na página, não inferido da URL.
+jcgm-gum5-2026:
+  type: Report
+  author: { name: "Joint Committee for Guides in Metrology" }
+  title: "JCGM GUM-5:2026: guide to the expression of uncertainty in measurement — part 5: examples"
+  date: 2026
+  edition: 1
+  publisher: { name: "BIPM", location: "Sèvres" }
+  language: en
+  serial-number: { doi: "10.59161/YNLY8209" }
+  url: { value: "https://doi.org/10.59161/YNLY8209", date: 2026-10-12 }
 
 # === Segurança: docs/seguranca.typ; não constituem autorização de ensaio ===
 
@@ -453,6 +1360,19 @@ arcattack-safety:
 # === Normalização e regras institucionais: recuperadas da memória ===
 # Não é obrigatório citar normas no texto apenas por usá-las na formatação.
 
+# Código do estilo consultado no repositório Citation Style Language para
+# diagnosticar a omissão de datas quando a editora não é informada.
+# Autoria e título conferidos em <info>; colaboradores e licença preservados
+# em template/abnt-datas.csl. <updated> informa 20/08/2023, não data de publicação.
+# O upstream declara NBR 10520:2023 e NBR 6023:2002; a correção local de datas
+# não representa auditoria integral da conformidade com a NBR 6023:2025.
+csl-abnt:
+  type: Web
+  author: "Régis, Juliana Geyna"
+  title: "Associação Brasileira de Normas Técnicas (Português - Brasil)"
+  language: pt-BR
+  url: { value: "https://raw.githubusercontent.com/citation-style-language/styles/master/associacao-brasileira-de-normas-tecnicas.csl", date: 2026-10-12 }
+
 abnt14724-2024:
   type: Report
   author: { name: "Associação Brasileira de Normas Técnicas" }
@@ -478,6 +1398,10 @@ abnt6023-2025:
   publisher: "ABNT"
   language: pt-BR
 
+# Revisão de seções: leitura dirigida do item 4.1, alínea e, p. 2.
+# Todas as seções devem conter texto relacionado a elas; a abertura antes das
+# subseções evita títulos consecutivos, não elimina o espaçamento de diagramação.
+# Cópia da norma hospedada na UFRN; consulta não implica leitura integral.
 abnt6024-2012:
   type: Report
   author: { name: "Associação Brasileira de Normas Técnicas" }
@@ -485,6 +1409,7 @@ abnt6024-2012:
   date: 2012
   publisher: "ABNT"
   language: pt-BR
+  url: { value: "https://mnpef.ect.ufrn.br/wp-content/uploads/2017/03/ABNT_NBR-6024-2012.pdf", date: 2026-10-12 }
 
 abnt6027-2012:
   type: Report
@@ -527,17 +1452,399 @@ ufu-feelt-normas-tcc:
   language: pt-BR
   url: { value: "https://feelt.ufu.br/system/files/conteudo/normas_complementares_de_tcc_-_versao_curricular_2020-2_0.pdf", date: 2026-10-12 }
 
+# Modelo atual recuperado pela página https://bibliotecas.ufu.br/servicos/tutoriais.
+# Leitura dirigida de §1.5 e Quadro 1: estilo "ABNT parágrafo texto", recuo de
+# 1,25 cm; conferido no DOCX (w:firstLine="709", unidade: twip).
+# Preservada a chave; a URL passa a recuperar o modelo, não a página que ainda
+# aponta para a versão de 2021. Data de publicação do arquivo não confirmada.
 ufu-template:
-  type: Web
+  type: Report
   author: { name: "Universidade Federal de Uberlândia. Sistema de Bibliotecas" }
   title: "Template para trabalhos acadêmicos"
   language: pt-BR
-  url: { value: "https://bibliotecas.ufu.br/servicos/template-para-trabalhos-academicos", date: 2026-10-12 }
+  url: { value: "https://bibliotecas.ufu.br/sites/bibliotecas.ufu.br/files/media/imagem/texto_5.docx", date: 2026-10-12 }
+
+# Consulta complementar localizada na mesma página de tutoriais da UFU.
+# Capa e trechos sobre apresentação consultados; não se alega leitura integral.
+# "fev_2026" no nome do arquivo não é tomado como data de publicação confirmada.
+ufu-tutorial-trabalhos-academicos:
+  type: Report
+  author: { name: "Universidade Federal de Uberlândia. Sistema de Bibliotecas" }
+  title: "Trabalhos acadêmicos"
+  language: pt-BR
+  url: { value: "https://bibliotecas.ufu.br/sites/bibliotecas.ufu.br/files/media/documento/tutorial_trabalhos_academicos_fev_2026.pdf", date: 2026-10-12 }
+
+# === Firmware da enroladora: bibliotecas e geração de pulsos ===
+
+# Origem: servidor HTTP de contagem estimada, 18/10/2026; exemplo oficial na
+# tag esp-rtos-v0.3.0. Leitura integral do main.rs e do manifesto do exemplo.
+# Finalidade: modo station, reconexão e DHCP com esp-radio/Embassy. O exemplo
+# é cliente HTTP: não se apresenta seu código como implementação de servidor.
+# Pendências: conexão/DHCP na placa com credenciais reais e teste sob carga.
+esp-rs-embassy-dhcp-rtos-0-3:
+  type: Web
+  author: { name: "esp-rs" }
+  title: "Embassy DHCP Example"
+  language: en
+  url: { value: "https://github.com/esp-rs/esp-hal/blob/esp-rtos-v0.3.0/examples/wifi/embassy_dhcp/src/main.rs", date: 2026-10-18 }
+
+# Origem: mesma implementação, 18/10/2026; fonte publicada/local de esp-rtos
+# 0.3.0, documentação e implementação de InterruptExecutor, leitura dirigida.
+# Finalidade: separar a tarefa do motor em SWI2/prioridade 2 para poder
+# preemptar HTTP e tarefas normais; isso não elimina seções críticas do rádio.
+# Compilação validada, latência física ainda não medida.
+esp-rtos-interrupt-executor-0-3:
+  type: Web
+  author: { name: "esp-rs" }
+  title: "esp-rtos 0.3.0 — src/embassy/mod.rs"
+  language: en
+  url: { value: "https://docs.rs/crate/esp-rtos/0.3.0/source/src/embassy/mod.rs", date: 2026-10-18 }
+
+# Origem: crate/manifesto e APIs de Stack, Runner e TcpSocket, 18/10/2026.
+# Finalidade: pilha IPv4, DHCP e sockets assíncronos do servidor. A versão 0.8
+# foi escolhida para a toolchain 1.88; não se alega revisão integral da pilha.
+# Pendências: validação de rede em hardware; testes TCP em loopback no host
+# exercitam o handler compartilhado, não o rádio ou a pilha embarcada.
+embassy-net-0-8:
+  type: Web
+  title: "embassy-net 0.8.0 — Async TCP/IP network stack for embedded systems"
+  language: en
+  url: { value: "https://crates.io/crates/embassy-net/0.8.0", date: 2026-10-18 }
+
+# Origem: implementação do parser de requisições, 18/10/2026. Metadados do
+# pacote e APIs Request/Status/Error consultados; não leitura integral.
+# Finalidade: parsing dos headers, sem parser textual artesanal. Limites,
+# códigos de erro, transporte e JSON pertencem ao nosso firmware. Testes
+# locais incluem fragmentação, headers grandes e métodos não permitidos.
+httparse-1-10-1:
+  type: Web
+  title: "httparse 1.10.1"
+  language: en
+  url: { value: "https://docs.rs/httparse/1.10.1/httparse/", date: 2026-10-18 }
+
+# Origem: avaliação de framework HTTP, 18/10/2026; apresentação/dependências
+# em docs.rs e manifesto publicado. Não adotado: 0.20.1 requer Rust 1.93;
+# 0.17.1 usa embedded-io-async 0.6, diferente da pilha 0.7 escolhida. Isso não
+# demonstra impossibilidade de adaptação. Código do servidor não revisado
+# integralmente; opção para reavaliar após atualização de toolchain.
+picoserve-0-20-1:
+  type: Web
+  title: "picoserve 0.20.1 — An async no_std HTTP server suitable for bare-metal environments"
+  language: en
+  url: { value: "https://docs.rs/picoserve/0.20.1/picoserve/", date: 2026-10-18 }
+
+# Origem: investigação de curso restrito a 27/28–60 rpm, 15/10/2026;
+# código publicado da crate esp-hal 1.1.2, calibration/basic.rs.
+# Finalidade: aplicar bias antes do truncamento em 12 bits; o comentário da
+# implementação alerta que omitir a calibração pode reduzir bastante a faixa.
+# Leitura integral deste arquivo curto, não de toda a crate. Isso sustenta a
+# correção de inicialização, mas não comprova a causa exclusiva na placa do usuário.
+# Pendências: conferir os extremos ADC e o ruído após gravar o novo firmware.
+esp-hal-adc-basic-1-1-2:
+  type: Web
+  author: { name: "esp-rs" }
+  title: "esp-hal 1.1.2 — src/analog/adc/calibration/basic.rs"
+  language: en
+  url: { value: "https://docs.rs/crate/esp-hal/1.1.2/source/src/analog/adc/calibration/basic.rs", date: 2026-10-15 }
+
+# Origem: implementação do potenciômetro no GP1, 15/10/2026; fonte publicada
+# da crate esp-hal 1.1.2, src/analog/adc/xtensa.rs, também conferida localmente.
+# Finalidade: ADC1/ESP32-S3 com read_oneshot e retorno WouldBlock, sem aguardar
+# a conversão em laço ocupado na tarefa de controles.
+# Leitura dirigida: construtor e métodos de conversão; não revisão integral
+# de toda a crate. Testes de filtro/rampa no host e compilação Xtensa feitos;
+# calibração física do potenciômetro, ruído e timing sob carga pendentes.
+esp-hal-adc-xtensa-1-1-2:
+  type: Web
+  author: { name: "esp-rs" }
+  title: "esp-hal 1.1.2 — src/analog/adc/xtensa.rs"
+  language: en
+  url: { value: "https://docs.rs/crate/esp-hal/1.1.2/source/src/analog/adc/xtensa.rs", date: 2026-10-15 }
+
+# Origem: consulta ao datasheet oficial indexado da Texas Instruments,
+# 15/10/2026. Finalidade: modos de micropasso e limites da entrada STEP.
+# Nível de leitura: trechos indexados de §7.6 e tabela de modos; não leitura
+# integral do PDF. §7.6 informa fSTEP máxima de 250 kHz e níveis alto/baixo
+# mínimos de 1,9 µs. Isso não especifica RPM mecânica máxima do motor.
+# Pendências: validar formas de onda e curva torque × velocidade do motor;
+# data da revisão não confirmada nesta consulta.
+ti-drv8825-datasheet:
+  type: Report
+  author: { name: "Texas Instruments" }
+  title: "DRV8825 Stepper Motor Controller IC (Rev. F)"
+  genre: "Datasheet"
+  language: en
+  url: { value: "https://www.ti.com/lit/ds/slvsa73f/slvsa73f.pdf", date: 2026-10-15 }
+
+# Origem: comparação de crates para o motor, 15/10/2026; documentação docs.rs.
+# Finalidade: substituir o cálculo artesanal da rampa por perfil trapezoidal.
+# Leitura: apresentação, tipos e opções no_std; código não revisado integralmente.
+# Pendências: integração com Embassy, reversão/pausa e compatibilidade das
+# dependências com a toolchain Xtensa instalada. Autoria/data não confirmadas.
+ramp-maker-rust-0-2:
+  type: Web
+  title: "RampMaker — Stepper Acceleration Ramp Generator (0.2.0)"
+  language: en
+  url: { value: "https://docs.rs/ramp-maker/0.2.0/ramp_maker/", date: 2026-10-15 }
+
+# Origem: mesma comparação, 15/10/2026; documentação docs.rs.
+# Finalidade: alternativa de geração de intervalos com aceleração/desaceleração.
+# Leitura: apresentação e exemplo com aritmética de ponto fixo; não revisão
+# integral do código. Não controla GPIO nem agenda pulsos por si só.
+# Pendências: validar limites numéricos, operação contínua e parada/reversão
+# com Embassy. Autoria/data de publicação não confirmadas.
+stepgen-rust-0-1-3:
+  type: Web
+  title: "stepgen — Stepper motor speed ramp generator (0.1.3)"
+  language: en
+  url: { value: "https://docs.rs/stepgen/0.1.3/stepgen/", date: 2026-10-15 }
+
+# Origem: migração do firmware para Embassy, 15/10/2026; índice do livro.
+# Finalidade: modelo de execução async e integração com o ecossistema ESP32.
+# Nível de leitura: trechos de apresentação e seção ESP32; não leitura integral.
+# Pendências: consultar capítulos específicos conforme novos periféricos forem
+# usados. Autoria pessoal e data de publicação não confirmadas.
+embassy-book:
+  type: Web
+  title: "Embassy Book"
+  language: en
+  url: { value: "https://embassy.dev/book/", date: 2026-10-15 }
+
+# Origem: exemplo oficial do repositório esp-rs/esp-hal, tag esp-rtos-v0.3.0,
+# consultado integralmente em 15/10/2026 (arquivo main.rs, não todo o projeto).
+# Finalidade: inicializar esp-rtos com TimerGroup/software interrupt e executar
+# tarefas Embassy no firmware no_std. Compilação local com esp-hal 1.1.2 e
+# esp-rtos 0.3.0 validada; ensaio físico e medição dos pulsos pendentes.
+esp-rs-embassy-hello-rtos-0-3:
+  type: Web
+  author: { name: "esp-rs" }
+  title: "embassy hello world"
+  language: en
+  url: { value: "https://github.com/esp-rs/esp-hal/blob/esp-rtos-v0.3.0/examples/async/embassy_hello_world/src/main.rs", date: 2026-10-15 }
+
+# Origem: investigação de trancos do motor, 15/10/2026; docs.rs, v0.6.0.
+# Finalidade: avaliar abstração STEP/DIR com suporte ao DRV8825.
+# Leitura dirigida: apresentação, exemplo e Cargo.toml publicado; não se
+# alega leitura integral do código. Autores conferidos no manifesto.
+# Pendências: integração e testes no ESP32-S3; usa embedded-hal alpha.8
+# e compatibilidade com 0.2, não é adoção direta da API estável 1.0.
+stepper-rust-0-6:
+  type: Web
+  author: ["Braun, Hanno", "Braham, Jesse"]
+  title: "Stepper — Universal Stepper Motor Interface (0.6.0)"
+  language: en
+  url: { value: "https://docs.rs/stepper/0.6.0/stepper/", date: 2026-10-15 }
+
+# Origem: exemplo oficial ESP-IDF, tag v5.5.2, consultado em 15/10/2026.
+# Finalidade: pulsos STEP por RMT com aceleração, cruzeiro e desaceleração;
+# o ESP32-S3 consta dos alvos suportados. README consultado integralmente;
+# implementação C não revisada integralmente e não portada/testada em Rust.
+# Pendências: integração com esp-idf-hal 0.47 e validação na placa real.
+# Atenção: o esquema genérico do exemplo mostra VDD; não transplantar essa
+# ligação para o módulo DRV8825 sem VDD usado no projeto.
+espressif-rmt-stepper-v5-5-2:
+  type: Web
+  author: { name: "Espressif Systems" }
+  title: "RMT Based Stepper Motor Smooth Controller"
+  language: en
+  url: { value: "https://github.com/espressif/esp-idf/tree/v5.5.2/examples/peripherals/rmt/stepper_motor", date: 2026-10-15 }
 
 # === Fontes comerciais: consulta de materiais, não evidência acadêmica ===
 # docs/fontes-e-descargas.typ e cotacao-materiais.typ, 12/10/2026.
 # Venda não substitui datasheet; preço/estoque/compatibilidade não são garantidos.
 # Valores observados permanecem em docs/, não nos metadados bibliográficos.
+
+# Origem: comparação NST/MOT em lojas brasileiras, 18/10/2026.
+# Leitura dirigida: descrição, preço e indicação de estoque da página.
+# Finalidade: candidato MOT Galanz GAL-900E-4, entrada 220 V / 60 Hz,
+# saída anunciada de 2.200 V. Não foi recuperado datasheet nem medida a saída.
+# Pendências: corrente secundária contínua, potência útil, FP, regime térmico,
+# placa, estado e estoque de duas unidades; não há qualificação para SGTC.
+carder-gal900e4:
+  type: Web
+  author: { name: "Carder Eletro" }
+  title: "Transformador Microondas 220v Alta Tensão Gal-900e-4 Novo"
+  language: pt-BR
+  url: { value: "https://www.cardereletro.com.br/transformador-microondas-220v-alta-tensao-gal-900e-4-novo", date: 2026-10-18 }
+
+# Origem: triagem dos modelos apresentados pelo pesquisador, 19/10/2026.
+# Leitura: título e trechos indexados; acesso direto retornou HTTP 402.
+# Finalidade: localizar oferta dos códigos LG EBJ38621128/EBJ38621123 em 220 V.
+# Pendências: placa das unidades, frequência, tensão/corrente secundárias e
+# regime térmico. Agrupamento comercial não prova equivalência elétrica dos
+# dois códigos; os 700 W do título não são potência contínua de saída validada.
+reciclasc-lg-ebj38621128-ebj38621123:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Micro-ondas LG EBJ38621128 EBJ38621123 220V 700W"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/transformador-trafo-micro-ondas-lg-ebj38621128-220v-700w", date: 2026-10-19 }
+
+# Origem: mesma triagem, 19/10/2026. Leitura: título/trechos indexados, não
+# página integral ou datasheet. Finalidade: localizar a família S1N6AA/R1N6AB.
+# Pendências: código exato enviado, placa, frequência, grandezas secundárias,
+# material dos enrolamentos e regime. Não transferir os 1.100 W anunciados
+# para potência útil, nem considerar os dois códigos automaticamente idênticos.
+reciclasc-s1n6aa-r1n6ab:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Micro-ondas S1N6AA/ R1N6AB 220V 1100W"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/transformador-trafo-micro-ondas-s1n6aa/-r1n6ab-220v-1100w", date: 2026-10-19 }
+
+# Origem: mesma triagem, 19/10/2026. Leitura dirigida da descrição técnica e
+# identificação de aplicação; página não fornece dados secundários. Finalidade:
+# identificação comercial do MD-101BMR-1 como reposição Midea 220 V, código
+# 17470000003521. Pendências: datasheet, corrente, frequência e regime; não
+# estender dados à variante MD-101BMR-2 nem interpretar 101 como potência.
+pontomultipecas-md101bmr1:
+  type: Web
+  author: { name: "Ponto Multipeças" }
+  title: "Transformador Alta Tensão MD-101BMR-1 220V Micro-ondas Midea"
+  language: pt-BR
+  url: { value: "https://www.pontomultipecas.com.br/transformador-alta-tensao-md-101bmr-1-220v-micro-ondas-midea", date: 2026-10-19 }
+
+# Mesma consulta de 18/10/2026. Leitura: preço, disponibilidade e descrição comercial;
+# vídeo, procedimentos e imagens vinculados não examinados nem adotados.
+# Finalidade: referência de MOT de reuso. Envia o modelo disponível: não
+# garante par idêntico. Valores ~1.100 W / 5 A / 2–3 kV não têm datasheet
+# vinculado; não tratar como potência útil ou 5 A de corrente secundária.
+# Pendências: unidade exata, placa, ensaio de isolação, regime e aprovação SGTC.
+reciclasc-gal900e-reuso:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Micro-ondas GAL-900E-1E / GAL-900E-4 / GAL-1000E-1A 220V"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/transformador-trafo-micro-ondas-gal-900e-1e-/-gal-900e-4-/-gal-1000e-1e-220v", date: 2026-10-18 }
+
+# Mesma consulta. Leitura dirigida da página da marca: identificação,
+# variante 220 V, preço e descrição de reposição; sem datasheet recuperado.
+# Finalidade: custo de MOT de reposição em canal da marca. Pendências:
+# dados secundários, potência ativa, regime, FP e aprovação da aplicação.
+# Aprofundamento em 18/10/2026: API pública consultada em
+# https://www.brastemp.com.br/api/catalog_system/pub/products/search?ft=W10629669
+# confirma EAN e compatibilidade, não potência/corrente secundárias. Fotos
+# oficiais examinadas mostram GAL-700E-4 / 220 V / 60 Hz / CLASS 220;
+# Gold Service mostra GAL-1000E-4 no mesmo código comercial. Confirmar lote.
+brastemp-w10629669:
+  type: Web
+  author: { name: "Brastemp" }
+  title: "Transformador de Alta Tensão 220V para Microondas - W10629669"
+  language: pt-BR
+  url: { value: "https://www.brastemp.com.br/transformador-de-alta-tensao-para-microondas-w10629669/p", date: 2026-10-18 }
+
+# Origem: aprofundamento do W10629669, 18/10/2026. Leitura dirigida da
+# descrição e fotografias; não leitura de datasheet ou inspeção de unidade.
+# Finalidade: massa/dimensões comerciais e etiqueta GAL-1000E-4, em contraste
+# com GAL-700E-4 das fotos oficiais. Texto anuncia pronta entrega, mas aviso
+# atual diz indisponível; não adotar disponibilidade. Pendências: lote exato,
+# dados secundários, serviço contínuo, FP, garantia/aprovação SGTC.
+goldservice-w10629669:
+  type: Web
+  author: { name: "Gold Service" }
+  title: "Transformador De Alta Tensão Para Microondas 220V Original Brastemp Consul W10629669"
+  language: pt-BR
+  url: { value: "https://www.goldservice.com.br/produto/transformador-de-alta-tensao-para-microondas-220v-original-brastemp-consul-w10629669.html", date: 2026-10-18 }
+
+# Mesma investigação. Leitura dirigida da descrição: identificação e
+# compatibilidade; preço/estoque não expostos no texto recuperado.
+# Finalidade: corroboração comercial de código/220 V, não dados elétricos
+# secundários. Pendências: datasheet e identificação física da unidade.
+pontomultipecas-w10629669:
+  type: Web
+  author: { name: "Ponto Multipeças" }
+  title: "Transformador Alta Tensão 220V W10629669 Micro-ondas Brastemp Consul"
+  language: pt-BR
+  url: { value: "https://www.pontomultipecas.com.br/transformador-alta-tensao-220v-w10629669-micro-ondas-brastemp-consul", date: 2026-10-18 }
+
+# Mesma investigação. Catálogo oficial consultado via API pública:
+# https://www.brastemp.com.br/api/catalog_system/pub/products/search?ft=BMJ38
+# Leitura dirigida de peças compatíveis e link do manual; não aceitar o
+# campo "Consumo Aproximado de Energia (kWh): 1500" como unidade válida.
+# Finalidade: vínculo BMJ38AR–W10629669; potência do forno não especifica
+# potência elétrica útil ou FP do transformador. Pendência: ficha da peça.
+brastemp-bmj38ar:
+  type: Web
+  author: { name: "Brastemp" }
+  title: "Micro-ondas Brastemp 38 Litros cor Inox Espelhado com Grill - BMJ38AR"
+  language: pt-BR
+  url: { value: "https://www.brastemp.com.br/micro-ondas-brastemp-ative-38l-bmj38ar/p", date: 2026-10-18 }
+
+# Origem: link do catálogo BMJ38AR; endpoint S3 retornou 403. Leitura dirigida
+# da cópia ManualPDF, páginas 1 e 8–10, especialmente tabela da p. 9:
+# 1.000 W úteis conforme IEC 60705 e 1.500 W de consumo no modo micro-ondas.
+# Não são potência elétrica de saída ou rendimento/FP do MOT. Identificação
+# W10634230 rev. A, 11/13, na p. 10; não inferir data de publicação pelo
+# caminho do arquivo ou pela revisão. Não é manual de serviço nem datasheet.
+brastemp-bmj38ar-manual-consumidor:
+  type: Report
+  author: { name: "Brastemp" }
+  title: "Brastemp BMJ38AR"
+  edition: "W10634230 rev. A"
+  language: pt-BR
+  url: { value: "https://www.manualpdf.pt/brastemp/bmj38ar/manual", date: 2026-10-18 }
+
+# Origem: busca de manual de serviço BMJ38AR, 18/10/2026. Página de
+# hospedagem e trechos indexados consultados; integral não recuperado.
+# Finalidade: pista documental de 46 páginas; não afirmar leitura do manual
+# ou adotar procedimentos de medição. Autoria, edição e data não confirmadas;
+# usuário que enviou o arquivo não foi tratado como autor do documento.
+# Pendência: obter cópia válida/original para conferir trechos e esquema.
+scribd-bmj38ar-servico:
+  type: Web
+  title: "BMJ38AR"
+  language: pt-BR
+  parent: { type: Web, title: "Scribd" }
+  url: { value: "https://pt.scribd.com/document/762179731/BMJ38AR", date: 2026-10-18 }
+
+# Mesma investigação. Leitura da página comercial, não do PDF pago.
+# Finalidade: registrar que o vendedor declara material próprio independente,
+# não documento de fábrica nem vínculo com Brastemp/rede autorizada.
+# Pendências: conteúdo não auditado; não comprado, não usado como evidência
+# das especificações do W10629669 nem recomendado como substituto do datasheet.
+refrimaq-bmj38ar-manual-independente:
+  type: Web
+  author: { name: "Refrimaq" }
+  title: "Manual Técnico de Serviços — Brastemp BMJ38AR (Micro-ondas)"
+  language: pt-BR
+  url: { value: "https://refrimaq.org/manuais/brastemp-bmj38ar", date: 2026-10-18 }
+
+# Mesma consulta. Leitura: oferta Mais Correios / Webcontinental Marketplace,
+# preço e descrição; não atribuir autoria institucional do anúncio à LG.
+# Finalidade: custo de reposição EBJ38621128. Anuncia 900 W, 220 V / 11 A e
+# 2,55 kVA, sem definir claramente a potência; 220 × 11 = 2,42 kVA.
+# Pendências: datasheet, significado dos 900 W, dados secundários, FP,
+# potência útil, regime e autorização SGTC. Não adotar a discrepância como
+# prova de defeito do componente; é limitação documental da oferta.
+maiscorreios-lg-ebj38621128:
+  type: Web
+  title: "Transformador Microondas LG EBJ38621128"
+  language: pt-BR
+  parent: { type: Web, title: "Mais Correios" }
+  url: { value: "https://www.maiscorreios.com.br/transformador-microondas-lg-ebj38621128-1065861/p", date: 2026-10-18 }
+
+# Mesma consulta. Leitura: página e metadados estruturados. Finalidade:
+# registrar oferta excluída: preços conflitantes e OutOfStock / estoque zero.
+# Não há tensão/corrente secundárias ou ficha suficientes. Pendências:
+# disponibilidade, preço firme, modelo e documentação; não qualificado SGTC.
+eletroarbc-mot220:
+  type: Web
+  author: { name: "EletroARBC" }
+  title: "Transformador Microondas 220V Alta Tensão"
+  language: pt-BR
+  url: { value: "https://www.eletroarbc.com.br/produtos/transformador-microondas-220v-alta-tensao/", date: 2026-10-18 }
+
+# Mesma consulta. Leitura dirigida de identificação, preço e descrição.
+# Finalidade: exclusão por categoria, não candidato MOT: PT-6329A com saídas
+# de 11 V / 140 mA e 7 V / 180 mA; transformador de placa de controle.
+# Pendências: nenhuma validação elétrica realizada; não confundir título
+# genérico "transformador microondas" com transformador de alta tensão.
+castro-pt6329a-baixa-tensao:
+  type: Web
+  author: { name: "Eletrônica Castro" }
+  title: "Transformador Microondas Electrolux 220v"
+  language: pt-BR
+  url: { value: "https://www.eletronicacastro.com.br/produto/transformador-microondas-electrolux-220v/", date: 2026-10-18 }
 
 ballastshop-france15060:
   type: Web
@@ -561,6 +1868,17 @@ ballastshop-france15030:
   url: { value: "https://ballastshop.com/15030-p5g-2ue-france-servicemaster-38823-neon-transformer-15kv-30ma-120v/", date: 2026-10-12 }
 
 # Vendedores não identificados: não atribuir autoria à plataforma.
+# Revisão de 18/10/2026: acesso continua exigindo login; não foi possível
+# identificar fabricante/datasheet, placa ou frequência de saída. EBT 15 é
+# designação do anúncio, não identidade de fabricante comprovada. Os valores
+# 15 kV / 30 mA e bivolt permanecem alegações do título, sem qualificação SGTC.
+# Complemento na mesma data: pesquisador forneceu duas fotos e descrição.
+# Placa mostra EBT Transformadores, 127/220 V, 60 Hz e 30 mA. Marca visual
+# identificada, identidade empresarial não. Etiqueta multipadrão sem seleção
+# inequívoca de 15 kV visível; construção compatível com NST magnético, não
+# inspeção interna. Massa ~10 kg e uso contínuo são alegações da descrição.
+# Garantia contraditória (1 ano/6 meses). “Barra estática” não prova SGTC.
+# Leitura: imagens e transcrição do anúncio, não datasheet nem ensaio.
 mercadolivre-ebt15:
   type: Web
   title: "Transformador para neon — 15.000 V, 30 mA, bivolt — EBT 15"
@@ -583,6 +1901,234 @@ agbrasil-neon:
   title: "Transformadores para néon"
   language: pt-BR
   url: { value: "https://agbrasilcomercial.com.br/transformadores-para-neon", date: 2026-10-12 }
+
+# Origem: cotação de fontes SGTC, 18/10/2026. Leitura: página e imagem do
+# catálogo, incluindo BHD 12/15 kV 30 mA e externo 10 kV 80 mA / 220 V.
+# Finalidade: contato nacional para orçamento. Pendências: atividade atual,
+# preço, estoque, ficha técnica, frequência de saída e aprovação SGTC.
+# Copyright do site não é data de publicação do catálogo; não inferir data.
+# Complemento de 18/10/2026: BrasilAPI e CNPJ.biz informam baixa do CNPJ
+# 07.870.474/0001-33 em 26/01/2021. Reclassificar como catálogo histórico;
+# eventual sucessor/revendedor e estoque precisam de comprovação separada.
+vanson-transformadores-neon:
+  type: Web
+  author: { name: "Vanson Transformadores" }
+  title: "Transformadores"
+  language: pt-BR
+  url: { value: "https://vansontransformadores.webnode.page/transformadores/", date: 2026-10-18 }
+
+# Origem: busca de canais de venda Vanson, 18/10/2026. Página consultada;
+# finalidade: contato histórico de pedido, sem preço/estoque/checkout.
+# Pendências: não comprova atividade atual; ver baixa cadastral nas fontes
+# BrasilAPI/CNPJ.biz. Nenhum formulário foi enviado nesta pesquisa.
+vanson-pedido:
+  type: Web
+  author: { name: "Vanson Transformadores" }
+  title: "Faça seu Pedido"
+  language: pt-BR
+  url: { value: "https://vansontransformadores.webnode.page/facaseupedido/", date: 2026-10-18 }
+
+# Origem: busca de revendedores, 18/10/2026. Lista da página consultada.
+# Finalidade: pistas históricas Edlab, Proneon, Braslum e Dalcol Neons.
+# Pendências: vínculo atual e estoque não confirmados; lista não é anúncio.
+vanson-distribuidores:
+  type: Web
+  author: { name: "Vanson Transformadores" }
+  title: "Nossos Distribuidores"
+  language: pt-BR
+  url: { value: "https://vansontransformadores.webnode.page/nossos-distribuidores/", date: 2026-10-18 }
+
+# Origem: verificação cadastral da Vanson, 18/10/2026. Leitura dos campos
+# razão social, nome fantasia, endereço e situação da resposta JSON.
+# Título descritivo da consulta. Finalidade: baixa desde 26/01/2021, não
+# comprovação emitida diretamente pela Receita nem juízo sobre sucessores.
+# Não utilizar dados de pessoas físicas para a pesquisa comercial.
+brasilapi-vanson-cnpj:
+  type: Web
+  author: { name: "BrasilAPI" }
+  title: "Consulta CNPJ: Vanson Industria e Comercio de Transformadores LTDA — 07.870.474/0001-33"
+  language: pt-BR
+  url: { value: "https://brasilapi.com.br/api/cnpj/v1/07870474000133", date: 2026-10-18 }
+
+# Origem: busca comercial, 18/10/2026. Leitura dirigida dos campos cadastrais.
+# Finalidade: corroboração secundária de identidade Vanson/Cromatron e baixa
+# cadastral; não substitui comprovante Receita. Não inferir fim de toda marca,
+# inexistência de estoque antigo ou impossibilidade de sucessor.
+cnpjbiz-vanson-cromatron:
+  type: Web
+  author: { name: "CNPJ Biz" }
+  title: "Cromatron Vanson Industria e Comercio de Transformadores LTDA 07.870.474/0001-33"
+  language: pt-BR
+  url: { value: "https://cnpj.biz/07870474000133", date: 2026-10-18 }
+
+# Origem: lista histórica de distribuidores Vanson, 18/10/2026. Leitura da
+# página de produtos/serviços e contatos. Finalidade: contato comercial que
+# confirma telefone/endereço da Proneon; não há anúncio de transformador
+# Vanson nesta página. Pendências: vínculo atual, oferta e estoque remanescente.
+proneon-produtos-servicos:
+  type: Web
+  author: { name: "Proneon" }
+  title: "Produtos e serviços"
+  language: pt-BR
+  url: { value: "https://www.proneon.com.br/produtos.html", date: 2026-10-18 }
+
+# Origem: verificação de distribuidor histórico Vanson, 18/10/2026. Leitura
+# da ficha pública de empresa; telefone/endereço coincidem com o site próprio.
+# Finalidade: corroboração de contato, não prova de venda de transformadores.
+# Pendências: vínculo atual Vanson e estoque; data de publicação não conferida.
+ilac-proneon:
+  type: Web
+  author: { name: "Instituto Latino-Americano do Acrílico" }
+  title: "Pro Neon"
+  language: pt-BR
+  url: { value: "https://www.indac.org.br/pro-neon/", date: 2026-10-18 }
+
+# Origem: busca comercial de 18/10/2026. Leitura: título/trechos indexados da
+# loja Mundo Baumann no Mercado Shops; endereço ML exige login. Não atribuir
+# autoria à plataforma nem tratar frequência do título como saída comprovada.
+# Finalidade: candidato nacional 12 kV / 30 mA. Pendências: oferta ativa,
+# preço, frete ao destino, fabricante, placa, datasheet e compatibilidade.
+mercadolivre-ena12000-30ma:
+  type: Web
+  title: "Transformador P/ Neon 12000v,30ma60hz 220v Marca Ena"
+  language: pt-BR
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://produto.mercadolivre.com.br/MLB-4287793846-transformador-p-neon-12000v30ma60hz-220v-marca-ena-_JM", date: 2026-10-18 }
+
+# Origem: cotação de 18/10/2026. Leitura: apenas resultado indexado; URL
+# retorna 404. Preço/estoque do índice não constituem oferta ativa.
+# Finalidade: registrar por que não usar este preço na comparação de compra.
+# Pendências: localizar oferta válida, placa e ficha; não inferir construção.
+facilitoucomprei-ena15000-seminovo:
+  type: Web
+  title: "Transformador seminovo para neon 15000v, 60HZ - 30mA, 220v Ena"
+  language: pt-BR
+  parent: { type: Web, title: "Facilitou Comprei" }
+  url: { value: "https://www.facilitoucomprei.com.br/transformador-seminovo-para-neon-15000v-60hz-30ma-220v-ena", date: 2026-10-18 }
+
+# Origem: triagem comercial de 18/10/2026. Leitura: resultado indexado;
+# acesso direto exige login. Finalidade: exemplo de eletrônico de néon
+# descartado da shortlist convencional por falta de aprovação SGTC.
+# Pendências: dados contraditórios do anúncio; 50/60 Hz é entrada, não
+# comprovação da frequência de saída. Preço indexado não é custo entregue.
+mercadolivre-hbc05te-neon:
+  type: Web
+  title: "Transformador Eletrônico Neon 5kv 30ma Neon Sign"
+  language: pt-BR
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://www.mercadolivre.com.br/transformador-eletronico-neon-5kv-30ma-neon-sign/up/MLBU4421017320", date: 2026-10-18 }
+
+# Origem: link da lista de peças de Kraakman (2018), consulta 18/10/2026.
+# Leitura: rótulo e URL históricos; acesso atual expõe só estrutura genérica.
+# Finalidade: pista de compra internacional de NST de núcleo de ferro,
+# não comprovação de oferta. Pendências: vendedor, variante, preço, frete,
+# tributos, documentação e disponibilidade. Título vem do texto do link.
+aliexpress-ironcore-neon-32829385715:
+  type: Web
+  title: "15kV, 30mA iron core neon sign transformer (no GFI)"
+  language: en
+  parent: { type: Web, title: "AliExpress" }
+  url: { value: "https://pt.aliexpress.com/item/32829385715.html", date: 2026-10-18 }
+
+# Origem: busca AliExpress, 18/10/2026. Leitura: título/trechos indexados;
+# página atual não expôs dados da oferta. Finalidade: registrar exclusão de
+# eletrônico de néon sem aprovação SGTC. Pendências: variante e datasheet;
+# preços nos snippets podem ser de recomendações, não do item principal.
+aliexpress-neon-eletronico-1005007349246161:
+  type: Web
+  title: "Transformador de néon transformador eletrônico"
+  language: pt-BR
+  parent: { type: Web, title: "AliExpress" }
+  url: { value: "https://pt.aliexpress.com/item/1005007349246161.html", date: 2026-10-18 }
+
+# Origem: cotação, 18/10/2026. PDF oficial de duas páginas baixado via página
+# do fabricante; leitura dirigida de modelos, SCGFP e tabela de entrada.
+# Finalidade: qualificação documental dos France 15030/15060 P5G-2UE.
+# Pendências: aprovação SGTC, limites de carga capacitiva, transientes e
+# correção de inconsistência 530 VA versus 120 V / 7,80 A no 15060.
+# A cópia Orbano consultada reproduz o documento; não cadastrar duplicata.
+france-p5g2ue-datasheet:
+  type: Web
+  author: { name: "France Lighting Solutions" }
+  title: "P5G-2UE: ServiceMaster Transformer"
+  language: en
+  url: { value: "https://www.francelighting.com/s/P5G-2UE-Neon-Transformer-SpecSheet-bhef.pdf", date: 2026-10-18 }
+
+# Origem: consulta sobre fator de potência de NSTs, 18/10/2026.
+# Leitura dirigida do texto extraído do PDF, itens 3.002 e 3.009–3.012;
+# imagens e procedimentos de ensaio não examinados nem adotados.
+# Finalidade: distinguir FP normal (0,40–0,50), alto FP (>= 0,90), VA de
+# entrada e potência ativa. Valores referem-se a carga de tubos de néon,
+# não a SGTC. Autoria e data de publicação não confirmadas; o caminho
+# /2020/09/ não é tomado como data. Hospedagem não comprova autoria.
+# Pendências: FP da unidade escolhida sob carga capacitiva pulsada.
+# O exemplo do item 3.009 contém erro: 202/450 é ~0,45, não 0,43.
+neon-transformer-faq:
+  type: Web
+  title: "Frequently Asked Questions - Neon Transformer"
+  language: en
+  url: { value: "https://www.neon-lighting.com/wp-content/uploads/2020/09/FAQ-Neon-Transformers.pdf", date: 2026-10-18 }
+
+# Origem: site oficial, 18/10/2026. Leitura das duas páginas do catálogo
+# comparativo, sem constituir revisão dos manuais de todas as famílias.
+# Finalidade: distinguir famílias, variantes de entrada e SGFP integrado.
+# Identificador impresso Q2.4.25; data exata de publicação não inferida.
+# Pendências: documento específico e aprovação da aplicação para cada modelo.
+france-classic-neon-comparativo:
+  type: Web
+  author: { name: "France Lighting Solutions" }
+  title: "France Classic Neon: neon transformers"
+  language: en
+  url: { value: "https://franceledproducts.com/wp-content/uploads/2025/04/Classic-Neon-SpecSheet.pdf", date: 2026-10-18 }
+
+# Origem: página oficial 9060 PBKMG-51, 18/10/2026. PDF de duas páginas
+# consultado: modelo, entrada, saída e secundário BMPG. Finalidade:
+# qualificação documental; manual restringe integração em luminosos.
+# Pendências: eventual aprovação de outra aplicação; não é fonte pronta SGTC.
+france-pbkmg51-60ma-datasheet:
+  type: Web
+  author: { name: "France Lighting Solutions" }
+  title: "PBKMG-51: 60mA, 120V"
+  language: en
+  url: { value: "https://www.francelighting.com/s/PBKMG-51-120-60-Neon-Transformer-SpecSheet.pdf", date: 2026-10-18 }
+
+# Origem: página oficial, 18/10/2026. Leitura do texto de instalação; tabela
+# de comprimento de tubos não usada para dimensionar SGTC. Finalidade:
+# identificar restrição a tubos/receptáculos integrais e enclausuramento.
+# A marcação 04/11/19 é ambígua quanto ao formato; não inferir data completa.
+# Pendências: qualquer aplicação fora dessas instruções exige esclarecimento.
+france-pbkmg-instalacao:
+  type: Web
+  author: { name: "France Lighting Solutions" }
+  title: "PBKMG Installation Instructions"
+  language: en
+  url: { value: "https://www.francelighting.com/s/Housing-PBKMG-51-Installation-Guide.pdf", date: 2026-10-18 }
+
+# Origem: página oficial, 18/10/2026. PDF integral de uma página consultado,
+# revisão 13005 Rev B; vigência declarada desde 01/01/2025, não presumida
+# como data de publicação. Finalidade: limites de uso e garantia em SGTC.
+# Pendências: cobertura da aplicação e condições comerciais exatas; não
+# presumir que prazo anunciado pelo revendedor prevaleça sobre fabricante.
+france-neon-garantia2025:
+  type: Web
+  author: { name: "France Lighting Solutions" }
+  title: "Neon Products Warranty Policy"
+  language: en
+  url: { value: "https://www.francelighting.com/s/France-Neon-Warranty-2025.pdf", date: 2026-10-18 }
+
+# Origem: busca de links históricos AliExpress, 18/10/2026. Leitura dirigida
+# da seção de fonte e lista de peças; autoria/data conferidas na página.
+# Finalidade: proveniência do item 32829385715, não validação científica das
+# afirmações do relato Hairpin nem instrução de segurança para este projeto.
+# Pendências: oferta ativa e documentação; não transferir desempenho à SGTC.
+kraakman-hairpin-replication:
+  type: Web
+  author: "Kraakman, Nick"
+  title: "Tesla Hairpin Circuit Replication & Experimental Results"
+  date: 2018-04-11
+  language: en
+  parent: { type: Web, title: "Waveguide" }
+  url: { value: "https://waveguide.blog/tesla-hairpin-circuit-stout-copper-bars-replication/", date: 2026-10-18 }
 
 tdklambda-highvoltage:
   type: Web
@@ -607,3 +2153,379 @@ obramax-fortlev150:
 # URL/variante de 150 mm informadas pelo pesquisador em 12/10/2026.
 # Consulta automatizada retornou 403; não registrar acesso ao conteúdo como feito.
 # DN não substitui diâmetro real medido.
+
+# Origem: consulta sobre disponibilidade de tubos em trechos de 1 m,
+# 13/10/2026. Leitura dirigida das páginas do fabricante: apresentação,
+# comprimento comercial e lista de bitolas; manual e norma não consultados.
+# Finalidade: comprovar ofertas de fábrica de 3 m e 6 m, com DN 40, 50, 75,
+# 100, 150 e 200 nesta linha. Pendências: venda fracionada, estoque e preços
+# dependem do revendedor; ausência de 1 m nestas páginas não prova que nenhum
+# fabricante ou comerciante ofereça esse comprimento. Confirmar composição,
+# diâmetro externo real e espessura do tubo efetivamente comprado.
+fortlev-esgoto-sn-3m:
+  type: Web
+  author: { name: "Fortlev" }
+  title: "Tubo Esgoto Série Normal — 3 m"
+  language: pt-BR
+  url: { value: "https://www.fortlev.com.br/produtos/esgoto/tubo-esgoto-serie-normal-3-m/", date: 2026-10-13 }
+
+fortlev-esgoto-sn-6m:
+  type: Web
+  author: { name: "Fortlev" }
+  title: "Tubo Esgoto Série Normal — 6 m"
+  language: pt-BR
+  url: { value: "https://www.fortlev.com.br/produtos/esgoto/tubo-esgoto-serie-normal-6m/", date: 2026-10-13 }
+
+# Origem: busca de diâmetro intermediário entre DN 100 e DN 150, 13/10/2026.
+# Leitura dirigida da página comercial do fabricante: PVC rígido azul,
+# DN 125 / DE 125 mm, PN 40, barra de 6 m; SKU FC-2817.
+# Finalidade: comprovar existência comercial de suporte candidato de 125 mm.
+# Pendências: espessura não informada no texto consultado; confirmar parede,
+# composição, condição superficial e venda de trecho. Nenhum ensaio de perdas
+# dielétricas/RF foi consultado; PN indica classe de pressão, não diâmetro.
+asperbras-irrigacao-125-pn40:
+  type: Web
+  author: { name: "Asperbras Tubos e Conexões" }
+  title: "Tubo PVC Irrigação Soldável DN125/DE125 PN40 Azul"
+  language: pt-BR
+  url: { value: "https://www.asperbrastuboseconexoes.com.br/produto/tubo-pvc-irrigacao-soldavel-dn125-de125-pn40-azul-393", date: 2026-10-13 }
+
+# Mesma busca de diâmetro intermediário, 13/10/2026. Leitura da apresentação
+# e tabela dimensional da página; ficha técnica PDF não consultada.
+# Variante 110 mm, código 10121035: cotas D = 110 mm, E = 6,1 mm e l = 6000 mm.
+# Finalidade: alternativa geométrica de 110 mm; parede mais espessa é uma
+# restrição prática a avaliar, não vantagem elétrica demonstrada para a SGTC.
+# Pendências: preço, venda fracionada e propriedades dielétricas/RF do produto.
+tigre-soldavel-6m:
+  type: Web
+  author: { name: "Tigre" }
+  title: "Tubo Soldável 6 m"
+  language: pt-BR
+  url: { value: "https://www.tigre.com.br/produto/tubo-soldavel-6-m", date: 2026-10-13 }
+
+# Busca de fornecedores locais para tubo de PVC rígido de 125 mm, 13/10/2026.
+# Leitura dirigida de páginas comerciais, categorias e contatos; não houve
+# contato com vendedores, confirmação de estoque, preço ou venda por metro.
+# Finalidade: pistas para cotação em Uberlândia, não referências de desempenho.
+
+# A página cadastra a linha de PVC rígido de irrigação PN 40/60/80, sem bitolas.
+# Contato conferido em https://www.ubertubos.com.br/contato:
+# Rua do Carpinteiro, 322, Planalto; tel. (34) 3233-6200;
+# WhatsApp (34) 99976-6253. DN/DE 125 e corte de 1 m ainda não confirmados.
+ubertubos-irrigacao-linha-fixa:
+  type: Web
+  author: { name: "Ubertubos" }
+  title: "Tubos de PVC rígido com junta soldável ou elástica PN 40 e PN 80"
+  language: pt-BR
+  url: { value: "https://www.ubertubos.com.br/produto/tubos-de-pvc-rigido-com-junta-soldavel-ou-elastica-pn-40-e-pn-80/6824c20da16b5701df4e5802", date: 2026-10-13 }
+
+# Categoria e rodapé consultados: oferece tubos/conexões de PVC para água e
+# esgoto, sem especificar 125 mm. Av. Vasconcelos Costa, 789, Martins;
+# WhatsApp (34) 99659-6507; tel. (34) 3235-9299. Cotação específica pendente.
+casa-da-chuva-tubos:
+  type: Web
+  author: { name: "Casa da Chuva" }
+  title: "Tubos e Conexões"
+  language: pt-BR
+  url: { value: "https://casadachuva.com.br/categoria/tuboseconexoes/", date: 2026-10-13 }
+
+# Categoria de tubos de irrigação e contatos consultados. A listagem recuperada
+# tem mangueiras de gotejamento/PEBDL, não oferta verificada de PVC rígido 125.
+# Av. Getúlio Vargas, 3900, Jardim das Palmeiras; tel. (34) 3238-5288.
+# Finalidade: contato alternativo especializado; estoque/corte pendentes.
+hidromotores-tubos:
+  type: Web
+  author: { name: "Hidromotores" }
+  title: "Tubos"
+  language: pt-BR
+  url: { value: "https://hidromotores.com.br/categoria-produto/irrigacao-2/tubos/", date: 2026-10-13 }
+
+# Oferta descartada como suporte do secundário: descrição e tabela técnica
+# consultadas informam tubo flexível para ventilação com PVC e arame de aço
+# galvanizado. A consulta sem região selecionada exibiu item indisponível;
+# isso não confirma o estoque de uma filial específica.
+leroy-polywest-125:
+  type: Web
+  title: "Tubo Plástico Polywest 125mm x 3 m Westaflex"
+  language: pt-BR
+  parent: { type: Web, title: "Leroy Merlin" }
+  url: { value: "https://www.leroymerlin.com.br/tubo-plastico-polywest-125mm-x-3-m-westaflex_86537941", date: 2026-10-13 }
+
+# Alternativa de 110 mm localizada, sem preço disponível. Página consultada
+# sem região selecionada exibiu indisponibilidade; retirada em Uberlândia não
+# confirmada. Campo de comprimento informa "600,00 m", aparentemente errôneo:
+# não tratar como dimensão verificada; fabricante/variante e corte pendentes.
+leroy-krona-soldavel-110:
+  type: Web
+  title: "Tubo De Pvc Soldavel 110mm Krona"
+  language: pt-BR
+  parent: { type: Web, title: "Leroy Merlin" }
+  url: { value: "https://www.leroymerlin.com.br/tubo-de-pvc-soldavel-110mm-krona_1567538013", date: 2026-10-13 }
+
+# Anúncio localizado em 13/10/2026; a listagem indica 5 kg ≈ 2.725 m de fio
+# 24 AWG (≈545 m/kg). A página exige login; o dado foi visto apenas no
+# resultado de busca, não conferido no anúncio. Preço/estoque não verificados.
+mercadolivre-fio24-5kg:
+  type: Web
+  title: "Fio de cobre esmaltado 24 AWG — 200 °C — carretel com 5 kg"
+  language: pt-BR
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://www.mercadolivre.com.br/fio-de-cobre-esmaltado-24-awg--200-c--carretel-com-5-kg/up/MLBU1137986156", date: 2026-10-13 }
+
+# Origem: avaliação de anúncio transcrito pelo pesquisador, 13/10/2026.
+# Leitura: descrição comercial consultada; não é ficha técnica nem certificado.
+# Finalidade: candidato AWG 26 para secundário de 100 × 500 mm; anuncia cobre,
+# 877 m/kg, PEI, classe 200 °C e NBR 60317-8. Pendências: linha/lote, classe
+# efetiva, capa S/R, diâmetro isolado, peso líquido e fornecimento sem emendas.
+# A combinação classe 200 / parte 8 exige esclarecimento; não comprova defeito.
+agrobombas-condupasqua-awg26:
+  type: Web
+  title: "Fio de Cobre Esmaltado 26 Awg Kg"
+  language: pt-BR
+  parent: { type: Web, title: "Agrobombas" }
+  url: { value: "https://www.agrobombas.com.br/material-eletrico/fio-esmaltado/fio-de-cobre-esmaltado-26-awg-kg", date: 2026-10-13 }
+
+# Origem: busca da especificação primária do fabricante, 13/10/2026.
+# Leitura: tabela de produtos da página; não comprova a identidade do lote vendido.
+# Finalidade: distinguir as linhas TERMPASQUA 180 (IEC 60317-8) e 200 Capa R
+# (IEC 60317-13). A página reúne outras variantes e indicações normativas;
+# não interpretar a tabela comercial como certificado de conformidade.
+# Pendência: obter ficha técnica da linha exata; publicação não confirmada.
+condupasqua-fio-esmaltado:
+  type: Web
+  author: { name: "ConduPasqua" }
+  title: "Fio de cobre esmaltado"
+  language: pt-BR
+  url: { value: "https://www.condupasqua.com.br/fio-de-cobre-esmaltado/", date: 2026-10-13 }
+
+# Origem: PDF vinculado à página Produtos do fabricante, 13/10/2026.
+# Leitura: conferência visual dirigida da linha AWG 26 e dos cabeçalhos;
+# não auditoria integral da tabela ou dos ensaios. Finalidade: cobre nominal
+# 0,404 mm, 877 m/kg; diâmetro externo MÁXIMO 0,445 mm (S/Grau 1) e 0,467 mm
+# (R/Grau 2). Esses máximos não são medidas do lote nem passos nominais.
+# Pendências: capa e diâmetro efetivos da oferta; condições dos ensaios.
+# Rigidez dielétrica tabelada não é tensão de operação autorizada da SGTC.
+# Não inferir publicação de /2023/07/ no URL.
+condupasqua-tabela-diametros:
+  type: Report
+  author: { name: "ConduPasqua" }
+  title: "Tabela de diâmetros e valores de ensaios"
+  language: pt-BR
+  url: { value: "https://www.condupasqua.com.br/wp-content/uploads/2023/07/Tabela-de-diametros-Condupasqua.pdf", date: 2026-10-13 }
+
+# Origem: conferência da parte 8 citada no anúncio, 13/10/2026.
+# Leitura: metadados e resumo oficiais; texto integral da norma NÃO consultado.
+# Finalidade: confirmar que IEC 60317-8 especifica fio de cobre circular com
+# poliesterimida, classe 180. Não confundir esta edição IEC com a edição da
+# adoção brasileira, não recuperada; não comprova conformidade do produto.
+iec60317-8-2024:
+  type: Report
+  author: { name: "International Electrotechnical Commission" }
+  title: "IEC 60317-8:2010+AMD1:2024 CSV: Specifications for particular types of winding wires — Part 8: Polyesterimide enamelled round copper wire, class 180"
+  date: 2024-06-18
+  edition: "4.1"
+  language: en
+  url: { value: "https://webstore.iec.ch/en/publication/96014", date: 2026-10-13 }
+
+# Origem: comparação com anúncio Corfio transcrito pelo pesquisador, 13/10/2026;
+# URL da oferta não informada, identidade do produto/lote não confirmada.
+# Leitura: tabela oficial de linhas; não leitura integral de normas/ensaios.
+# Finalidade: Corfitherm SL 200 associa classe 200, grau 2 e NEMA MW 74-C /
+# ABNT NBR NM 60317-42. A página admite graus 1 e 3 sob consulta; não presumir
+# que todo fio vendido como Corfio AWG 26 seja SL 200 ou grau 2.
+# Pendências: etiqueta/ficha do fio ofertado, diâmetro isolado e continuidade.
+# Página em /en/, mas conteúdo técnico consultado em português; sem data
+# de publicação verificada. Norma IEC 60317-0-1 no anúncio é geral, não linha.
+corfio-fio-esmaltado:
+  type: Web
+  author: { name: "Corfio" }
+  title: "Fio de Cobre Esmaltado"
+  language: pt-BR
+  url: { value: "https://www.corfio.com.br/en/produto/fio-de-cobre-esmaltado", date: 2026-10-13 }
+
+# Origem: catálogo público do fabricante recuperado em 13/10/2026.
+# Leitura visual dirigida: produtos (p. 2) e linha AWG 26 (p. 4), paginação
+# impressa; não auditoria integral dos ensaios. Finalidade: diâmetro externo
+# máximo 0,445 / 0,467 / 0,487 mm para graus 1 / 2 / 3, respectivamente.
+# Esses limites dimensionais não são medições do lote nem passos nominais.
+# O catálogo não identifica a oferta do pesquisador; data/edição não verificadas.
+corfio-catalogo-esmaltados:
+  type: Report
+  author: { name: "Corfio" }
+  title: "Catálogo de Fios Esmaltados"
+  language: pt-BR
+  url: { value: "https://www.corfio.com.br/documentos/catalogo_esmaltado.pdf", date: 2026-10-13 }
+
+# Origem: comparação AWG 26/27, 13/10/2026. Leitura: página de ajuda sobre Rac;
+# descreve cálculo de Fraga com correção empírica e confronto com medições
+# pelo desenvolvedor. Não equivale a validação independente do nosso protótipo;
+# texto integral do artigo de Fraga não consultado. Finalidade: interpretar
+# alcance/limitações da rotina de perdas, sem prever comprimento de descarga.
+javatc-rac:
+  type: Web
+  author: "Anderson, Barton B."
+  title: "JavaTC: AC resistance"
+  language: en
+  url: { value: "https://classictesla.com/java/javatc/outRac.html", date: 2026-10-13 }
+
+# Origem: scripts vinculados à página JavaTC 13.6, 13/10/2026.
+# Leitura dirigida: calcSecondary, cálculo Rac/Q para bobina carregada;
+# não auditoria integral dos demais cálculos. Rotina executada isoladamente
+# como conferência da implementação SI em docs/calculos/comparar-awg26-awg27.py.
+# Frequência/L/C fornecidos pelo modelo concentrado de comparação, NÃO por
+# execução completa de GEOTC/JavaTC. Perdas ambientais e dielétricas reais
+# não verificadas. Data de publicação deste arquivo específico não confirmada.
+javatc-calcs:
+  type: Web
+  author: "Anderson, Barton B."
+  title: "JavaTC: JTC_calcs.js"
+  language: en
+  url: { value: "https://classictesla.com/java/javatc/JTC_calcs.js", date: 2026-10-13 }
+
+# === Revestimento do secundário: pesquisa de compra, 18–19/10/2026 ===
+
+# Origem: PDF oficial vinculado ao produto; consulta em 18/10/2026.
+# Leitura: ficha técnica, quatro páginas; finalidade: identificar produto,
+# aplicação e secagem. Revisão 10, JUL/22. A composição remete à FISPQ:
+# não confirma resina poliuretânica nem compatibilidade com PVC/fio esmaltado.
+# Pendências: FDS/FISPQ atual e validação do revestimento no nosso conjunto.
+sayerlack-poliulack-sb2300-ficha:
+  type: Report
+  author: { name: "Renner Sayerlack S/A" }
+  title: "SB.2300.00 (Brilhante) / SO 2301 00 (Acetinado): Poliulack — Verniz Marítimo — Premium"
+  date: 2022-07
+  language: pt-BR
+  url: { value: "https://www.sayerlack.com.br/storage/products/August2022/U1NJxyEnFytYf5jHazTq.pdf", date: 2026-10-18 }
+
+# Origem: PDF oficial; leitura da ficha técnica, quatro páginas, 18/10/2026.
+# Finalidade: identificar Polikol Cristal e condições de secagem. Revisão 10,
+# Jan/21; não identifica a resina, remete à FISPQ. Não demonstra desempenho
+# em Tesla, compatibilidade com PVC ou com o esmalte do fio comprado.
+# Pendências: FDS/FISPQ atual e confirmação da resina pelo fabricante.
+sayerlack-polikol-cristal-ficha:
+  type: Report
+  author: { name: "Renner Sayerlack S/A" }
+  title: "SB 2343 00 — Brilhante / SO 2313 00 — Acetinado: Polikol Cristal — Verniz Altíssima Durabilidade — Premium"
+  date: 2021-01
+  language: pt-BR
+  url: { value: "https://www.sayerlack.com.br/storage/products/March2021/GdNuZFRiezIC8TkRvRYR.pdf", date: 2026-10-18 }
+
+# Origem: FDS disponibilizada pela Leroy Merlin; consulta em 18/10/2026.
+# Leitura dirigida: identificação e seção 3; não leitura integral das 11 p.
+# Finalidade: código L9490091 e ingredientes perigosos declarados, não fórmula
+# completa. Documento da embalagem 3,6 L, mesma base de código da lata 900 mL.
+# A FDS não identifica a resina; o rótulo fotografado declara resina alquídica.
+# Pendências: compatibilidade e desempenho elétrico; não é verniz elétrico
+# demonstrado pela documentação consultada. Revisão 00, 09/01/2024.
+eucatex-luxens-ultra-protecao-incolor-fds:
+  type: Report
+  author: { name: "Eucatex Indústria e Comércio Ltda." }
+  title: "FDS: Verniz Base Solvente Acetinado Ultra Proteção Luxens Incolor"
+  date: 2024-01-09
+  language: pt-BR
+  url: { value: "https://cdn.leroymerlin.com.br/medias/document-92241604-fispq-verniz-para-madeira-base-solvente-acetinado-ultra-protecao-incolor-3,6l-luxens.pdf", date: 2026-10-18 }
+
+# Origem: catálogo PDF oficial WEG, recuperado em 19/10/2026.
+# Leitura dirigida: descrição das linhas e tabela de especificações;
+# não validação experimental. Finalidade: 1303 monocomponente, poliéster
+# modificado, cura ambiente, embalagem 0,9 L; 1313 exige estufa.
+# A aplicação declarada do 1303 inclui transformadores/reatores até 480 V;
+# NÃO comprova adequação a alta frequência/alta tensão de uma Tesla, nem
+# compatibilidade com PVC e o esmalte específico. Pendências: boletim técnico
+# e FDS atuais do produto/lote, cura completa e ensaio de compatibilidade.
+# Data/edição do catálogo não verificadas; não extrapolar kV/mm para a bobina.
+weg-lacktherm-catalogo:
+  type: Report
+  author: { name: "WEG" }
+  title: "Lacktherm: vernizes eletroisolantes"
+  language: pt-BR
+  url: { value: "https://static.weg.net/medias/downloadcenter/h5a/h3a/WEG-tintas-lacktherm-50021432-catalogo-pt.pdf", date: 2026-10-19 }
+
+# Origem: catálogo eletrônico oficial, consulta em 19/10/2026.
+# Leitura dirigida: linha ISO-1730; secagem ao ar, classe B, emprego em motores
+# e transformadores. Finalidade: triagem de compra, não aprovação para Tesla.
+# A tabela não informa duração de cura completa nem a resina dessa linha;
+# não interpretar secagem rápida/toque como cura completa. Pendências:
+# boletim e FDS específicos, identidade do produto ofertado e compatibilidade.
+# Publicação/atualização não verificadas.
+isolasil-catalogo-vernizes:
+  type: Web
+  author: { name: "Isolasil" }
+  title: "Catálogo de Vernizes"
+  language: pt-BR
+  url: { value: "https://isolasil.com.br/catalogo-vernizes", date: 2026-10-19 }
+
+# Origem: página oficial, consulta em 19/10/2026. Leitura dirigida à seção
+# Vernizes Secagem ao Ar; descrição genérica de poliéster modificado, sem
+# associação explícita a cada código. Anúncios do ISO-1730 mencionam alquídica
+# modificada: não resolver a diferença por suposição. Finalidade: conhecer
+# aplicação da família. Pendências: ficha específica do ISO-1730 e confirmação
+# do fabricante. Publicação não verificada; não demonstra adequação a Tesla.
+isolasil-produtos:
+  type: Web
+  author: { name: "Isolasil" }
+  title: "Produtos"
+  language: pt-BR
+  url: { value: "https://isolasil.com.br/produtos", date: 2026-10-19 }
+
+# Origem: boletim oficial WEG, consulta em 19/10/2026; revisão 02/02/2026.
+# Leitura integral das duas páginas; finalidade: aplicação por pincel,
+# cura de 3–6 h a 25–30 °C e natureza monocomponente/poliéster modificado.
+# Documento do código 13403171, embalagem 20 L; confirmar ficha do código
+# 900 mL comprado antes de transpor condições. Não especifica número de
+# demãos, espessura ou intervalo de repintura para revestimento de Tesla.
+# Pendências: confirmação da WEG para PVC/esmalte, repintura e espessura;
+# rigidez dielétrica de ensaio não equivale à tensão suportada pela bobina.
+weg-lacktherm-1303-b-boletim-13403171:
+  type: Report
+  author: { name: "WEG" }
+  title: "Resina Lacktherm 1303 B: código 13403171"
+  date: 2026-02-02
+  language: pt-BR
+  url: { value: "https://static.weg.net/medias/downloadcenter/hf8/h94/boletim-tecnico-13403171-resina-lacktherm-1303-b-pt.pdf", date: 2026-10-19 }
+
+# === Toroide com duto de 100 mm: investigação em 19/10/2026 ===
+# Relatório: docs/investigacao-toroide-2026-10-19.md. As obras já cadastradas
+# de Lau, Denicolai, Craven, Wasatonic, De Queiroz e Silva Júnior/Soares foram
+# reconsultadas em trechos dirigidos; não se afirma leitura integral.
+
+# Origem: página específica do guia DeepFriedNeon já cadastrado. Leitura:
+# texto da construção e fotografias toroid1/toroid2 examinados. Finalidade:
+# emenda com fita e centro de duas formas metálicas apertadas por parafusos.
+# Pendências: produto real, rigidez, contato elétrico e dimensões do encaixe;
+# relato de construtor, não demonstração de tamanho ótimo ou certificação.
+deepfriedneon-toroid:
+  type: Web
+  author: { name: "DeepFriedNeon" }
+  title: "Tesla Coils - Discharge Terminal"
+  language: en
+  url: { value: "https://deepfriedneon.com/tesla_toroid.html", date: 2026-10-19 }
+
+# Origem: compilação ligada à página COILBLD já cadastrada. Leitura dirigida:
+# textos atribuídos a Richard Quick e Ed Sonderman, e construção T11/T14 do
+# mantenedor. Finalidade: luva interna de PVC na emenda, centro revestido e
+# suporte isolante removível. Autoria completa do mantenedor e datas de cada
+# contribuição não verificadas; não atribuir toda a página a Richard Quick.
+# Pendências: adequação dimensional e mecânica; não adotar afirmações de que
+# efeito pelicular dispensaria contato elétrico, nem hipóteses não ensaiadas
+# sobre fendas no toroide. Não é norma nem procedimento de segurança aprovado.
+stefans-toroid:
+  type: Web
+  title: "The toroidal discharge terminal"
+  language: en
+  parent: { type: Web, title: "Stefan's Tesla-Pages" }
+  url: { value: "https://hotstreamer.deanostoybox.com/stk/tc/toroid.htm", date: 2026-10-19 }
+
+# Origem: link na página inicial de Gary Lau. Leitura do texto da página,
+# sobretudo falha da emenda após expansão da espuma, disco central e junta
+# condutora de malha; fotografias dessa página não examinadas nesta consulta.
+# Finalidade: contraponto ao uso de espuma expansiva e ao contato por simples
+# sobreposição de fita com adesivo isolante. Relato do autor, não ensaio
+# controlado ou especificação para o duto de 100 mm. Publicação não verificada;
+# pendências: materiais atuais, rigidez, massa e solução de contato aplicável.
+lau-foam-toroid:
+  type: Web
+  author: "Lau, Gary"
+  title: "My 7\"x30\" foam-core toroid"
+  language: en
+  url: { value: "https://www.laushaus.com/tesla/foamtoroid.htm", date: 2026-10-19 }
