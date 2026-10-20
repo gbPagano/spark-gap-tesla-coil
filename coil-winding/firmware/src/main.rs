@@ -12,14 +12,17 @@ use embassy_sync::blocking_mutex::{raw::CriticalSectionRawMutex, Mutex};
 use embassy_time::{Duration, Instant, Ticker, Timer};
 use esp_backtrace as _;
 use esp_hal::{
+    clock::CpuClock,
     gpio::{Input, InputConfig, Level, Output, OutputConfig, Pull},
-    interrupt::software::SoftwareInterruptControl,
+    interrupt::{software::SoftwareInterruptControl, Priority},
     timer::timg::TimerGroup,
 };
 
 mod buttons;
 mod motor;
+mod network;
 mod potentiometer;
+mod telemetry;
 
 use buttons::Button;
 use motor::{Commands, Status, StepDirMotor};
@@ -32,6 +35,8 @@ static COMMANDS: Commands = Commands::new();
 static STATUS: Status = Status::new();
 static POT_READING: Mutex<CriticalSectionRawMutex, Cell<Option<PotReading>>> =
     Mutex::new(Cell::new(None));
+static MOTOR_EXECUTOR: static_cell::StaticCell<esp_rtos::embassy::InterruptExecutor<2>> =
+    static_cell::StaticCell::new();
 
 #[embassy_executor::task]
 async fn report_status() {
@@ -71,7 +76,9 @@ async fn report_status() {
 
 #[esp_rtos::main]
 async fn main(spawner: Spawner) {
-    let peripherals = esp_hal::init(esp_hal::Config::default());
+    let peripherals = esp_hal::init(esp_hal::Config::default().with_cpu_clock(CpuClock::max()));
+    // O driver Wi-Fi precisa de heap; controles, contagem e HTTP usam buffers fixos.
+    esp_alloc::heap_allocator!(size: 100 * 1024);
 
     // Saídas seguras desde a configuração: STEP baixo e driver desabilitado.
     let step = Output::new(peripherals.GPIO4, Level::Low, OutputConfig::default());
@@ -99,7 +106,14 @@ async fn main(spawner: Spawner) {
     esp_println::println!("GP1 ADC calibrado; em pausa, mova o pot para ver raw/filtro/min/max");
 
     spawner.spawn(report_status().unwrap());
-    spawner.spawn(motor::run(spindle, &COMMANDS, &STATUS).unwrap());
+    // O motor pode preemptar parsing HTTP e tarefas normais do executor.
+    let motor_executor = MOTOR_EXECUTOR.init(esp_rtos::embassy::InterruptExecutor::new(
+        sw_int.software_interrupt2,
+    ));
+    motor_executor
+        .start(Priority::Priority2)
+        .spawn(motor::run(spindle, &COMMANDS, &STATUS, &telemetry::TELEMETRY).unwrap());
+    spawner.spawn(network::run(peripherals.WIFI, spawner).unwrap());
 
     // Tarefa dos botões: estado desejado independente do sentido físico atual.
     let mut requested = ControlState::default();

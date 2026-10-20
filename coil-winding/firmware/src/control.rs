@@ -106,6 +106,10 @@ impl Motion {
         self.requested.speed_rpm
     }
 
+    pub fn play_active(&self) -> bool {
+        self.requested.running
+    }
+
     fn goal_millirpm(&self) -> u32 {
         if self.requested.running && self.requested.direction == self.direction {
             self.requested.speed_rpm * 1_000

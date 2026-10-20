@@ -9,6 +9,6 @@ linker = "xtensa-esp32s3-elf-gcc"
 runner = "espflash flash --monitor --flash-size 4mb --flash-mode dio"
 rustflags = ["-C", "link-arg=-Wl,-Tlinkall.x", "-C", "link-arg=-nostartfiles", "-C", "force-frame-pointers"]
 
-# Bare metal: compilar apenas core; não há std, ESP-IDF ou alocador.
+# Bare metal: core e alloc (heap usado pelo Wi-Fi), sem std ou runtime ESP-IDF.
 [unstable]
-build-std = ["core"]
+build-std = ["core", "alloc"]

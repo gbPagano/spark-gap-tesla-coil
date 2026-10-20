@@ -1,7 +1,12 @@
 //! Motor em tarefa Embassy: esperas de período assíncronas, sem pausa periódica.
 
+use crate::telemetry::Telemetry;
 use coil_winding_firmware::control::{
     next_deadline_us, Action, ControlState, Direction, Motion, Phase,
+};
+use coil_winding_firmware::{
+    api::Snapshot,
+    counting::{RunTimer, TurnCounter},
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, signal::Signal};
 use embassy_time::{Duration, Instant, Timer};
@@ -55,10 +60,16 @@ impl StepDirMotor {
 }
 
 #[embassy_executor::task]
-pub async fn run(mut spindle: StepDirMotor, commands: &'static Commands, status: &'static Status) {
+pub async fn run(
+    mut spindle: StepDirMotor,
+    commands: &'static Commands,
+    status: &'static Status,
+    telemetry: &'static Telemetry,
+) {
     let mut motion = Motion::default();
     let mut last_status = None;
-    let mut steps = 0_u64;
+    let mut counter = TurnCounter::new();
+    let mut run_timer = RunTimer::new();
 
     spindle.set_direction(Direction::Clockwise);
     spindle.enable.set_low(); // Energizado, mas inicia sem emitir passos.
@@ -69,41 +80,59 @@ pub async fn run(mut spindle: StepDirMotor, commands: &'static Commands, status:
         if let Some(state) = commands.try_take() {
             motion.request(state);
         }
-        let action = motion.next_action(Instant::now().as_micros());
+        let now_us = Instant::now().as_micros();
+        let action = motion.next_action(now_us);
+        // Inclui rampas e os dois sentidos, mas não play ativo com velocidade
+        // zero, espera inicial ou o intervalo parado entre inversões.
+        run_timer.set_running(now_us, matches!(action, Action::Step { .. }));
         let current_status = (motion.phase(), motion.direction(), motion.target_rpm());
         if last_status != Some(current_status) {
             // A impressão serial fica em outra tarefa, não neste caminho.
             status.signal(MotorStatus {
                 phase: current_status.0,
                 direction: current_status.1,
-                steps,
+                steps: counter.total_steps(),
                 target_rpm: current_status.2,
             });
             last_status = Some(current_status);
         }
 
-        match action {
+        let wait_until = match action {
             Action::Step { period_us } => {
                 spindle.pulse();
-                steps = steps.wrapping_add(1);
+                counter.record_step(motion.direction());
                 deadline = Instant::from_micros(next_deadline_us(
                     deadline.as_micros(),
                     Instant::now().as_micros(),
                     period_us,
                 ));
-                // Cede ao executor em TODO passo, sem inserir atrasos extras.
-                Timer::at(deadline).await;
+                Some(deadline)
             }
             Action::SetDirection(direction) => {
                 spindle.set_direction(direction);
                 deadline = Instant::now();
+                None
             }
             Action::Idle => {
-                if motion.is_settled() {
-                    motion.request(commands.wait().await);
-                }
                 deadline = Instant::now();
+                None
             }
+        };
+        // Snapshot copiado após o pulso, incluindo todos os passos das rampas.
+        let snapshot = Snapshot {
+            counter,
+            run_timer,
+            phase: motion.phase(),
+            direction: motion.direction(),
+            play_active: motion.play_active(),
+            target_rpm: motion.target_rpm(),
+        };
+        telemetry.lock(|value| value.set(snapshot));
+        if let Some(deadline) = wait_until {
+            Timer::at(deadline).await;
+        } else if action == Action::Idle && motion.is_settled() {
+            motion.request(commands.wait().await);
+            deadline = Instant::now();
         }
     }
 }
