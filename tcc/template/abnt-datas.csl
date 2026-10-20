@@ -3,8 +3,8 @@
   Derivado do estilo ABNT do projeto Citation Style Language (licenca CC BY-SA 3.0).
   Origem: https://raw.githubusercontent.com/citation-style-language/styles/master/associacao-brasileira-de-normas-tecnicas.csl
   SHA-256 do original: 4f3f2eadb94c314476608e070acb889253f7007fbbe3e2c251ffc90e2163eaae
-  Ajuste local: imprimir a data tambem quando a editora nao foi informada,
-  com ou sem local de publicacao. Os demais macros foram preservados.
+  Ajustes locais: imprimir a data tambem sem editora e distinguir obras
+  sem data pelo sufixo junto a [S.d.], nunca junto a data de acesso.
   Esta correcao pontual nao constitui uma auditoria integral da NBR 6023:2025.
 -->
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" demote-non-dropping-particle="never" default-locale="pt-BR">
@@ -273,10 +273,12 @@
           <date variable="issued">
             <date-part name="year" />
           </date>
+          <text variable="year-suffix" />
         </group>
       </if>
       <else>
         <text value="[S.d.]" font-style="italic" />
+        <text variable="year-suffix" />
       </else>
     </choose>
   </macro>
@@ -286,9 +288,11 @@
         <date variable="issued">
           <date-part name="year" />
         </date>
+        <text variable="year-suffix" />
       </if>
       <else>
         <text value="[S.d.]" font-style="italic" />
+        <text variable="year-suffix" />
       </else>
     </choose>
   </macro>
@@ -370,6 +374,7 @@
     <sort>
       <key macro="author" />
       <key variable="issued" />
+      <key variable="title" />
     </sort>
     <layout prefix="(" suffix=")" delimiter="; ">
       <group>
@@ -383,6 +388,7 @@
     <sort>
       <key macro="author" />
       <key variable="issued" />
+      <key variable="title" />
     </sort>
     <layout>
       <choose>
@@ -464,6 +470,7 @@
             <text macro="author" suffix=". " />
             <text macro="title" suffix=". " />
             <text macro="genre" suffix=". " />
+            <text macro="issued" suffix=". " />
             <text macro="access" suffix=". " />
           </group>
         </else-if>

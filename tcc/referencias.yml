@@ -6,15 +6,19 @@
 # interpretados como nomes pessoais e reduzidos ao último sobrenome.
 # Listar todos os autores; o estilo controla o uso de et al.
 # Cadastro não significa leitura integral, aprovação de método ou uso no texto.
-# Fontes: docs/*.typ, memória do projeto e portal do BIPM; revisão em 12/10/2026.
+# Fontes: docs/*.md, memória do projeto e portal do BIPM; revisão em 12/10/2026.
 # Comentários guardam origem e pendências sem entrar na referência final.
 # date = publicação; url.date = acesso. Omitir dados não confirmados.
 
-# === Trabalhos correlatos: docs/trabalhos-correlatos.typ e fundamentacao.typ ===
+# === Trabalhos correlatos: docs/trabalhos-correlatos.md e fundamentacao.md ===
 
 # Q06 — relato técnico; PDF p. 1–7, atualização em 24/08/2006.
 # Introdução (12/10/2026): p. 1–2 e 6–7 do PDF original conferidas;
 # precedente de sintonia em baixa potência, não autorização de ensaio.
+# Capítulo 2 (19/10/2026): p. 1–3 reconsultadas por extração do PDF original;
+# configuração, transferência e retorno de energia, extinção e descargas.
+# Redação completa do capítulo 2 (19/10/2026): p. 6 também reconsultada;
+# valores de sintonia, acoplamento e perdas usados na síntese crítica.
 queiroz2006:
   type: Report
   author: "De Queiroz, Antônio Carlos M."
@@ -36,6 +40,16 @@ queiroz2006:
 # Comparação de fontes (18/10/2026): §§2.6 e 3.4, p. 16 e 20, consultados
 # sobre repetição, energia por pulso e crescimento das descargas; não é
 # comparação experimental entre NST e dois MOTs comerciais brasileiros.
+# Capítulo 2 (19/10/2026): leitura dirigida por extração do PDF, §6.1.1,
+# p. 48–51 (modos e batimentos), §6.2, p. 63–65 (Q, carregamento e k),
+# §§6.3.3–6.4, p. 73–76 (ajustes e regime), §7.1, p. 77 (níveis de erro).
+# Eq. (6-19), p. 51, conferida também na imagem: fórmulas de f± no texto
+# resultam de T=1, sem perdas; não são fórmulas de picos amortecidos gerais.
+# Revisão de citações do capítulo 2 (19/10/2026): a base de circuitos foi
+# atribuída diretamente a Terman, já conferido. Denicolai permanece na
+# discussão de parâmetros equivalentes do secundário, sem chamadas repetidas
+# para álgebra elementar. A remoção das antigas seções 2.8–2.9 não apaga
+# os registros históricos de leitura e não altera o cadastro das obras.
 denicolai2001:
   type: Thesis
   author: "Denicolai, Marco"
@@ -53,6 +67,13 @@ denicolai2001:
 # Modos superiores, terminal e Q; §§2.3, 4–6.
 # Introdução (12/10/2026): PDF original, §§2.1–2.4 e 5.1 conferidos;
 # modelos, capacitância do ambiente, topologias e Q carregado/não carregado.
+# Capítulo 2 (19/10/2026): extração do PDF, §§2.1–2.3, p. 15–20;
+# cap. 4, p. 46–49 e Tabela 4.1, p. 65; §5.1, p. 83–96; Apêndice B,
+# p. 121–124. Finalidade: domínio concentrado/distribuído, perdas, Q,
+# carregamento e diferenças entre modos superiores e separação f±.
+# Eq. (B.3), p. 123, também conferida na imagem; a aproximação final 1/Q
+# não foi reproduzida: π/Q não pode ser aproximado por 1/Q. A relação
+# exata Q(delta) em main.typ foi obtida do RLC subamortecido.
 craven2014:
   type: Thesis
   author: "Craven, Richard Miles"
@@ -69,6 +90,9 @@ craven2014:
 # V14 — modelo distribuído e carregamento da medição; não confundir com f±.
 # Introdução (12/10/2026): PDF oficial, §§II, IV e XII, p. 12–13 e 17–18;
 # trechos sobre parâmetros distribuídos e carregamento capacitivo conferidos.
+# Capítulo 2 (19/10/2026): PDF oficial novamente extraído; §§II–IV e XII,
+# Tabela I, p. 18, conferidos para hipóteses da linha, cargas capacitivas e
+# ressonâncias. Parâmetros inferidos desses dados não são previsão independente.
 voitkans2014:
   type: Article
   author: ["Voitkāns, Janis", "Voitkāns, Arnis"]
@@ -94,6 +118,10 @@ voitkans2014:
 # Anexo I. Dois transformadores de 2,1 kV e rotativo; comprimento quantitativo
 # de descarga não localizado. Potências do texto e do anexo são inconsistentes
 # e não foram tratadas como potência ativa medida ou especificação de MOT.
+# Capítulo 2 (19/10/2026): §3.1.3, p. 33–34, reconsultado na extração do
+# PDF institucional: Tabela 1 contém cálculos, com número de espiras diferente
+# no WinTesla. Síntese de construção/aplicação limitada aos trechos dos
+# caps. 3–5 já examinados; não se afirma ausência universal de medições.
 silva-soares2024:
   type: Thesis
   author: ["Silva Júnior, José Eurípedes Paulino da", "Soares, Pablo Anastácio"]
@@ -125,7 +153,7 @@ gurleyuk2011:
 
 # T24 — SSTC musical; cadastro bibliográfico conferido, integral não recuperado
 # nesta revisão. Memória gotchas/t24-tanwar-numeros-sem-origem.md alerta sobre
-# números em docs/trabalhos-correlatos.typ: reauditar contra PDF válido antes de citar.
+# números em docs/trabalhos-correlatos.md: reauditar contra PDF válido antes de citar.
 tanwar2024:
   type: Article
   author: ["Tanwar, Naman", "Kumar, M. Rajesh", "Naidu, Rani Chinnappa"]
@@ -143,6 +171,12 @@ tanwar2024:
 # W13 — relatório de Master of Engineering; §§3.3–3.5, 4.2–4.3, 7.1.
 # Introdução (12/10/2026): §§1.2–1.4, p. 2–9 do PDF do autor conferidos;
 # estrutura, acionamento SGTC/SSTC/DRSSTC e aplicações educacionais.
+# Capítulo 2 (19/10/2026): §§1.2–1.3, p. 3–6, e §3.2, p. 21–22,
+# reconsultados por extração do PDF do autor; ciclo e repetição dos pulsos.
+# Redação completa (19/10/2026): §1.3, p. 6–7, §3.2, p. 21–22, e
+# §3.5.1, p. 46–49, reconsultados para SSTC/DRSSTC, temporização e ponte.
+# Comparação de topologias limitada às condições do mesmo ressonador;
+# não se pressupõe igualdade entre pulso da DRSSTC e condução do centelhador.
 # Comparação de fontes (18/10/2026): leitura dirigida de §4.3, p. 84;
 # máximo de 70 cm na série de descarga livre, limitado por streamers laterais.
 # Não interpretar esse resultado como limite universal de NST 15 kV / 60 mA.
@@ -158,6 +192,9 @@ wasatonic2013:
   url: { value: "https://eric-wasatonic.squarespace.com/s/Comparison-of-Tesla-Coil-Driver-Topologies.pdf", date: 2026-10-12 }
 
 # O23 — DRSSTC; ensaio a 15 Vcc sem descarga, não demonstra meta de 1 m.
+# Capítulo 2 (19/10/2026): página integral da editora consultada, sobretudo
+# §§3.2 e 4, abstract e Tabela 1. Uso como arquitetura e limite do ensaio;
+# não se adotam equações de núcleo ferroso/slayer exciter como modelo da SGTC.
 obeidat2023:
   type: Article
   author: ["Obeidat, Mohammad A.", "Nehad, Mohammad", "Mahafzah, Khaled A.", "Mansour, Ayman M."]
@@ -183,7 +220,15 @@ obeidat2023:
 # e 154–155 consultados no OCR da cópia in.ernet.dli.2015.126496 do Internet Archive.
 # Não é leitura integral. O catálogo/OCR dessa outra cópia indica 1923;
 # essa data não foi adotada, pois diverge da folha de rosto conferida.
-# Pendência: conferir as equações e figuras na imagem antes de transcrevê-las.
+# Capítulo 2 (19/10/2026): imagens das p. 135–136, 139, 149, 151 e
+# 154–155 da digitalização acima conferidas; ressonância série, Q, decréscimo
+# logarítmico, M/k e resposta forçada de circuitos acoplados. Consulta dirigida,
+# não integral. A relação exata Q(delta) foi derivada no texto, distinguindo
+# frequência amortecida da não amortecida; não é transcrição da eq. (9).
+# Revisão de citações (19/10/2026): a condição de modos sem perdas e sintonia
+# exata foi obtida da anulação do denominador da eq. (34), p. 155:
+# k² − (1 − 1/γ²)² = 0, com γ = f/f0. É uma consequência algébrica da
+# formulação consultada, não uma equação transcrita de Denicolai.
 terman1943:
   type: Book
   author: "Terman, Frederick Emmons"
@@ -194,6 +239,68 @@ terman1943:
   location: "New York"
   language: en
   url: { value: "https://electrooptical.net/OldBooks/Terman-RadioEngineersHandbook_1943.pdf", date: 2026-10-19 }
+
+# Origem: Denicolai (2001), §6.1.1, referência [Hof75].
+# Finalidade: consultar a fonte da equação característica com perdas.
+# Consulta (19/10/2026): metadados Crossref, DOI e resumo indexado da editora;
+# autoria, v. 46, n. 1 e p. 1–4 verificados. Texto original não recuperado
+# (editora retornou 403). Não citado no capítulo; conferir o integral antes
+# de atribuir a ele equações ou resultados específicos.
+hoffmann1975:
+  type: Article
+  author: "Hoffmann, C. R. J."
+  title: "A Tesla transformer high-voltage generator"
+  date: 1975-01-01
+  page-range: 1-4
+  language: en
+  serial-number: { doi: "10.1063/1.1134057" }
+  parent:
+    type: Periodical
+    title: "Review of Scientific Instruments"
+    volume: 46
+    issue: 1
+  url: { value: "https://doi.org/10.1063/1.1134057", date: 2026-10-19 }
+
+# Origem: Denicolai (2001), §6.1.1, referência [Phu91]; autoria completa
+# corroborada pela lista de referências de Denicolai (2002).
+# Finalidade: investigar a fonte da resposta transitória sem perdas e das
+# relações entre sintonia, acoplamento e ganho. Consulta (19/10/2026): somente
+# registros bibliográficos secundários; original não recuperado nem lido.
+# Sem DOI/URL original confirmado. Pendência: recuperar as atas ou cópia
+# verificável do artigo antes de citá-lo diretamente no capítulo.
+phung1991:
+  type: Article
+  author: ["Phung, B. T.", "Blackburn, T. R.", "Sheehy, R.", "James, R. E."]
+  title: "Tesla transformer design and application in insulator testing"
+  date: 1991
+  page-range: 133-136
+  language: en
+  parent:
+    type: Proceedings
+    title: "Seventh International Symposium on High Voltage Engineering"
+    volume: 5
+
+# Origem: busca da cadeia de fontes de Denicolai (2001), [Phu91].
+# Finalidade: artigo posterior do autor, útil para localizar as fontes de
+# sintonia/transferência; não é substituto primário de Phung et al. (1991).
+# Consulta (19/10/2026): metadados Crossref e texto indexado da cópia do autor
+# em https://classictesla.com/download/op.pdf, especialmente referências.
+# Não se afirma leitura integral ou conferência visual de todas as equações.
+# A paginação editorial abaixo é a do Crossref; a cópia tem paginação 1–5.
+denicolai2002:
+  type: Article
+  author: "Denicolai, Marco"
+  title: "Optimal performance for Tesla transformers"
+  date: 2002-09-01
+  page-range: 3332-3336
+  language: en
+  serial-number: { doi: "10.1063/1.1498905" }
+  parent:
+    type: Periodical
+    title: "Review of Scientific Instruments"
+    volume: 73
+    issue: 9
+  url: { value: "https://doi.org/10.1063/1.1498905", date: 2026-10-19 }
 
 # Origem: Denicolai (2001), §§1.5 e 2.1, referência [Smy50].
 # Finalidade: consultar a análise clássica de circuitos acoplados com perdas.
@@ -350,6 +457,8 @@ javatc2020:
   language: en
   url: { value: "https://classictesla.com/java/javatc/javatc.html", date: 2026-10-12 }
 
+# Capítulo 2 (19/10/2026): página out9 consultada integralmente; define Les
+# em ressonância e distingue a indutância medida em baixa frequência.
 javatc-les:
   type: Web
   author: "Anderson, Barton B."
@@ -357,6 +466,9 @@ javatc-les:
   language: en
   url: { value: "https://classictesla.com/java/javatc/out9.html", date: 2026-10-08 }
 
+# Capítulo 2 (19/10/2026): página out12 consultada integralmente; define Ces
+# referida ao terminal. Finalidade: compatibilidade de parâmetros efetivos,
+# não validação de ferramenta nem comprovação de valores para este protótipo.
 javatc-ces:
   type: Web
   author: "Anderson, Barton B."
@@ -375,7 +487,7 @@ javatc-q:
 # primária das cópias a utilizar permanecem pendentes: cadastrar após conferência.
 
 # === Guias de construtores e mensagens históricas ===
-# docs/dimensionamento-secundario.typ e fontes-e-descargas.typ.
+# docs/dimensionamento-secundario.md e fontes-e-descargas.md.
 # Regras empíricas/relatos de autor: não são normas nem ensaios homologados.
 
 deepfriedneon-guide:
@@ -794,6 +906,8 @@ burnett-rotary:
 # Finalidade: extinção depende também de sintonia/carregamento; velocidade
 # de separação não assegura primeiro mínimo. Pendências: exemplos e conselhos
 # de operação não homologados; não é leitura integral de todas as seções.
+# Capítulo 2 (19/10/2026): texto da seção Quenching reconsultado para as
+# condições de extinção e a ausência de garantia de extinção no primeiro mínimo.
 burnett-quenching:
   type: Web
   author: "Burnett, Richie"
@@ -1331,10 +1445,10 @@ jcgm-gum5-2026:
   serial-number: { doi: "10.59161/YNLY8209" }
   url: { value: "https://doi.org/10.59161/YNLY8209", date: 2026-10-12 }
 
-# === Segurança: docs/seguranca.typ; não constituem autorização de ensaio ===
+# === Segurança: docs/seguranca.md; não constituem autorização de ensaio ===
 
 # Edição citada no plano. Conferir vigência e exigências institucionais ao usar.
-# docs/seguranca.typ registra transição prevista para nova redação em 01/06/2027.
+# docs/seguranca.md registra transição prevista para nova redação em 01/06/2027.
 nr10-2019:
   type: Report
   author: { name: "Brasil. Ministério do Trabalho e Emprego" }
@@ -1649,8 +1763,433 @@ espressif-rmt-stepper-v5-5-2:
   language: en
   url: { value: "https://github.com/espressif/esp-idf/tree/v5.5.2/examples/peripherals/rmt/stepper_motor", date: 2026-10-15 }
 
+# === Investigação individual dos MOTs: 19/10/2026 ===
+# Origem comum: códigos das quatro capturas fornecidas pelo pesquisador.
+# Síntese, níveis de leitura e lacunas em
+# docs/investigacao-datasheets-mots-2026-10-19.md. Nenhuma destas fontes
+# constitui, por si só, qualificação da unidade ou da aplicação em SGTC.
+
+# Leitura: página oficial e quatro fotos de etiqueta. Finalidade: confirmar
+# código, fabricante DPC, 220 V/60 Hz e inscrição Al-Al 30Min. Pendências:
+# significado dos 900 W/11 A/2,55 kVA do texto, saída, serviço e isolação;
+# não adotar 30 min como duração permitida de operação da SGTC.
+lg-ebj38621128-oficial:
+  type: Web
+  author: { name: "LG Electronics do Brasil" }
+  title: "Transformador Micro-ondas LG MS3052RA, MH7097ARA, MS3044LA - EBJ38621128"
+  language: pt-BR
+  url: { value: "https://www.lg.com/br/acessorios-para-eletrodomesticos/pecas-e-acessorios-de-cozinha/ebj38621128/", date: 2026-10-19 }
+
+# Leitura: descrição e fotografia de etiqueta. Finalidade: EBJ38621123,
+# 220 V/60 Hz, DPC e Al-Al 30Min, além da aplicação MS3042G.FWHGLGZ.
+# Pendências: saída e condições térmicas; identidade elétrica com 128 não provada.
+soplacas-ebj38621123:
+  type: Web
+  author: { name: "SoPlacas" }
+  title: "TRANSFORMADOR LG MS3042RA MS3045SA MS3048GA MS3049LA MS3042B MS3046S MS3042G MS3043SAR 220V 60Hz EBJ38621123"
+  language: pt-BR
+  url: { value: "https://www.soplacas.tv.br/index.php?route=product/product&product_id=638778080", date: 2026-10-19 }
+
+# Leitura: título/trecho indexados, não página ou etiqueta integral.
+# Finalidade: pista S1N6AA 220 V/60 Hz. Pendências: saída, condições de CLASS
+# 250 e regime; não atribuir autoria à plataforma nem watts pelo código.
+shopee-s1n6aa-60hz:
+  type: Web
+  title: "Transformador S1N6AA 220V/60HZ CLASS 250 !Usado!"
+  language: pt-BR
+  parent: { type: Web, title: "Shopee Brasil" }
+  url: { value: "https://shopee.com.br/Transformador-S1N6AA-220V-60HZ-CLASS-250-!Usado!-i.411230883.22398825351", date: 2026-10-19 }
+
+# Leitura: título/trechos indexados; original exige login. Finalidade:
+# identificação GAL-600E-4, 220 V/60 Hz e dimensões comerciais. Pendências:
+# fabricante/etiqueta, saída e regime; não inferir potência pelo tamanho.
+mercadolivre-gal600e4:
+  type: Web
+  title: "Transformador Microondas 220v 60hz Gal-600e-4 Class 220 Novo"
+  language: pt-BR
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://www.mercadolivre.com.br/transformador-microondas-220v-60hz-gal600e4-class-220-novo/up/MLBU1662545317", date: 2026-10-19 }
+
+# Leitura: trechos indexados da listagem, não integral; acesso retornou 402.
+# Finalidade: pista GAL-700E-1A 220 V/60 Hz. Pendências: ficha individual,
+# etiqueta e dados secundários; lista comercial não comprova par em estoque.
+reciclasc-catalogo-transformadores:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "TRANSFORMADOR ALTA"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/transformador", date: 2026-10-19 }
+
+# Leitura: especificações e foto vinculada. Finalidade: detectar divergência:
+# título GAL-800E-4/240 V, tabela 50 Hz, foto MD-801EMR-1/230 V/50 Hz.
+# Pendências: unidade efetiva e saída; não atribuir essa ficha à opção brasileira.
+supplyvan-gal800e4-240v:
+  type: Web
+  author: { name: "SupplyVan" }
+  title: "Microwave Oven Power Transformer, GAL-800E-4, 240V"
+  language: en
+  url: { value: "https://www.supplyvan.com/microwave-oven-power-transformer-gal-800e-4-240v.html", date: 2026-10-19 }
+
+# Leitura: trechos indexados, não PDF integral; download retornou 403.
+# Finalidade: variante GAL-900E-4 230–240 V/50 Hz, peça 403258. Pendências:
+# saída, unidade brasileira e edição/data; pasta da URL não prova publicação.
+gev-transformers-catalog:
+  type: Web
+  author: { name: "GEV" }
+  title: "transformers"
+  language: en
+  url: { value: "https://www.gev-online.com/Media/Default/Kataloge_als_PDF/Elektro-2015/EN/15-transformers.pdf", date: 2026-10-19 }
+
+# Leitura: trecho indexado; PDF no espelho retornou 403. Finalidade: pista
+# GAL-900E-4/95244XC-5 em catálogo de peças, não datasheet elétrico.
+# Pendências: autoria/edição, integral e correspondência à variante 220 V/60 Hz.
+galanz-parts-catalog-professionall:
+  type: Web
+  title: "GALANZ"
+  language: en
+  url: { value: "https://www.professionall.ro/media/Cataloage/Z-Cataloage-Fabricanti/G/Galanz_ENU.pdf", date: 2026-10-19 }
+
+# Leitura: localizador/título indexado; conteúdo não recuperado (ferramenta
+# sem suporte ao PDF e download 404). Finalidade: pista adicional GAL-900E-4.
+# Pendências: integral e todos os dados; nenhum número foi usado como lido.
+klinikaagd-gal900e4-pdf:
+  type: Web
+  title: "Transformator GAL-900E-4 kuchenki mikrofalowej"
+  language: pl
+  url: { value: "https://www.klinikaagd.pl/inc/system/pdf/35_Transformator+GAL-900E-4+kuchenki+mikrofalowej_KLU519ARD.pdf", date: 2026-10-19 }
+
+# Leitura: trechos indexados; acesso direto 402. Finalidade: agrupamento
+# MD-801BMR-2/MD-901BTR-2 de 220 V e alegação de 700 W. Pendências: saída,
+# serviço e equivalência; não tratar 700 W como potência contínua de saída.
+reciclasc-md801bmr2-md901btr2:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Micro-ondas MD-801BMR-2 / MD-901BTR-2 220V 700W"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/transformador-trafo-micro-ondas-md-801bmr-2-/-md-901btr-2-220v-700w", date: 2026-10-19 }
+
+# Leitura dirigida da identificação/aplicação. Finalidade: MD-801BMR-1,
+# código 251200200343, entrada 220 V e fornos de 25 L. Pendências: revisão,
+# saída e regime; compatibilidade anunciada não é datasheet do fabricante.
+pontomultipecas-md801bmr1:
+  type: Web
+  author: { name: "Ponto Multipeças" }
+  title: "Transformador de Alta Tensão MD-801BMR-1 Micro-ondas 220V 25L 251200200343 Midea"
+  language: pt-BR
+  url: { value: "https://www.pontomultipecas.com.br/transformador-de-alta-tensao-md-801bmr-1-micro-ondas-220v-25l-251200200343-midea", date: 2026-10-19 }
+
+# Leitura: título/trecho indexados, original 403. Finalidade: pista de código
+# OEM 17470000010784/GWLD para MD-801BMR-1. Pendências: revisão e equivalência
+# com o modelo brasileiro; não importar tensão de rede ou serviço sem ficha.
+repairclinic-md801bmr1:
+  type: Web
+  author: { name: "RepairClinic" }
+  title: "17470000010784 H.v.transformer md-801bmr-1 gwld rohs"
+  language: en
+  url: { value: "https://www.repairclinic.com/PartDetail/H-V-Transformer-Md-801Bmr-1-Gwld-Rohs/17470000010784/5062389", date: 2026-10-19 }
+
+# Leitura: descrição/aplicação e foto. Finalidade: identificar MD-801BTR-2,
+# código 17470000003482, e detectar foto de OUTRO código: MD-801EMR-2.
+# Pendências: etiqueta correta, saída e serviço; não transferir dados da foto.
+pontomultipecas-md801btr2:
+  type: Web
+  author: { name: "Ponto Multipeças" }
+  title: "Transformador de tensão MD-801BTR-2 220V Springer Midea 17470000003482"
+  language: pt-BR
+  url: { value: "https://www.pontomultipecas.com.br/transformador-de-tensao-md-801btr-2-220v-springer-midea-17470000003482", date: 2026-10-19 }
+
+# Leitura: título indexado, original exige login. Finalidade: pista individual
+# MD-801BMR-2 de 220 V/60 Hz. Pendências: placa, saída, serviço e estado;
+# não estender ao BTR/EMR ou considerar potência pelo código.
+mercadolivre-md801bmr2:
+  type: Web
+  title: "Transformador Microondas 220v 60h Md-801bmr-2 Class 220 (Usado)"
+  language: pt-BR
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://www.mercadolivre.com.br/transformador-microondas-220v-60h-md801bmr2-class-220/up/MLBU2457481193", date: 2026-10-19 }
+
+# Leitura: identificação, aplicação e foto da etiqueta 220 V/60 Hz/CLASS 220.
+# Finalidade: código MD-701BMR-1/261200201100 e rastreabilidade de origem.
+# Pendências: ficha de saída, perdas, regime e isolação para a nova aplicação.
+pontomultipecas-md701bmr1:
+  type: Web
+  author: { name: "Ponto Multipeças" }
+  title: "Transformador de Alta Tensão MD-701BMR-1 Micro-ondas 220V 20L 261200201100 Midea"
+  language: pt-BR
+  url: { value: "https://www.pontomultipecas.com.br/transformador-de-alta-tensao-md-701bmr-1-micro-ondas-220v-20l-261200201100-midea", date: 2026-10-19 }
+
+# Leitura: trechos indexados; original 402. Finalidade: alegação de saída
+# aproximada de 2.000 V CA e 220 V/60 Hz para página que agrupa -1/-2.
+# Pendências: condição de carga/corrente e equivalência; não é dado de fabricante.
+reciclasc-md701bmr12-tecnico:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Micro-ondas MD-701BMR-1 220V 700W"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/3sdhtb6uu-transformador-trafo-micro-ondas-md-701bmr-1-220v-700w", date: 2026-10-19 }
+
+# Leitura: trechos indexados; original 402. Finalidade: pista de diferenças
+# físicas, com menção a fio terra na variante -2. Pendências: integral,
+# esquema e documentação do fabricante; não confundir com diferença de potência.
+reciclasc-md701bmr12:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Micro-ondas Md-701bmr-1 220v"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/transformador-trafo-micro-ondas-md-701bmr-1-220v-700w", date: 2026-10-19 }
+
+# Leitura: título/trecho indexados. Finalidade: MD-701BTR-2 220 V/60 Hz.
+# Pendências: fabricante, etiqueta, corrente e serviço; vendedor não identificado.
+mercadolivre-md701btr2:
+  type: Web
+  title: "Transformador Micro-ondas 220v 60hz Md-701btr-2"
+  language: pt-BR
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://www.mercadolivre.com.br/transformador-microondas-220v-60hz-md701btr2/up/MLBU3768261622", date: 2026-10-19 }
+
+# Leitura: trecho indexado. Finalidade: pista de forno de origem NN-ST254.
+# Pendências: manual/lista de peças vinculando a variante; não é confirmação
+# de fabricante nem permite importar parâmetros de outro manual Panasonic.
+mercadolivre-md701btr2-nnst254:
+  type: Web
+  title: "Transformador Alta Tensão Microondas Md-701btr-2 220v - Nn-st"
+  language: pt-BR
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://www.mercadolivre.com.br/transformador-alta-tensao-microondas-md701btr2-220v--nnst/up/MLBU3476370362", date: 2026-10-19 }
+
+# Leitura: página e foto da etiqueta, não datasheet. Finalidade: MD-101BMR-1,
+# 220 V/60 Hz, CLASS 220, fabricante MD Microwave Oven Manufacturing/GWBF.
+# Pendências: corrente, tensão secundária e regime; ausência na etiqueta não
+# prova serviço contínuo. Não deduzir parâmetros pela palavra alta voltagem.
+carder-md101bmr1:
+  type: Web
+  author: { name: "Carder Eletro" }
+  title: "TRANSFORMADOR PARA MICROONDAS MD-101BMR-1 ALTA VOLTAGEM"
+  language: pt-BR
+  url: { value: "https://www.cardereletro.com.br/transformador-microondas-220v-x-60hz-md-101bmr-1-alta-voltagem", date: 2026-10-19 }
+
+# Leitura: trechos indexados, original 402. Finalidade: aplicação Electrolux
+# MEF41, 220 V, -1 com fusível/-2 sem fusível segundo vendedor. Pendências:
+# tipo/valor do fusível, equivalência, saída e regime; 1.100 W não validado.
+reciclasc-md101bmr12-220v:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Micro-ondas MD-101BMR - 1/2 220V 1100W"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/8s8dbr4ru-transformador-trafo-micro-ondas-md-101bmr-12-220v-1100w", date: 2026-10-19 }
+
+# Leitura: título/trechos indexados, não ficha integral. Finalidade: evidência
+# de oferta do código MD-101BMR-2 em 127 V, diferente da opção solicitada.
+# Pendências: etiqueta/revisão e saída; não considerar esta variante utilizável
+# na mesma rede só pelo código. Data do índice não adotada como publicação.
+reciclasc-md101bmr2-127v:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Microondas MD-101BMR-2 127V 1100W"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/transformador-trafo-micro-ondas-md-101bmr-2-127v-1100w", date: 2026-10-19 }
+
+# Leitura: trechos indexados; original exige login. Finalidade: corroborar
+# código XB-900-282260 de 220 V e dimensões comerciais. Pendências: frequência,
+# placa e saída; não estimar potência contínua pelas dimensões.
+mercadolivre-xb900282260:
+  type: Web
+  title: "Transformador Alta Tensão Para Microondas 220v Xb-900-282260"
+  language: pt-BR
+  parent: { type: Web, title: "Mercado Livre" }
+  url: { value: "https://www.mercadolivre.com.br/transformador-alta-tensao-para-microondas-220v-xb900282260/up/MLBU3010587977", date: 2026-10-19 }
+
+# Leitura: trecho indexado. Finalidade: distinguir XB-800-202460 encontrado
+# do XB-800-282260 da imagem; não são declarados equivalentes.
+# Pendências: confirmar código correto e ficha da unidade efetiva.
+reciclasc-xb800202460:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Micro-ondas XB-800-202460 220V"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/transformador-trafo-micro-ondas-xb-800-202460-220v", date: 2026-10-19 }
+
+# Leitura: registro de download, não manual; download 403 e ManualsLib 403.
+# Finalidade: pista de manual para forno associado ao EBJ38621123 por vendedor.
+# Pendências: edição, variante elétrica e lista de peças; não se atribui a LG
+# como autoria de conteúdo não lido nem se extrai resistência de outro modelo.
+lg-ms3042g-service-index:
+  type: Web
+  author: { name: "Electronica-PT" }
+  title: "LG MS3042G: Microwave Service Manual — registro de download"
+  language: pt
+  url: { value: "https://www.electronica-pt.com/esquema/microondas/lg-microwave/lg-ms3042g-87265/", date: 2026-10-19 }
+
+# Leitura: registro de download, não manual integral. Finalidade: pista MEF41
+# para os MD-101BMR anunciados. Pendências: recuperar edição/lista de peças e
+# conferir vínculo exato. Data de atualização do portal não é publicação da obra.
+electrolux-mef41-service-index:
+  type: Web
+  author: { name: "Electronica-PT" }
+  title: "Electrolux MEF33 MEG33 MEF41 MEG41 MEX41: Service manual — registro de download"
+  language: pt
+  url: { value: "https://www.electronica-pt.com/esquema/microondas/electrolux-mef33-meg33-mef41-meg41-mex41-67758/", date: 2026-10-19 }
+
+# === Aprofundamento LG EBJ38621123/128: 20/10/2026 ===
+# Síntese em docs/investigacao-lg-ebj38621123-ebj38621128-2026-10-20.md.
+
+# Origem: site do fabricante identificado nas etiquetas. Leitura dirigida:
+# descrição, princípio, sistemas isolantes e tabelas da família, não datasheet
+# dos EBJ. Finalidade: dispersão deliberada e faixa doméstica 1,8–2,5 kV.
+# Pendências: vínculo aos códigos, condições de carga, corrente e CLASS 250.
+# Data do post 20/01/2021; imagens/edições posteriores não datadas integralmente.
+dpc-hvt-oficial:
+  type: Web
+  author: { name: "DPC Co., Ltd." }
+  title: "HVT (High Voltage Transformer)"
+  language: en
+  url: { value: "https://www.dpc.co.kr/en_sub_2_1/3", date: 2026-10-20 }
+
+# Origem: apresentação DPC em espelho Atlantic. PDF recuperado, extração
+# completa e leitura dirigida das pp. 8–10 e 19; não leitura integral de toda
+# a apresentação. Finalidade: história AL-Coil/2004 e construção geral HVT.
+# Pendências: data/edição e lista de materiais individual EBJ; não inventar ano
+# editorial a partir das séries históricas de vendas incluídas nos slides.
+dpc-company-profile:
+  type: Report
+  author: { name: "Digital Power Communications" }
+  title: "Company Profile"
+  language: en
+  url: { value: "https://atlantic-comfort.com/content/download/1178/file/DPC%20INTRODUCTION_ENG.pdf?inLanguage=eng-GB&version=1", date: 2026-10-20 }
+
+# Origem: site oficial DPC. Leitura da tabela pública de certificações, não
+# dos certificados/relatórios completos. Finalidade: pista UL E108173.
+# Pendências: escopo, validade e vínculo ao modelo; não certifica uso em SGTC.
+dpc-certificacoes:
+  type: Web
+  author: { name: "DPC Co., Ltd." }
+  title: "Quality Certification"
+  language: en
+  url: { value: "https://www.dpc.co.kr/en_certificate", date: 2026-10-20 }
+
+# Origem: suporte LG do forno oficialmente associado ao 128. Leitura dirigida
+# do registro e link de manual; não confundir data do portal com edição do PDF.
+# Finalidade: cadeia de recuperação oficial MFL56715906. Pendência: ficha MOT.
+lg-ms3052ra-suporte:
+  type: Web
+  author: { name: "LG Electronics do Brasil" }
+  title: "MS3052RA.FW1GLGZ: suporte para produtos"
+  language: pt-BR
+  url: { value: "https://www.lg.com/br/suporte/suporte-ao-producto/cs-MS3052RA.FW1GLGZ/", date: 2026-10-20 }
+
+# Origem: download oficial LG, recuperado. Leitura dirigida: capa e tabela
+# técnica p. 3, conferida visualmente; não leitura integral do manual.
+# Finalidade: MS3052RA 220 V/60 Hz, 800 W IEC/750 W Inmetro e consumo 1.250 W
+# DO FORNO, não saída elétrica do MOT. Revisão/data impressas no rodapé p. 3.
+# Pendências: lista de peças e grandezas secundárias; é manual de usuário.
+lg-mfl56715906-rev4:
+  type: Report
+  author: { name: "LG Electronics do Brasil" }
+  title: "Manual de instruções: forno de micro-ondas MS3042R, MS3042RA, MS3052R, MS3052RA, MS3053R, MS3053RA"
+  date: 2015-05-27
+  edition: "Revisão 4 — MFL56715906"
+  language: pt-BR
+  url: { value: "https://gscs-b2c.lge.com/open/downloadFile?fileId=KROWM000622726.pdf", date: 2026-10-20 }
+
+# Origem: manual LG hospedado pela Gazin. PDF recuperado; leitura dirigida
+# da tabela p. 2 com conferência visual, não integral. Finalidade: distinguir
+# MS3052RA 800 W/1.250 W de MH7053RA 900 W/1.350 W, todos valores do forno.
+# Pendências: edição/data editorial e especificação individual do transformador.
+lg-manual-multimodelos-gazin:
+  type: Report
+  author: { name: "LG Electronics" }
+  title: "Manual de instruções: forno de micro-ondas — modelos solo e grill"
+  language: pt-BR
+  url: { value: "https://gazin-marketplace.s3.amazonaws.com/midias/manuais/micro-ondas-lg-30l-800w-com-easy-clean-funcao-descongelar-ms3091bc-112107181926.pdf", date: 2026-10-20 }
+
+# Origem: espelho taQi. PDF recuperado; leitura dirigida da tabela técnica,
+# não integral. Finalidade: conferência complementar de grandezas do forno.
+# Pendências: edição/data e secundário MOT; não deduzir data pelo nome do arquivo.
+lg-ms3052-manual-taqi:
+  type: Report
+  author: { name: "LG Electronics" }
+  title: "Manual de instruções: forno de micro-ondas MS3042R/MS3042RA e MS3052R/MS3052RA"
+  language: pt-BR
+  url: { value: "https://www.taqi.com.br/file/general/microondas-lg-ms3052-manual.pdf", date: 2026-10-20 }
+
+# Origem: busca de manual MS3042G. PDF de sete páginas recuperado; leitura
+# dirigida de identificação p. 1 e base p. 7, não manual completo de serviço.
+# Finalidade: sufixos CWH7LAP/CSL7LAP/CW17LAP e posição 56170D, NÃO vínculo
+# a EBJ38621123/128. Copyright 2007 impresso. Pendências: variante brasileira
+# FWHGLGZ, lista de códigos de peças e parâmetros elétricos.
+lg-ms3042g-vistas-needapart:
+  type: Report
+  author: { name: "LG Electronics" }
+  title: "Exploded view: MS3042G, MS3042GS, MS3042G1"
+  date: 2007
+  language: en
+  url: { value: "https://cdn.needapart.co.nz/manuals/MS3042G1.pdf", date: 2026-10-20 }
+
+# Origem: busca dos códigos exatos; leitura apenas de trecho indexado,
+# original HTTP 402. Finalidade: alegação de envio 123 OU 128, não equivalência
+# de fabricante. Pendências: conteúdo integral e confirmação LG/DPC.
+reciclasc-lg-ebj38621123-original:
+  type: Web
+  author: { name: "Reciclasc" }
+  title: "Transformador Trafo Micro-ondas LG EBJ38621123 220V Original"
+  language: pt-BR
+  url: { value: "https://www.reciclasc.com.br/transformador-frafo-micro-ondas-lg-ebj38621123-220v-original", date: 2026-10-20 }
+
+# Origem: busca EBJ/DPC-C. Leitura de título/descrição indexados; original
+# exige login. Finalidade: pista DPC-C e agrupamento comercial 123/128.
+# Pendências: etiqueta e confirmação oficial; 700 W não é saída MOT validada.
+mercadolivre-lg-ebj38621128-dpcc:
+  type: Web
+  title: "Transformador Trafo Micro-ondas Ebj38621128 Dpc-c 220v 60hz"
+  parent: { type: Web, title: "Mercado Livre" }
+  language: pt-BR
+  url: { value: "https://www.mercadolivre.com.br/transformador-trafo-microondas-ebj38621128-dpcc-220v-60hz/up/MLBU4731253657", date: 2026-10-20 }
+
+# Origem: busca do manual completo MS3042G. Leitura apenas do registro:
+# 33 páginas/2,2 MB; PDF não recuperado. Finalidade: espelho adicional.
+# Pendências: conteúdo, variante, lista de peças e correspondência dos EBJ.
+lg-ms3042g-service-elektrotanya:
+  type: Web
+  author: { name: "Elektrotanya" }
+  title: "LG MS3042G SM: Service Manual — registro de download"
+  language: en
+  url: { value: "https://elektrotanya.com/lg_ms3042g_sm.pdf/download.html", date: 2026-10-20 }
+
+# Origem: mesma busca. Leitura da página pública/descrição; não conteúdo
+# técnico integral. A descrição é marcada AI-enhanced pelo portal; não é
+# fonte de parâmetros nem prova de leitura do manual. Pendências: integral,
+# variante, lista de peças. Não atribuir autoria do manual com base no uploader.
+lg-ms3042g-service-scribd:
+  type: Web
+  title: "LG MS3042G Microwave Service Manual — registro"
+  parent: { type: Web, title: "Scribd" }
+  language: en
+  url: { value: "https://www.scribd.com/document/685461353/LG-MS3042G", date: 2026-10-20 }
+
+# Origem: navegação no suporte DPC. Leitura dirigida dos departamentos e
+# canais de contato, sem envio de mensagem. Finalidade: solicitar desenho,
+# regime e confirmação de equivalência 123/128; não é ficha técnica.
+dpc-contatos:
+  type: Web
+  author: { name: "DPC Co., Ltd." }
+  title: "Online Inquiry"
+  language: en
+  url: { value: "https://www.dpc.co.kr/en_email", date: 2026-10-20 }
+
+# Origem: busca de aplicação MS3042G. Leitura de trecho indexado, não página
+# original do produto: acesso atual mostrou busca sem resultado. Finalidade:
+# pista de OUTRO código, EBJ38621122, anunciado 110/127 V para FWHFLGZ, não
+# o 123/220 V/FWHGLGZ. Não se transferiram 0,8 kVA do anúncio aos dois MOTs.
+# Pendências: registro original, etiqueta e vínculo por lista oficial de peças.
+servtel-lg-ebj38621122-contraste:
+  type: Web
+  author: { name: "Servtel Celular" }
+  title: "Transformador Microondas LG Ebj38621122 110v Original"
+  language: pt-BR
+  url: { value: "https://www.servtelcelular.com.br/transformador-microondas-lg-ebj38621122-110v-original-p25431", date: 2026-10-20 }
+
 # === Fontes comerciais: consulta de materiais, não evidência acadêmica ===
-# docs/fontes-e-descargas.typ e cotacao-materiais.typ, 12/10/2026.
+# docs/fontes-e-descargas.md e cotacao-materiais.md, 12/10/2026.
 # Venda não substitui datasheet; preço/estoque/compatibilidade não são garantidos.
 # Valores observados permanecem em docs/, não nos metadados bibliográficos.
 
@@ -2529,3 +3068,30 @@ lau-foam-toroid:
   title: "My 7\"x30\" foam-core toroid"
   language: en
   url: { value: "https://www.laushaus.com/tesla/foamtoroid.htm", date: 2026-10-19 }
+
+# === Material do primário: consulta em 20/10/2026 ===
+# Origem: página técnica de Gary Lau. Texto consultado, não análise das fotos
+# ou leitura integral do site. Finalidade: precedente de tubo de cobre de
+# refrigeração de 1/4 pol e tomada móvel; a página descreve diferentes versões
+# de primário, que não devem ser fundidas numa única configuração.
+# Publicação não verificada. Pendências: corrente RF, perdas, dimensões,
+# metragem e conexão do nosso protótipo; não é especificação homologada.
+lau-primary:
+  type: Web
+  author: "Lau, Gary"
+  title: "Primary"
+  language: en
+  url: { value: "https://www.laushaus.com/tesla/primary.htm", date: 2026-10-20 }
+
+# Origem: página específica do guia DeepFriedNeon. Texto consultado;
+# fotografias não examinadas nesta coleta. Finalidade: precedente de espiral
+# plana com tubo de cobre de 8 mm e tomada móvel. Os 10 m e as cerca de nove
+# espiras pertencem ao exemplo do autor, não dimensionam o nosso primário.
+# Publicação não verificada. Pendências: geometria, Cp, sintonia e perdas;
+# não se adotam automaticamente suportes, afastamentos ou proteções do relato.
+deepfriedneon-primary:
+  type: Web
+  author: { name: "DeepFriedNeon" }
+  title: "Primary Coil"
+  language: en
+  url: { value: "https://deepfriedneon.com/tesla_primary.html", date: 2026-10-20 }

@@ -4,7 +4,8 @@
 #import "template/citacoes.typ": citacao-longa
 #import "template/titulos.typ": titulo-sem-numero
 
-// Introdução em desenvolvimento; os demais capítulos permanecem em esqueleto.
+// Introdução e fundamentação redigidas, sujeitas à revisão do pesquisador;
+// os demais capítulos permanecem em esqueleto.
 // Resumo e abstract permanecem vazios; os avisos do template indicam
 // os requisitos de preenchimento para a versão final.
 #show: conf.with(
@@ -210,28 +211,475 @@ os limites do modelo nas
 configurações investigadas, inclusive diante de resultados incompatíveis ou
 inconclusivos.
 
-= Fundamentação teórica e trabalhos correlatos
+= Fundamentação teórica
+
+A descrição teórica da bobina de Tesla relaciona a excitação do primário à
+transferência de energia e à resposta do secundário. Para a análise em baixa
+energia, adota-se a aproximação por circuitos ressonantes acoplados, com perdas
+representadas por resistências equivalentes. Sua aplicação requer definir as
+condições de sintonia e acoplamento e considerar os efeitos das capacitâncias
+e da distribuição espacial de tensão e corrente no secundário.
+
+// Espaços reservados da versão de trabalho. Substituir pelos arquivos das
+// figuras e informar sua autoria/origem antes da versão final.
+#let figura-prevista(titulo, descricao) = abnt-figure(
+  rect(
+    width: 100%,
+    height: 4.2cm,
+    inset: 12pt,
+    stroke: 0.5pt + luma(70%),
+    fill: luma(97%),
+    align(center + horizon)[
+      #set text(size: 10pt, fill: luma(40%))
+      #set par(first-line-indent: 0em, justify: false)
+      Espaço reservado para figura
+
+      #descricao
+    ],
+  ),
+  title: titulo,
+  source: [A definir na inserção da figura.],
+)
 
 == Princípio de funcionamento e ciclo de operação da SGTC
 
+Na SGTC clássica, uma fonte de alta tensão carrega o capacitor primário, cuja
+descarga é chaveada pelo centelhador. O primário tem poucas espiras de condutor
+de maior seção, e o secundário, muitas espiras de fio fino sobre um suporte
+isolante. O terminal metálico superior e as capacitâncias distribuídas do
+enrolamento participam da ressonância do secundário @wasatonic2013.
+
+Enquanto o centelhador está aberto, a fonte carrega o capacitor. Quando a tensão
+entre os eletrodos provoca a ruptura dielétrica do ar, forma-se um caminho
+condutor que fecha a malha do capacitor com o enrolamento primário. A descarga
+oscilatória nessa malha é o mecanismo de excitação descrito por
+#cite(<tesla1891-lighting>, form: "prose"). A @fig-circuito-sgtc indica as
+ligações correspondentes às etapas de carga e de condução.
+
+#figura-prevista(
+  [Circuito de princípio da SGTC nas etapas de carga do capacitor e condução do centelhador],
+  [Esquema em dois painéis: fonte de alta tensão, capacitor primário, centelhador, enrolamentos acoplados, terminal capacitivo e referência de terra; destacar o caminho de corrente em cada etapa.],
+) <fig-circuito-sgtc>
+
+Durante a condução, a energia oscila entre os campos elétricos e magnéticos dos
+circuitos. O acoplamento transfere energia ao secundário ao longo de vários
+ciclos. Na condição de sintonia, a envoltória da tensão secundária cresce
+inicialmente enquanto a das oscilações primárias diminui. Se o centelhador
+continuar conduzindo, parte da energia retorna ao primário. Os dois modos do
+conjunto produzem batimentos, com redução progressiva da energia total pelas
+perdas nos componentes e no centelhador. Quando a tensão secundária inicia
+descargas no ar, essas descargas também retiram energia do ressonador
+@queiroz2006.
+
+A interrupção da condução é denominada extinção, ou _quenching_. A abertura da
+malha em um mínimo de energia no primário impede o retorno da energia por esse
+circuito; na descrição idealizada, a energia remanescente decai no secundário.
+Para que a condução cesse, a corrente precisa deixar de sustentar a descarga
+e o meio entre os eletrodos deve recuperar capacidade isolante suficiente para
+evitar a reignição. Isso pode ocorrer depois do primeiro mínimo
+@burnett-quenching. Com o centelhador novamente aberto, o capacitor primário
+volta a ser carregado, permitindo outro disparo.
+
+No centelhador estático, a taxa de repetição depende da tensão aplicada, da
+capacitância primária e das condições de ruptura do ar. Cada disparo inicia
+um transitório com vários ciclos de alta frequência. A taxa de disparos,
+as frequências dessas oscilações e a frequência da alimentação são grandezas
+distintas. Observar a repetição das descargas não basta para determinar as
+frequências naturais ou o amortecimento dos circuitos.
+
 == Comparação entre SGTC, SSTC e DRSSTC
+
+SGTC, SSTC e DRSSTC diferem pelo acionamento e pela presença de um tanque
+ressonante no primário, conforme os circuitos da
+@fig-circuitos-topologias e a comparação do @quadro-topologias. Na SGTC, a
+energia de cada transitório é acumulada no capacitor antes do disparo. O
+centelhador fecha a malha de descarga, e sua condução depende das condições
+de manutenção e extinção do arco. No rotativo, a posição dos eletrodos também
+determina os instantes em que o disparo pode ocorrer; a duração da condução
+continua sem controle eletrônico independente.
+
+Na SSTC, uma ponte de semicondutores alimentada por um barramento contínuo
+aplica tensão alternada ao primário, com frequência escolhida em função da
+ressonância do secundário. Na configuração de ressonância simples, não há
+capacitor dimensionado para formar um tanque com o primário. Um capacitor
+usado apenas para bloquear a componente contínua não exerce essa função.
+
+A DRSSTC tem um capacitor de tanque em série com o primário e recebe energia
+do barramento durante os ciclos de acionamento. A realimentação de corrente
+permite acompanhar a oscilação e comutar próximo das passagens por zero da
+corrente. O sinal de interrupção define os intervalos de excitação e sua
+repetição, limitando o tempo de crescimento da corrente no tanque. A SGTC e a
+DRSSTC têm, assim, dois ressonadores, excitados sob condições diferentes: na
+primeira, o transitório parte da descarga do capacitor; na segunda, a ponte
+continua fornecendo energia durante o acionamento.
+
+#figura-prevista(
+  [Circuitos de acionamento das topologias SGTC, SSTC e DRSSTC],
+  [Três esquemas com o mesmo secundário: descarga por centelhador, ponte eletrônica sem tanque primário e ponte eletrônica com capacitor de tanque em série. Identificar a função de cada capacitor.],
+) <fig-circuitos-topologias>
+
+#[
+  #set text(size: 10pt)
+  #set par(leading: 0.35em, spacing: 0em, first-line-indent: 0em, justify: false)
+  #set table(inset: 5pt)
+  #abnt-quadro(
+    title: [Comparação dos princípios de acionamento de SGTC, SSTC e DRSSTC],
+    source: [Elaborado pelo autor, com base em #cite(<wasatonic2013>, form: "prose").],
+    columns: (0.19fr, 0.27fr, 0.27fr, 0.27fr),
+    align: left + top,
+    table.header([Aspecto], [SGTC], [SSTC], [DRSSTC]),
+    [Chaveamento],
+    [Centelhador estático ou rotativo.],
+    [Ponte de semicondutores.],
+    [Ponte de semicondutores.],
+    [Tanque ressonante primário],
+    [Presente.],
+    [Ausente na configuração de ressonância simples.],
+    [Presente.],
+    [Fornecimento de energia],
+    [Capacitor carregado antes do disparo.],
+    [Barramento contínuo durante o acionamento.],
+    [Barramento contínuo durante o acionamento do tanque.],
+    [Temporização],
+    [Vinculada à carga e à ruptura do centelhador; o rotativo também impõe instantes de aproximação dos eletrodos.],
+    [Definida pelo circuito de acionamento e por eventual interrupção.],
+    [Intervalos de excitação e repetição definidos pelo controle eletrônico.],
+    [Limitações do acionamento],
+    [Perdas no centelhador e dificuldade de controlar sua extinção.],
+    [Esforços nos semicondutores e adequação da frequência de excitação.],
+    [Corrente crescente no tanque, exigindo controle e proteção dos semicondutores.],
+  ) <quadro-topologias>
+]
+
+O projeto de #cite(<obeidat2023>, form: "prose") emprega ponte completa,
+realimentação e interrupção programada em uma DRSSTC. Já
+#cite(<wasatonic2013>, form: "prose") compara o acionamento eletrônico
+duplamente ressonante com um centelhador rotativo no mesmo ressonador. Nessa
+comparação, a relação entre comprimento de descarga e alimentação dependeu
+da duração e da repetição dos pulsos. Os resultados se aplicam às condições
+ensaiadas, sem estabelecer uma vantagem fixa de uma topologia. A construção
+deste trabalho se restringe à SGTC; SSTC e DRSSTC são tratadas na revisão
+bibliográfica.
 
 == Ressonância, sintonia e acoplamento magnético
 
+Em um RLC série com parâmetros constantes, a ressonância de corrente ocorre
+quando as reatâncias indutiva e capacitiva se cancelam. A frequência depende
+do produto entre indutância e capacitância
+#cite(<terman1943>, supplement: [p. 135-136]). Para o primário e o secundário
+considerados separadamente,
+
+$
+  f_(0 p) = 1 / (2 pi sqrt(L_p C_p)),
+  quad
+  f_(0 s) = 1 / (2 pi sqrt(L_s C_s)),
+$ <eq-frequencias-desacopladas>
+
+em que $p$ e $s$ identificam primário e secundário. $L_p$ e $L_s$ são as
+indutâncias, $C_p$ é a capacitância primária e $C_s$ é a capacitância equivalente
+do secundário. Essas são também as frequências naturais não amortecidas de
+cada RLC isolado. A sintonia nominal corresponde a
+$f_(0 p) = f_(0 s) = f_0$, ou $L_p C_p = L_s C_s$.
+
+O acoplamento magnético depende da indutância mútua $M$, que relaciona a
+variação de corrente em um enrolamento à tensão induzida no outro. Define-se
+o coeficiente de acoplamento por
+
+$ k = abs(M) / sqrt(L_p L_s). $ <eq-coeficiente-acoplamento>
+
+Adota-se $0 <= k < 1$; o sinal dos termos de indutância mútua nas equações
+depende dos sentidos dos enrolamentos e das referências de corrente. A posição
+relativa das bobinas altera $M$ e $k$. O deslocamento vertical do primário
+permite, portanto, variar o acoplamento. A sintonia precisa ser verificada
+em cada posição, pois a alteração mecânica não assegura a igualdade dos
+produtos LC.
+
+Com os circuitos acoplados, as oscilações livres pertencem aos modos do
+conjunto. No caso sem perdas, com sintonia exata e $k > 0$, a condição de
+oscilação obtida da resposta de circuitos acoplados de
+#cite(<terman1943>, form: "prose", supplement: [p. 149-155]) fornece
+
+$
+  f_(-) = f_0 / sqrt(1 + k),
+  quad
+  f_(+) = f_0 / sqrt(1 - k).
+$ <eq-modos-sintonizados>
+
+Os índices $-$ e $+$ indicam os modos de menor e maior frequência. O aumento
+de $k$ amplia sua separação, e ambos tendem a $f_0$ quando $k$ tende a zero,
+como previsto na @fig-separacao-modal. Com dessintonia, as frequências dependem
+dos dois produtos LC, e a @eq-modos-sintonizados deixa de se aplicar. Nesse
+caso, a separação pode persistir mesmo sem acoplamento.
+
+#figura-prevista(
+  [Frequências dos modos naturais de dois circuitos sintonizados em função do coeficiente de acoplamento],
+  [Gráfico teórico de f−/f₀ e f+/f₀ em função de k, no caso sem perdas. Indicar a frequência desacoplada e a separação entre os ramos; não incluir dados experimentais.],
+) <fig-separacao-modal>
+
+As frequências naturais sem perdas, as frequências amortecidas e os picos
+de resposta forçada têm definições distintas. As perdas e o circuito de
+excitação alteram a resposta em frequência e podem dificultar a resolução de
+dois picos. Na comparação experimental, a previsão e a grandeza extraída do
+sinal devem corresponder à mesma definição e à mesma configuração de ensaio.
+
 == Transferência de energia, batimentos e dissipação
+
+Para analisar um disparo, admitem-se correntes iniciais nulas nos enrolamentos,
+secundário descarregado e tensão $V_0$ no capacitor primário. A energia inicial
+é
+
+$ E_0 = 1 / 2 C_p V_0^2. $ <eq-energia-inicial>
+
+Com a malha primária fechada, essa energia se distribui entre os campos
+elétricos e magnéticos dos circuitos. A transferência pode se inverter e
+devolver energia ao primário, como descreve #cite(<queiroz2006>, form: "prose").
+A energia de um ressonador pode diminuir enquanto a do outro aumenta; a
+dissipação, por sua vez, reduz a energia total.
+
+A superposição dos modos permite interpretar os batimentos. Pela identidade
+trigonométrica
+
+$
+  cos(omega_(-) t) - cos(omega_(+) t)
+  = 2 sin(((omega_(+) + omega_(-)) t) / 2)
+      sin(((omega_(+) - omega_(-)) t) / 2)
+$ <eq-identidade-batimentos>
+
+uma oscilação rápida é multiplicada por um fator de variação lenta, com
+$omega_(-) = 2 pi f_(-)$ e $omega_(+) = 2 pi f_(+)$. Essa forma descreve a
+resposta ideal sintonizada com energia inicial no primário. No caso geral,
+a envoltória depende também das amplitudes, fases e taxas de amortecimento
+dos modos. Os mínimos de uma tensão medida não indicam, por si só, que a
+energia total tenha sido dissipada. A @fig-batimentos-energia relaciona as
+oscilações ao balanço de energia.
+
+#figura-prevista(
+  [Batimentos e transferência de energia entre os circuitos primário e secundário],
+  [Painéis com tensões e suas envoltórias, energias dos ressonadores e energia total, contabilizando o termo mútuo. Distinguir a troca entre circuitos da redução da energia total por perdas. Curvas ilustrativas do modelo, sem dados medidos.],
+) <fig-batimentos-energia>
+
+Para dois RLC acoplados com parâmetros constantes, sem fornecimento externo
+de energia e com perdas representadas por resistências série $R_p$ e $R_s$,
+o balanço energético das equações de malha resulta em
+
+$
+  (upright(d) W) / (upright(d) t)
+  = -R_p i_p^2 - R_s i_s^2,
+$ <eq-balanco-energia>
+
+em que $W$ inclui a energia elétrica dos capacitores e a energia magnética,
+com a contribuição da indutância mútua. As correntes são $i_p$ e $i_s$.
+O termo à direita representa as perdas resistivas e deve ser compatível com
+a variação da energia calculada na simulação. Descargas ativas e resistência
+variável do centelhador exigiriam termos adicionais ao modelo linear.
+
+Se toda a energia inicial fosse armazenada em $C_s$ em um mesmo instante,
+a conservação da energia imporia o limite
+
+$
+  abs(V_s)_max <= abs(V_0) sqrt(C_p / C_s)
+  = abs(V_0) sqrt(L_s / L_p),
+$ <eq-limite-tensao>
+
+sendo a última igualdade válida para $L_p C_p = L_s C_s$. O transitório
+pode atingir um valor inferior, conforme a relação entre os modos e as perdas.
+Na operação com descargas, o carregamento do secundário e a extinção do
+centelhador também alteram a resposta. O limite da @eq-limite-tensao não
+determina diretamente o comprimento de descarga.
 
 == Amortecimento e fator de qualidade
 
+A análise do amortecimento exige distinguir o decaimento de um ressonador
+da resposta dos modos acoplados. Essa distinção orienta a estimação do fator
+de qualidade e a escolha do modelo de ajuste. Em ambas as configurações,
+o carregamento introduzido pela medição participa das perdas observadas.
+
+=== Resposta livre de um ressonador
+
+Uma resistência equivalente pode representar as perdas do ressonador em uma
+faixa limitada de frequência. Além da resistência em corrente contínua,
+participam os efeitos pelicular e de proximidade, que alteram a distribuição
+da corrente no enrolamento. A radiação, o ambiente e o carregamento externo
+também afetam o decaimento observado @craven2014. O valor equivalente depende,
+portanto, do modo e da configuração.
+
+Para um RLC série subamortecido com parâmetros constantes, a resposta livre
+de tensão ou corrente tem a forma
+
+$ x(t) = A_0 e^(-alpha t) cos(omega_d t + phi), $ <eq-decaimento-livre>
+
+com
+
+$
+  omega_0 = 1 / sqrt(L C),
+  quad alpha = R / (2 L),
+  quad omega_d = sqrt(omega_0^2 - alpha^2).
+$ <eq-parametros-decaimento>
+
+As condições iniciais determinam $A_0$ e $phi$. A taxa $alpha$ descreve o
+decaimento da amplitude, $omega_0$ é a frequência angular natural não
+amortecida e $omega_d$ é a frequência angular amortecida. A condição
+$alpha < omega_0$ caracteriza o regime subamortecido. Definindo o fator de
+qualidade do RLC série como a razão entre a reatância indutiva na ressonância
+e a resistência total #cite(<terman1943>, supplement: [p. 135-136, 139]),
+
+$ Q = (omega_0 L) / R = omega_0 / (2 alpha). $ <eq-q-amortecimento>
+
+Quanto maior Q, mais lento é o decaimento em relação ao período de oscilação.
+A constante de tempo da amplitude é $tau_A = 1 / alpha$. Como a energia
+depende do quadrado das tensões e correntes, sua envoltória decai, no regime
+de perdas pequenas, com constante de tempo aproximadamente igual a
+$tau_E = 1 / (2 alpha)$. A estimação de Q deve distinguir esses dois
+decaimentos.
+
+=== Estimativa por decaimento livre e carregamento da medição
+
+No _ring-down_, observa-se a resposta após retirar a excitação. Quando um
+único modo domina o sinal, pode-se estimar $alpha$ ajustando a envoltória da
+@eq-decaimento-livre ou calculando o decréscimo logarítmico. Para módulos de
+picos de mesmo sinal $A_j$ e $A_(j+N)$, separados por $N$ períodos completos,
+
+$
+  delta = 1 / N ln(A_j / A_(j+N)) = alpha T_d,
+  quad T_d = (2 pi) / omega_d.
+$ <eq-decremento-logaritmico>
+
+A combinação da @eq-parametros-decaimento com a @eq-q-amortecimento e a
+@eq-decremento-logaritmico fornece
+
+$ Q = sqrt(1 / 4 + (pi / delta)^2) approx pi / delta, $ <eq-q-decremento>
+
+em que a aproximação exige amortecimento pequeno. A expressão exata conserva
+a diferença entre $omega_0$ e $omega_d$. A @fig-ringdown indica os elementos
+necessários à leitura do decaimento.
+
+#figura-prevista(
+  [Resposta de decaimento livre e parâmetros utilizados na estimação do fator de qualidade],
+  [Senoide amortecida com envoltórias ±A₀ exp(−αt), período T_d e dois picos de mesmo sinal separados por N períodos. Indicar uma janela de ajuste e a região dominada pelo ruído. Ilustração, não medição do protótipo.],
+) <fig-ringdown>
+
+No domínio da frequência, Q pode ser estimado pela razão entre a frequência
+central e a largura de banda de meia potência, desde que a ressonância esteja
+suficientemente isolada e a resposta seja compatível com esse modelo.
+#cite(<craven2014>, form: "prose") emprega esse método e medições por carta
+de Smith, considerando a influência do gerador e das conexões. O resultado
+inclui o carregamento do arranjo de ensaio. Retirar a excitação no _ring-down_
+reduz uma fonte de carregamento, mas os efeitos do sensor, das conexões e do
+ambiente permanecem.
+
+Neste trabalho, $Q_s$ será o fator de qualidade do secundário medido com a
+malha primária aberta, sob o carregamento residual do ensaio. A janela de
+ajuste deve conter um trecho compatível com o decaimento de um único modo.
+A presença de outras oscilações ou do ruído ao fim do sinal pode comprometer
+a estimativa.
+
+=== Amortecimento dos modos acoplados
+
+Com a malha primária fechada, as perdas dos dois circuitos contribuem para os
+polos do sistema acoplado. Para o par complexo conjugado de cada modo $r$,
+definem-se
+
+$
+  s_r^(plus.minus) = -alpha_r plus.minus j omega_(d,r),
+  quad
+  Q_r = sqrt(alpha_r^2 + omega_(d,r)^2) / (2 alpha_r),
+$ <eq-q-modal>
+
+em que $r$ identifica o modo inferior ou superior, $alpha_r > 0$ e $j^2 = -1$.
+O fator $Q_r$ é definido pela razão de amortecimento do par de polos. Em geral,
+$Q_(-)$ e $Q_(+)$ diferem de $Q_s$ e dos fatores dos RLC isolados. Os batimentos
+da resposta acoplada também impedem ajustar sua envoltória completa por uma
+única exponencial de perdas. A caracterização modal exige um ajuste que
+considere a superposição; o _ring-down_ do secundário será analisado com a
+malha primária aberta.
+
 == Capacitância própria, terminal capacitivo e influência do ambiente
 
-A capacitância do ressonador secundário inclui as contribuições do enrolamento,
-do terminal capacitivo superior (_top-load_) e do ambiente @denicolai2001.
+As capacitâncias do secundário estão distribuídas entre espiras, terminal
+e objetos próximos. Como o potencial varia ao longo do enrolamento, o valor
+equivalente $C_s$ depende do modo e das condições de contorno. Ele não é
+necessariamente a soma das capacitâncias das partes medidas isoladamente.
+
+O terminal superior, ou _top-load_, acrescenta capacitância e modifica o campo
+elétrico na extremidade da bobina. Para uma mesma indutância equivalente,
+o aumento de capacitância reduz a frequência natural. A forma e os raios de
+curvatura do terminal também afetam o início de corona e de descargas, efeitos
+discutidos por #cite(<craven2014>, form: "prose"). O ponto de descarga
+(_breakout_) concentra o campo em uma região definida. Sua instalação altera
+a geometria e deve ser registrada tanto na caracterização sem descargas como
+na operação funcional.
+
+Para pequenas variações de capacitância e indutância constante, a
+diferenciação da @eq-frequencias-desacopladas fornece
+
+$ (Delta f_(0 s)) / f_(0 s) approx -1 / 2 (Delta C_s) / C_s. $ <eq-sensibilidade-capacitancia>
+
+A relação é válida dentro da aproximação LC; mudanças na distribuição dos
+campos também podem alterar os parâmetros efetivos. No ressonador estudado
+por Voitkāns e Voitkāns (#cite(<voitkans2014>, form: "year")), a frequência
+fundamental passou de 1,635 MHz sem carga adicionada para 1,362 MHz com uma
+esfera de capacitância declarada de 3,62 pF. Os autores observaram influência
+mesmo ao conectar capacitâncias da ordem de 1 pF, o que limita a medição
+direta por sondas.
+
+A altura em relação ao plano de referência, a proximidade de condutores e a
+posição da instrumentação fazem parte da configuração elétrica do ensaio.
+Essas condições devem ser mantidas ou registradas nas comparações. Uma sonda
+pode deslocar a frequência e introduzir perdas, mesmo com alta resistência
+de entrada, devido ao carregamento capacitivo.
+
+O JavaTC define a capacitância efetiva com as contribuições distribuídas
+referidas ao terminal @javatc-ces. A documentação também distingue a indutância
+medida em baixa frequência da indutância série efetiva em ressonância, que
+considera a corrente não uniforme no enrolamento @javatc-les. Assim, calcular
+$C_s$ com uma frequência medida e uma indutância de baixa frequência não
+assegura equivalência com a capacitância fornecida pela ferramenta. A
+comparação entre cálculo e medição exige definições compatíveis dos parâmetros.
 
 == Modelos concentrados e distribuídos
 
-== Síntese crítica dos trabalhos correlatos
+O modelo concentrado descreve a SGTC por duas malhas RLC acopladas pela
+indutância mútua. O centelhador em condução é substituído por uma ligação que
+fecha a malha primária, e as perdas são reunidas em parâmetros equivalentes.
+As cargas dos dois capacitores e as correntes dos enrolamentos formam quatro
+variáveis de estado. O sistema tem ordem quatro e pode apresentar dois pares
+de polos complexos conjugados.
 
-== Posicionamento e contribuição deste trabalho
+Essa descrição permite calcular os transitórios e os parâmetros modais sem
+resolver a distribuição espacial do campo. Nos modelos distribuídos, tensão
+e corrente dependem também da posição. O enrolamento pode ser dividido em
+seções com indutâncias e capacitâncias, incluindo interações entre elas,
+ou aproximado por uma linha de transmissão. A @fig-modelos-secundario
+contrapõe essas representações e indica as contribuições do terminal e do
+ambiente.
+
+#figura-prevista(
+  [Representações concentrada e distribuída do secundário e suas contribuições capacitivas],
+  [Comparar um RLC equivalente com um enrolamento dividido em seções. Indicar capacitâncias entre espiras, para o terminal e para o ambiente, além de perfis qualitativos de tensão e corrente no modo fundamental.],
+) <fig-modelos-secundario>
+
+Denicolai (#cite(<denicolai2001>, form: "year")) obtém parâmetros equivalentes
+a partir da distribuição de corrente e potencial do secundário.
+Craven (#cite(<craven2014>, form: "year")) investiga modos superiores e
+alterações no sentido de enrolamento com modelos espaciais. Sua análise
+também relaciona a aplicabilidade do modelo concentrado ao carregamento
+capacitivo e à frequência de operação em relação às ressonâncias do
+enrolamento. Voitkāns e Voitkāns (#cite(<voitkans2014>, form: "year"))
+adotam uma linha monocondutora equivalente, inicialmente homogênea e sem
+perdas, e comparam ressonâncias e distribuições de tensão com medições.
+
+Os modos superiores do secundário têm distribuições espaciais diferentes
+das do modo fundamental, podem existir com a malha primária aberta e não
+precisam ter frequências múltiplas inteiras da fundamental. Eles diferem do
+par $f_(-)$ e $f_(+)$, que decorre da interação entre os dois ressonadores na
+faixa considerada. Vários picos em um espectro podem, portanto, ter origens
+distintas.
+
+Neste trabalho, o modelo concentrado será avaliado na faixa de frequência
+e nas configurações ensaiadas. As descrições distribuídas auxiliarão a
+discussão das discrepâncias, sem validação espacial do enrolamento. A
+concordância na fundamental não assegura concordância nos modos superiores,
+com outro terminal ou na operação com descargas.
 
 = Metodologia
 
