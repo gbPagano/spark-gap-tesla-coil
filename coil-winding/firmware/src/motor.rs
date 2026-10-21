@@ -1,12 +1,9 @@
 //! Motor em tarefa Embassy: esperas de período assíncronas, sem pausa periódica.
 
 use crate::telemetry::Telemetry;
+use coil_winding_firmware::api::Snapshot;
 use coil_winding_firmware::control::{
     next_deadline_us, Action, ControlState, Direction, Motion, Phase,
-};
-use coil_winding_firmware::{
-    api::Snapshot,
-    counting::{RunTimer, TurnCounter},
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, signal::Signal};
 use embassy_time::{Duration, Instant, Timer};
@@ -65,11 +62,12 @@ pub async fn run(
     commands: &'static Commands,
     status: &'static Status,
     telemetry: &'static Telemetry,
+    initial: Snapshot,
 ) {
     let mut motion = Motion::default();
     let mut last_status = None;
-    let mut counter = TurnCounter::new();
-    let mut run_timer = RunTimer::new();
+    let mut counter = initial.counter;
+    let mut run_timer = initial.run_timer;
 
     spindle.set_direction(Direction::Clockwise);
     spindle.enable.set_low(); // Energizado, mas inicia sem emitir passos.

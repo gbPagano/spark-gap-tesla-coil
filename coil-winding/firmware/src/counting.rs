@@ -11,8 +11,13 @@ pub struct TurnCounter {
 
 impl TurnCounter {
     pub const fn new() -> Self {
+        Self::with_initial_steps(0)
+    }
+
+    /// Saldo anterior informado pelo operador; percurso conta só os novos pulsos.
+    pub const fn with_initial_steps(net_steps: i64) -> Self {
         Self {
-            net_steps: 0,
+            net_steps,
             total_steps: 0,
         }
     }
@@ -44,8 +49,13 @@ pub struct RunTimer {
 
 impl RunTimer {
     pub const fn new() -> Self {
+        Self::with_initial_elapsed_us(0)
+    }
+
+    /// Começa parado, preservando o tempo de movimento de uma sessão anterior.
+    pub const fn with_initial_elapsed_us(accumulated_us: u64) -> Self {
         Self {
-            accumulated_us: 0,
+            accumulated_us,
             running_since_us: None,
         }
     }

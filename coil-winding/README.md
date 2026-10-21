@@ -61,7 +61,8 @@ bootloader usado pelo `espflash`.
 - O saldo de pulsos e o percurso total nos dois sentidos são mantidos
   internamente, mas não são expostos no JSON.
   A contagem fica preservada ao pausar ou perder o Wi-Fi. Reiniciar/desenergizar
-  a ESP zera a contagem: **não há persistência nem endpoint de zerar** nesta etapa.
+  a ESP restaura os valores iniciais configurados no build (zero por padrão):
+  **não há persistência nem endpoint de zerar** nesta etapa.
 - É uma **estimativa**, não medição: perdas de passos, folgas, acoplamento
   escorregando ou fio rompido não são detectados. O retorno HTTP nunca confirma
   que as espiras foram efetivamente depositadas.
@@ -110,7 +111,8 @@ Exemplo **ilustrativo**, com uma volta para frente e um quarto de volta de retor
   não o tempo ligado. Inclui aceleração, desaceleração e os dois sentidos;
   congela parado, inclusive com play ativo e potenciômetro em zero. Retomar
   continua a soma, preservando frações de segundo entre pausas. Reiniciar a
-  placa zera o tempo. Sem sensor, ele não detecta motor fisicamente travado.
+  placa restaura o tempo inicial configurado (zero por padrão). Sem sensor,
+  ele não detecta motor fisicamente travado.
   O snapshot é atualizado
   após cada STEP e mudança de estado; não há velocidade medida ou idade do
   snapshot na resposta HTTP.
@@ -378,6 +380,38 @@ Em outra placa, ajuste `--flash-size` em `.cargo/config.toml` ao tamanho real.
 Logs e mensagens de panic saem pela USB-Serial-JTAG nativa (GPIO19/20), não
 pela UART TX/RX. A compilação não grava a placa; `cargo run` grava.
 
+### Retomar voltas e tempo de uma sessão anterior
+
+As variáveis opcionais **`COIL_INITIAL_TURNS`** e **`COIL_INITIAL_UPTIME_S`**
+definem os valores de partida do firmware. Exemplo: retomar com **350,75 voltas**
+e **1 hora de movimento acumulado**, a partir de `coil-winding/firmware`:
+
+```sh
+export COIL_INITIAL_TURNS='350.75'
+export COIL_INITIAL_UPTIME_S='3600'
+cargo run --release --locked # com WIFI_SSID/WIFI_PASSWORD também no ambiente
+```
+
+- São valores de **build**, não parâmetros enviados pela API. Fornecê-los também
+  ao `cargo run`, mesmo se já foram usados no `cargo build`; mudanças ou remoção
+  das variáveis provocam recompilação pelo Cargo.
+- Cada variável ausente vale **zero**, independentemente da outra. Para voltar
+  ao início, usar `unset COIL_INITIAL_TURNS COIL_INITIAL_UPTIME_S` e recompilar/gravar.
+- Voltas aceitam sinal e frações com **ponto decimal**; o valor é arredondado
+  uma única vez ao pulso mais próximo (1/6400 de volta na configuração atual).
+  O saldo inicial deve caber no contador `i64` de pulsos. O percurso total dos
+  logs continua contando apenas os pulsos emitidos desde o boot atual.
+- Tempo aceita **segundos inteiros não negativos**, até 18.446.744.073.709 s
+  (limite do contador interno em microssegundos); não aceita `hh:mm:ss`.
+- Valores vazios, inválidos, não finitos ou fora dos limites impedem a
+  inicialização, antes de habilitar o driver. Não são substituídos por zero.
+- A placa continua **iniciando parada**. A API, o CSV e o painel já recebem os
+  totais incluindo os valores iniciais; novas voltas e tempo de movimento
+  acumulam normalmente, sem contar o tempo parado.
+- **Não há salvamento automático:** todo reset reaplica os mesmos valores
+  gravados no firmware. Para outra retomada, atualizar os dois totais conforme
+  necessário e recompilar/gravar. Conferir a contagem física antes de continuar.
+
 ## Testes no computador
 
 ```sh
@@ -387,7 +421,7 @@ cargo fmt --check
 WIFI_SSID='compile-check' WIFI_PASSWORD='compile-only-not-secret' cargo clippy --release --locked -- -D warnings
 ```
 
-Os 57 testes cobrem boot parado, rampas por tempo, seleção de velocidade,
+Os 64 testes cobrem boot parado, rampas por tempo, seleção de velocidade,
 potenciômetro em zero, pausa/inversão com mudanças de velocidade, limite de
 RPM, comandos coalescidos, prazos, debounce, rejeição de picos, leitura inicial
 e histerese nas fronteiras de todos os valores de RPM, sem perder ajustes de 1 rpm.
@@ -395,6 +429,8 @@ Incluem contagem líquida/negativa, frações, rampas de parada, saturação dos
 contadores, JSON e o handler HTTP com requisições fragmentadas, inválidas,
 grandes, métodos de escrita e escritas parciais. Um teste também usa TCP real
 em loopback e consulta avanço/retorno sobre o mesmo handler.
+Incluem valores iniciais opcionais, frações e sinais nas voltas, retomada do
+tempo sem contar pausas, valores inválidos e limites dos contadores.
 
 Os testes do host não precisam de credenciais Wi-Fi. Build e teste local TCP
 não comprovam associação ao roteador, DHCP na placa ou ausência de jitter
@@ -451,7 +487,8 @@ de hub, prefira um hub USB 2.0 alimentado e cabo de dados curto e bom.
 - Faixa atual de 0–60 rpm pelo potenciômetro; sem realimentação de velocidade.
   O ADC não distingue todos os defeitos de cursor/fiação de uma posição válida.
 - Sem fim de curso, contagem persistente, avanço ou encoder. Contagem estimada
-  com sinal, zerada a cada reinício, não confirmação física de espiras.
+  com sinal, restaurada aos valores iniciais do build a cada reinício (zero por
+  padrão), não confirmação física de espiras.
 - Os pulsos ainda são emitidos por software: timers assíncronos eliminam a
   pausa artificial, mas interrupções, executor e logs podem introduzir jitter.
   Se perder um prazo inteiro, o próximo é reagendado sem recuperar em rajada.
@@ -494,6 +531,7 @@ coil-winding/
         ├── potentiometer.rs # ADC não bloqueante no GP1
         ├── speed.rs    # filtro, histerese, mapeamento ADC/RPM e testes
         ├── counting.rs # saldo e percurso em pulsos, sem arredondar frações
+        ├── startup.rs  # valida valores iniciais de voltas e tempo para retomada
         ├── api.rs      # snapshot e JSON do estado estimado
         ├── http.rs     # parser httparse e atendimento HTTP assíncrono limitado
         ├── http_tcp_tests.rs # teste do handler em TCP local

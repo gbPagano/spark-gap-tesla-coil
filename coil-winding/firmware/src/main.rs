@@ -86,6 +86,15 @@ async fn main(spawner: Spawner) {
     let enable = Output::new(peripherals.GPIO6, Level::High, OutputConfig::default());
     let spindle = StepDirMotor::new(step, dir, enable);
 
+    // Valida antes de habilitar o driver. option_env! faz o Cargo acompanhar
+    // mudanças das variáveis, inclusive quando voltam a ficar ausentes.
+    let initial = coil_winding_firmware::startup::initial_snapshot(
+        option_env!("COIL_INITIAL_TURNS"),
+        option_env!("COIL_INITIAL_UPTIME_S"),
+    )
+    .expect("valores iniciais invalidos");
+    telemetry::TELEMETRY.lock(|value| value.set(initial));
+
     let sw_int = SoftwareInterruptControl::new(peripherals.SW_INTERRUPT);
     let timg0 = TimerGroup::new(peripherals.TIMG0);
     esp_rtos::start(timg0.timer0, sw_int.software_interrupt0);
@@ -112,7 +121,7 @@ async fn main(spawner: Spawner) {
     ));
     motor_executor
         .start(Priority::Priority2)
-        .spawn(motor::run(spindle, &COMMANDS, &STATUS, &telemetry::TELEMETRY).unwrap());
+        .spawn(motor::run(spindle, &COMMANDS, &STATUS, &telemetry::TELEMETRY, initial).unwrap());
     spawner.spawn(network::run(peripherals.WIFI, spawner).unwrap());
 
     // Tarefa dos botões: estado desejado independente do sentido físico atual.

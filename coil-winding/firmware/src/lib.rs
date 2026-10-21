@@ -10,6 +10,7 @@ pub mod counting;
 pub mod debounce;
 pub mod http;
 pub mod speed;
+pub mod startup;
 
 #[cfg(test)]
 mod http_tcp_tests;
