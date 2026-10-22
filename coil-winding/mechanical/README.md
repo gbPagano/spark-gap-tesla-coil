@@ -5,6 +5,11 @@ ao enrolamento e acionamento por motor NEMA 17HD48002-24B.
 
 ![Vista isométrica da enroladora do secundário no FreeCAD](coil-winding.png)
 
+O [timelapse do enrolamento](../winding-timelapse.mp4) mostra o protótipo
+montado em operação, com o tubo apoiado nos berços. É um registro visual, não
+uma conferência dimensional do CAD nem uma validação das peças: o acoplamento,
+o eixo e as retenções da R02 continuam experimentais.
+
 ## Arquivos
 
 - [`coil-winding.FCStd`](coil-winding.FCStd): modelo

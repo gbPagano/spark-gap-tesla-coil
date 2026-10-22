@@ -213,6 +213,16 @@ Conferir diâmetro externo do tubo e medidas do motor antes das peças finais.
 
 ![Vista isométrica da enroladora do secundário no FreeCAD](mechanical/coil-winding.png)
 
+## Registro em vídeo
+
+O [timelapse do enrolamento do secundário](winding-timelapse.mp4) reúne quatro
+gravações de bancada, aceleradas 20× e sem áudio, com 1 min 17 s. Os cortes
+omitem preparação, pausas e ajustes. É um registro visual da operação; não
+confirma a contagem de espiras nem substitui a conferência física.
+
+O arquivo é H.265/HEVC em 1080p, versionado pelo Git LFS. Alguns reprodutores
+podem exigir suporte a esse codec.
+
 ## Hardware previsto
 
 | Item           | Referência                                        |
@@ -238,8 +248,6 @@ Conferir diâmetro externo do tubo e medidas do motor antes das peças finais.
 - No ESP32-S3, evitar GPIO 0, 3, 45 e 46 (strap), 19/20 (USB-Serial-JTAG)
   e 26–37 (flash/PSRAM). Na Super Mini, GP0 é o botão BOOT e GP48 é o LED RGB
   WS2812 — nenhum dos dois se usa aqui.
-- Ligação completa com o DRV8825 (potência, RST/SLP, VREF, motor):
-  [`wiring-drv8825.md`](wiring-drv8825.md).
 - No A4988, manter RESET e SLEEP interligados (ou em nível alto).
 
 ### Botões
@@ -467,9 +475,9 @@ de hub, prefira um hub USB 2.0 alimentado e cabo de dados curto e bom.
 
 ## Antes do primeiro ensaio mecânico
 
-- Ajustar a corrente do driver ANTES de rodar (fórmulas em
-  `wiring-drv8825.md`): DRV8825 → `VREF ≈ 0,5 × I`; A4988 → `VREF ≈ 0,8 × I`
-  (ambos com Rs = 0,1 Ω). Sem dissipador extra, limitar a ~1,0–1,2 A.
+- Ajustar a corrente do driver ANTES de rodar: DRV8825 → `VREF ≈ 0,5 × I`;
+  A4988 → `VREF ≈ 0,8 × I` (ambos com Rs = 0,1 Ω). Sem dissipador extra,
+  limitar a ~1,0–1,2 A.
 - Conferir `MICROSTEPS = 32` em `firmware/src/control.rs` e os jumpers do
   DRV8825: por exemplo M0 = 3V3, M1 = GND e M2 = 3V3. Alterar a constante não
   muda os jumpers. Fazer mudanças com a alimentação desligada.
