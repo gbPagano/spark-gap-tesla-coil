@@ -31,11 +31,11 @@
 
 Este trabalho aborda o projeto e a construção de uma bobina de Tesla com
 centelhador e a validação experimental de seu modelo de circuitos ressonantes
-acoplados. O estudo incluirá a operação do protótipo com acionamento pelo
-centelhador e produção de descargas elétricas no secundário. Em uma etapa
-distinta, serão realizados ensaios de caracterização em baixa energia, sem
-descargas no secundário, para comparar os valores previstos e medidos das
-frequências naturais e do amortecimento.
+acoplados. Para avaliar o modelo, serão realizados ensaios de caracterização
+em baixa energia, sem descargas no secundário, nos quais serão comparados os
+valores previstos e medidos das frequências naturais e do amortecimento.
+Em uma etapa distinta, o protótipo será operado com acionamento pelo centelhador
+e produção de descargas elétricas no secundário.
 
 == Contextualização e aplicações
 
@@ -45,22 +45,25 @@ na patente US 454.622, um sistema de iluminação elétrica que empregava a
 descarga oscilatória de um capacitor em um circuito primário para induzir altas
 tensões em um circuito secundário @tesla1891-lighting.
 
-Na configuração clássica com centelhador, denominada SGTC, do inglês
-_spark gap Tesla coil_, uma fonte de alta tensão carrega o capacitor primário.
+Esse princípio é empregado na configuração clássica com centelhador, denominada
+SGTC, do inglês _spark gap Tesla coil_. Nela, uma fonte de alta tensão carrega
+o capacitor primário.
 Quando o centelhador conduz, fecha-se a malha oscilatória primária e inicia-se
 a transferência de energia ao secundário por acoplamento magnético. Esse
-princípio de funcionamento está descrito na patente de
+funcionamento corresponde ao descrito na patente de
 #cite(<tesla1891-lighting>, form: "prose").
 
-Na aproximação por parâmetros concentrados, os circuitos primário e secundário
-são representados por dois circuitos ressonantes magneticamente acoplados, com
-resistência (R), indutância (L) e capacitância (C), denominados circuitos RLC.
+Para analisar essa transferência na aproximação por parâmetros concentrados,
+o primário e o secundário são representados por dois circuitos ressonantes
+magneticamente acoplados, com resistência (R), indutância (L) e capacitância (C),
+denominados circuitos RLC.
 A análise desses circuitos considera a indutância mútua e a sintonia dos
 ressonadores, de modo que a elevação de tensão não depende apenas da razão
 entre os números de espiras @terman1943.
 
-O primário também pode ser acionado por semicondutores. Nas bobinas de estado
-sólido, denominadas SSTC, do inglês _solid state Tesla coil_,
+Além do acionamento por centelhador, o primário pode ser excitado por
+semicondutores. Nas bobinas de estado sólido, denominadas SSTC, do inglês
+_solid state Tesla coil_,
 o primário é excitado eletronicamente, sem o tanque ressonante primário da
 configuração clássica. A topologia DRSSTC, do inglês
 _double resonant solid state Tesla coil_, incorpora esse tanque ao acionamento
@@ -68,12 +71,13 @@ eletrônico, formando um sistema de dupla ressonância. As topologias diferem
 quanto à alimentação do ressonador e aos recursos de controle do acionamento
 @wasatonic2013.
 
-Bobinas de Tesla são empregadas na geração de pulsos de alta tensão, em ensaios
-de materiais isolantes e no estudo de descargas elétricas @denicolai2001.
+Quanto às aplicações, bobinas de Tesla são empregadas na geração de pulsos de
+alta tensão, em ensaios de materiais isolantes e no estudo de descargas
+elétricas @denicolai2001.
 Também são utilizadas em demonstrações educacionais de ressonância, acoplamento
 magnético e ruptura dielétrica @wasatonic2013. Esses usos abrangem diferentes
-montagens e regimes de operação, para os quais a adequação do modelo e do
-protótipo deve ser avaliada.
+montagens e regimes de operação. A adequação do modelo e do protótipo deve,
+portanto, ser avaliada conforme as condições de cada aplicação.
 
 == Problema de pesquisa
 
@@ -90,31 +94,35 @@ conexão de pequenas capacitâncias alterava as condições do ressonador.
 No modelo de dois circuitos ressonantes acoplados, as frequências dos dois
 modos naturais dependem do coeficiente de acoplamento e dos parâmetros dos
 circuitos. A superposição dos modos produz batimentos na resposta transitória,
-enquanto as perdas determinam o amortecimento @denicolai2001. Na comparação
-experimental, a transferência de energia entre os circuitos deve ser
+enquanto as perdas determinam o amortecimento @denicolai2001. Por essa razão,
+na comparação experimental, a transferência de energia entre os circuitos deve ser
 distinguida da dissipação. A ressonância do secundário com a malha primária
-aberta também deve ser analisada separadamente dos modos do sistema acoplado.
+aberta, por sua vez, deve ser analisada separadamente dos modos do sistema
+acoplado.
 
-Em que medida um modelo linear de circuitos RLC magneticamente acoplados
-descreve as frequências naturais e o amortecimento de um protótipo de bobina de
+Essas condições delimitam o problema de pesquisa: em que medida um modelo
+linear de circuitos RLC magneticamente acoplados descreve as frequências
+naturais e o amortecimento de um protótipo de bobina de
 Tesla com centelhador, em ensaios de caracterização em baixa energia, sem
 descargas no secundário, considerando a variação do acoplamento, as
 configurações do terminal capacitivo e as incertezas associadas às medições?
 
-Os resultados analíticos, simulados e medidos serão comparados para as mesmas
-grandezas. A comparação entre a solução analítica e a integração numérica
-servirá à verificação da implementação; a comparação com as medições, à
-validação do modelo. Serão distinguidas as previsões nominais, definidas antes
+Para responder a essa questão, os resultados analíticos, simulados e medidos
+serão comparados para as mesmas grandezas. A comparação entre a solução
+analítica e a integração numérica servirá à verificação da implementação,
+enquanto a comparação com as medições será destinada à validação do modelo.
+Nessa análise, serão distinguidas as previsões nominais, definidas antes
 da coleta, das previsões atualizadas com parâmetros medidos e daquelas obtidas
 com parâmetros ajustados às respostas experimentais. A reprodução dos dados
 usados para identificar parâmetros não será considerada validação independente.
 
 == Objetivos
 
-Será construído um protótipo de duas bobinas com centelhador estático. As
-topologias SSTC e DRSSTC serão abordadas apenas na revisão bibliográfica.
-A validação se limitará aos modos de interesse do modelo RLC concentrado e não
-abrangerá a distribuição espacial no secundário nem a dinâmica não linear do
+Para investigar o problema proposto, será construído um protótipo de duas
+bobinas com centelhador estático, enquanto as topologias SSTC e DRSSTC serão
+abordadas apenas na revisão bibliográfica. Nesse recorte, a validação se
+limitará aos modos de interesse do modelo RLC concentrado e não abrangerá a
+distribuição espacial no secundário nem a dinâmica não linear do
 centelhador e das descargas.
 
 === Objetivo geral
@@ -154,18 +162,17 @@ simulação e medição em ensaios de caracterização em baixa energia.
 Nos ensaios de caracterização em baixa energia, a fonte de alta tensão
 permanecerá desconectada. Para analisar os modos acoplados, o centelhador será
 substituído, no circuito de ensaio, por uma ligação condutora que representa
-seu estado de condução e mantém a malha primária fechada. No _ring-down_ do
+seu estado de condução e mantém a malha primária fechada. Já no _ring-down_ do
 secundário, essa malha permanecerá aberta, considerando-se o carregamento
-residual da medição. O fator de qualidade do secundário será avaliado
+residual da medição. Assim, o fator de qualidade do secundário será avaliado
 separadamente dos fatores de qualidade dos modos acoplados.
 
 Na etapa de operação com descargas, o centelhador realizará o chaveamento do
-circuito primário. Serão registrados o comprimento das descargas no secundário
+circuito primário, e serão registrados o comprimento das descargas no secundário
 e a taxa de repetição do centelhador. Essa avaliação funcional será distinta
-da validação do modelo linear.
-A obtenção de descargas de aproximadamente 1 m é uma meta prática complementar.
-Esse comprimento não será usado como critério de validade do modelo nem
-apresentado como desempenho garantido.
+da validação do modelo linear e terá como meta prática complementar a obtenção
+de descargas de aproximadamente 1 m. Esse comprimento não será usado como
+critério de validade do modelo nem apresentado como desempenho garantido.
 
 Os ensaios dependerão de autorização e de supervisão, e seguirão os
 procedimentos do laboratório e as medidas de controle de risco previstas na
@@ -175,50 +182,55 @@ Norma Regulamentadora nº 10 (NR-10) @nr10-2019.
 
 A motivação formativa da pesquisa é aplicar conhecimentos de circuitos
 elétricos, eletromagnetismo, altas tensões e medidas elétricas à construção e à
-avaliação do protótipo. O dimensionamento dos componentes será relacionado à
-modelagem e à análise dos transitórios. A caracterização dos parâmetros e o
-planejamento das medições serão acompanhados do registro das decisões técnicas
-e das limitações encontradas. O protótipo e a documentação também poderão
+avaliação do protótipo. Nessa abordagem, o dimensionamento dos componentes será
+relacionado à modelagem e à análise dos transitórios. Ao longo da caracterização
+dos parâmetros e do planejamento das medições, serão registradas as decisões
+técnicas e as limitações encontradas. O protótipo e a documentação também poderão
 subsidiar futuras atividades didáticas, condicionadas aos requisitos de
 segurança e de uso dos laboratórios.
 
-#cite(<denicolai2001>, form: "prose") descreve o projeto, a modelagem e a
-caracterização de uma bobina de Tesla, com ajustes de parâmetros para
-reproduzir respostas transitórias. #cite(<craven2014>, form: "prose")
+A relação entre modelagem e caracterização experimental aparece no trabalho de
+#cite(<denicolai2001>, form: "prose"), que descreve o projeto de uma bobina de
+Tesla e o ajuste de parâmetros para reproduzir suas respostas transitórias.
+Quanto aos limites dessa representação, #cite(<craven2014>, form: "prose")
 investiga modelos do secundário, modos superiores e fator de qualidade,
-considerando os efeitos do terminal e do carregamento da medição. No relato
-técnico de #cite(<queiroz2006>, form: "prose"), a sintonia e a observação dos
-transitórios em baixa potência antecedem a operação com descargas. Esses
-estudos de comparação entre métodos e de medição do fator de qualidade
-orientam a estratégia experimental da pesquisa.
+considerando os efeitos do terminal e do carregamento da medição. Já o relato
+técnico de #cite(<queiroz2006>, form: "prose") apresenta uma sequência de
+ensaios em que a sintonia e a observação dos transitórios em baixa potência
+antecedem a operação com descargas. A comparação entre métodos e a medição do
+fator de qualidade nesses estudos orientam a estratégia experimental da
+pesquisa, que também separa a caracterização em baixa energia da avaliação
+funcional com descargas.
 
-A contribuição esperada tem caráter aplicado: avaliar uma mesma SGTC de forma
-integrada e rastreável, relacionando o dimensionamento à montagem final, aos
+A partir dessas referências, a contribuição esperada tem caráter aplicado:
+avaliar uma mesma SGTC de forma integrada e rastreável, relacionando o
+dimensionamento à montagem final, aos
 parâmetros medidos e às respostas do sistema. Essa avaliação reunirá a curva de
 separação entre as frequências modais em função do acoplamento, a caracterização
 do decaimento livre do secundário e a comparação de configurações do terminal
-capacitivo e do ponto de descarga. Os dados brutos, as entradas computacionais e os procedimentos de
-análise serão preservados para reexecutar as comparações e distinguir o
-desempenho das previsões nominais daquele obtido após atualização ou ajuste de
-parâmetros.
+capacitivo e do ponto de descarga. Para permitir a reexecução das comparações,
+os dados brutos, as entradas computacionais e os procedimentos de análise serão
+preservados. Esse registro também permitirá distinguir o desempenho das
+previsões nominais daquele obtido após atualização ou ajuste de parâmetros.
 
 Conforme o GUM, um resultado de medição é uma estimativa que deve ser
 acompanhada de sua incerteza, e correlações relevantes entre grandezas de entrada
 devem ser consideradas nessa avaliação @jcgm100-2008. As diferenças relativas
-entre previsões e medições serão discutidas considerando o orçamento de
-incerteza e as condições de ensaio. A análise buscará identificar a adequação e
-os limites do modelo nas
-configurações investigadas, inclusive diante de resultados incompatíveis ou
-inconclusivos.
+entre previsões e medições serão, portanto, discutidas considerando o orçamento
+de incerteza e as condições de ensaio. Com isso, a análise buscará identificar
+a adequação e os limites do modelo nas configurações investigadas, inclusive
+diante de resultados incompatíveis ou inconclusivos.
 
 = Fundamentação teórica
 
 A descrição teórica da bobina de Tesla relaciona a excitação do primário à
 transferência de energia e à resposta do secundário. Para a análise em baixa
 energia, adota-se a aproximação por circuitos ressonantes acoplados, com perdas
-representadas por resistências equivalentes. Sua aplicação requer definir as
-condições de sintonia e acoplamento e considerar os efeitos das capacitâncias
-e da distribuição espacial de tensão e corrente no secundário.
+representadas por resistências equivalentes. Nessa aproximação, a resposta
+depende tanto das condições de sintonia e acoplamento quanto dos parâmetros
+atribuídos a cada circuito. Por isso, a análise também considera as
+contribuições capacitivas e a distribuição espacial de tensão e corrente no
+secundário, que delimitam a aplicação desses parâmetros equivalentes.
 
 // Espaços reservados da versão de trabalho. Substituir pelos arquivos das
 // figuras e informar sua autoria/origem antes da versão final.
@@ -262,56 +274,60 @@ ligações correspondentes às etapas de carga e de condução.
 ) <fig-circuito-sgtc>
 
 Durante a condução, a energia oscila entre os campos elétricos e magnéticos dos
-circuitos. O acoplamento transfere energia ao secundário ao longo de vários
-ciclos. Na condição de sintonia, a envoltória da tensão secundária cresce
-inicialmente enquanto a das oscilações primárias diminui. Se o centelhador
-continuar conduzindo, parte da energia retorna ao primário. Os dois modos do
-conjunto produzem batimentos, com redução progressiva da energia total pelas
-perdas nos componentes e no centelhador. Quando a tensão secundária inicia
-descargas no ar, essas descargas também retiram energia do ressonador
-@queiroz2006.
+circuitos, enquanto o acoplamento promove sua transferência ao secundário ao
+longo de vários ciclos. Na condição de sintonia, essa transferência se manifesta
+pelo crescimento inicial da envoltória da tensão secundária e pela redução da
+envoltória das oscilações primárias. Se o centelhador continuar conduzindo,
+parte da energia retorna ao primário. Essa troca está associada à superposição
+dos dois modos do conjunto, que produz batimentos na resposta. Ao mesmo tempo,
+as perdas nos componentes e no centelhador reduzem progressivamente a energia
+total. Caso a tensão secundária inicie descargas no ar, elas também retiram
+energia do ressonador @queiroz2006.
 
-A interrupção da condução é denominada extinção, ou _quenching_. A abertura da
-malha em um mínimo de energia no primário impede o retorno da energia por esse
-circuito; na descrição idealizada, a energia remanescente decai no secundário.
-Para que a condução cesse, a corrente precisa deixar de sustentar a descarga
-e o meio entre os eletrodos deve recuperar capacidade isolante suficiente para
-evitar a reignição. Isso pode ocorrer depois do primeiro mínimo
-@burnett-quenching. Com o centelhador novamente aberto, o capacitor primário
-volta a ser carregado, permitindo outro disparo.
+A interrupção dessa condução é denominada extinção, ou _quenching_. Se a malha
+for aberta em um mínimo de energia no primário, impede-se o retorno da energia
+por esse circuito e, na descrição idealizada, a energia remanescente decai no
+secundário. A ocorrência desse mínimo, porém, não garante a extinção: a corrente
+precisa deixar de sustentar a descarga, e o meio entre os eletrodos deve
+recuperar capacidade isolante suficiente para evitar a reignição. A extinção
+pode, assim, ocorrer depois do primeiro mínimo @burnett-quenching. Quando o
+centelhador volta a permanecer aberto, a fonte retoma a carga do capacitor
+primário, permitindo outro disparo.
 
 No centelhador estático, a taxa de repetição depende da tensão aplicada, da
-capacitância primária e das condições de ruptura do ar. Cada disparo inicia
-um transitório com vários ciclos de alta frequência. A taxa de disparos,
-as frequências dessas oscilações e a frequência da alimentação são grandezas
-distintas. Observar a repetição das descargas não basta para determinar as
-frequências naturais ou o amortecimento dos circuitos.
+capacitância primária e das condições de ruptura do ar. Essa taxa descreve a
+repetição do ciclo de carga e disparo, enquanto cada disparo inicia um
+transitório com vários ciclos de alta frequência. Portanto, a taxa de disparos,
+as frequências das oscilações e a frequência da alimentação são grandezas
+distintas. Por isso, observar a repetição das descargas não basta para determinar
+as frequências naturais ou o amortecimento dos circuitos.
 
 == Comparação entre SGTC, SSTC e DRSSTC
 
-SGTC, SSTC e DRSSTC diferem pelo acionamento e pela presença de um tanque
-ressonante no primário, conforme os circuitos da
+As topologias SGTC, SSTC e DRSSTC diferem quanto à forma de fornecer energia
+aos ressonadores e à presença de um tanque ressonante no primário, conforme os circuitos da
 @fig-circuitos-topologias e a comparação do @quadro-topologias. Na SGTC, a
 energia de cada transitório é acumulada no capacitor antes do disparo. O
 centelhador fecha a malha de descarga, e sua condução depende das condições
-de manutenção e extinção do arco. No rotativo, a posição dos eletrodos também
-determina os instantes em que o disparo pode ocorrer; a duração da condução
-continua sem controle eletrônico independente.
+de manutenção e extinção do arco. No centelhador rotativo, a posição dos
+eletrodos também determina os instantes em que o disparo pode ocorrer;
+a duração da condução continua sem controle eletrônico independente.
 
-Na SSTC, uma ponte de semicondutores alimentada por um barramento contínuo
+Já na SSTC, uma ponte de semicondutores alimentada por um barramento contínuo
 aplica tensão alternada ao primário, com frequência escolhida em função da
 ressonância do secundário. Na configuração de ressonância simples, não há
 capacitor dimensionado para formar um tanque com o primário. Um capacitor
 usado apenas para bloquear a componente contínua não exerce essa função.
 
-A DRSSTC tem um capacitor de tanque em série com o primário e recebe energia
-do barramento durante os ciclos de acionamento. A realimentação de corrente
-permite acompanhar a oscilação e comutar próximo das passagens por zero da
-corrente. O sinal de interrupção define os intervalos de excitação e sua
-repetição, limitando o tempo de crescimento da corrente no tanque. A SGTC e a
-DRSSTC têm, assim, dois ressonadores, excitados sob condições diferentes: na
-primeira, o transitório parte da descarga do capacitor; na segunda, a ponte
-continua fornecendo energia durante o acionamento.
+Na DRSSTC, a inclusão de um capacitor de tanque em série com o primário forma
+um segundo circuito ressonante, que recebe energia do barramento durante os
+ciclos de acionamento. A realimentação de corrente permite acompanhar a
+oscilação e comutar próximo das passagens por zero da corrente. Para limitar
+o tempo de crescimento da corrente no tanque, o sinal de interrupção define
+os intervalos de excitação e sua repetição. A SGTC e a DRSSTC têm, assim, dois ressonadores,
+mas diferem quanto à excitação: na primeira, o transitório parte da descarga
+do capacitor previamente carregado; na segunda, a ponte continua fornecendo
+energia durante o acionamento.
 
 #figura-prevista(
   [Circuitos de acionamento das topologias SGTC, SSTC e DRSSTC],
@@ -351,21 +367,23 @@ continua fornecendo energia durante o acionamento.
   ) <quadro-topologias>
 ]
 
-O projeto de #cite(<obeidat2023>, form: "prose") emprega ponte completa,
+Como exemplo de acionamento eletrônico duplamente ressonante, o projeto de
+#cite(<obeidat2023>, form: "prose") emprega ponte completa,
 realimentação e interrupção programada em uma DRSSTC. Já
 #cite(<wasatonic2013>, form: "prose") compara o acionamento eletrônico
 duplamente ressonante com um centelhador rotativo no mesmo ressonador. Nessa
 comparação, a relação entre comprimento de descarga e alimentação dependeu
 da duração e da repetição dos pulsos. Os resultados se aplicam às condições
-ensaiadas, sem estabelecer uma vantagem fixa de uma topologia. A construção
-deste trabalho se restringe à SGTC; SSTC e DRSSTC são tratadas na revisão
-bibliográfica.
+ensaiadas, sem estabelecer uma vantagem fixa de uma topologia. Neste trabalho,
+essa comparação fica restrita à revisão bibliográfica, pois a construção será
+limitada à SGTC.
 
 == Ressonância, sintonia e acoplamento magnético
 
-Em um RLC série com parâmetros constantes, a ressonância de corrente ocorre
-quando as reatâncias indutiva e capacitiva se cancelam. A frequência depende
-do produto entre indutância e capacitância
+Para analisar os ressonadores, considera-se inicialmente cada circuito de
+forma isolada. Em um RLC série com parâmetros constantes, a ressonância de
+corrente ocorre quando as reatâncias indutiva e capacitiva se cancelam, e sua
+frequência depende do produto entre indutância e capacitância
 #cite(<terman1943>, supplement: [p. 135-136]). Para o primário e o secundário
 considerados separadamente,
 
@@ -381,16 +399,18 @@ do secundário. Essas são também as frequências naturais não amortecidas de
 cada RLC isolado. A sintonia nominal corresponde a
 $f_(0 p) = f_(0 s) = f_0$, ou $L_p C_p = L_s C_s$.
 
-O acoplamento magnético depende da indutância mútua $M$, que relaciona a
-variação de corrente em um enrolamento à tensão induzida no outro. Define-se
-o coeficiente de acoplamento por
+As frequências isoladas estabelecem a condição de sintonia, mas a resposta do
+conjunto também depende da interação entre os enrolamentos. Essa interação é
+descrita pela indutância mútua $M$, que relaciona a variação de corrente em um
+enrolamento à tensão induzida no outro. A partir dela, define-se o coeficiente
+de acoplamento por
 
 $ k = abs(M) / sqrt(L_p L_s). $ <eq-coeficiente-acoplamento>
 
-Adota-se $0 <= k < 1$; o sinal dos termos de indutância mútua nas equações
-depende dos sentidos dos enrolamentos e das referências de corrente. A posição
-relativa das bobinas altera $M$ e $k$. O deslocamento vertical do primário
-permite, portanto, variar o acoplamento. A sintonia precisa ser verificada
+Adota-se $0 <= k < 1$, enquanto o sinal dos termos de indutância mútua nas
+equações depende dos sentidos dos enrolamentos e das referências de corrente.
+A posição relativa das bobinas altera $M$ e $k$. O deslocamento vertical do
+primário permite, portanto, variar o acoplamento. A sintonia precisa ser verificada
 em cada posição, pois a alteração mecânica não assegura a igualdade dos
 produtos LC.
 
@@ -416,28 +436,31 @@ caso, a separação pode persistir mesmo sem acoplamento.
   [Gráfico teórico de f−/f₀ e f+/f₀ em função de k, no caso sem perdas. Indicar a frequência desacoplada e a separação entre os ramos; não incluir dados experimentais.],
 ) <fig-separacao-modal>
 
-As frequências naturais sem perdas, as frequências amortecidas e os picos
-de resposta forçada têm definições distintas. As perdas e o circuito de
-excitação alteram a resposta em frequência e podem dificultar a resolução de
-dois picos. Na comparação experimental, a previsão e a grandeza extraída do
-sinal devem corresponder à mesma definição e à mesma configuração de ensaio.
+Essas expressões descrevem as frequências naturais sem perdas, cuja definição
+difere daquela das frequências amortecidas e dos picos de resposta forçada.
+Ao considerar as perdas e o circuito de excitação, a resposta em frequência
+se altera, o que pode dificultar a resolução de dois picos. Por isso, a
+comparação experimental exige que a previsão e a grandeza extraída do sinal
+correspondam à mesma definição e à mesma configuração de ensaio.
 
 == Transferência de energia, batimentos e dissipação
 
-Para analisar um disparo, admitem-se correntes iniciais nulas nos enrolamentos,
-secundário descarregado e tensão $V_0$ no capacitor primário. A energia inicial
-é
+Para relacionar os modos naturais à transferência de energia durante um
+disparo, admitem-se correntes iniciais nulas nos enrolamentos, secundário
+descarregado e tensão $V_0$ no capacitor primário. Nessas condições, a energia
+inicial está armazenada nesse capacitor e é dada por
 
 $ E_0 = 1 / 2 C_p V_0^2. $ <eq-energia-inicial>
 
 Com a malha primária fechada, essa energia se distribui entre os campos
 elétricos e magnéticos dos circuitos. A transferência pode se inverter e
 devolver energia ao primário, como descreve #cite(<queiroz2006>, form: "prose").
-A energia de um ressonador pode diminuir enquanto a do outro aumenta; a
-dissipação, por sua vez, reduz a energia total.
+Assim, a redução da energia de um dos ressonadores pode acompanhar o aumento
+da energia do outro. Para interpretar o transitório, é necessário distinguir
+essa troca da dissipação, que reduz a energia total do sistema.
 
-A superposição dos modos permite interpretar os batimentos. Pela identidade
-trigonométrica
+A troca de energia também se manifesta nos batimentos produzidos pela
+superposição dos modos. Pela identidade trigonométrica
 
 $
   cos(omega_(-) t) - cos(omega_(+) t)
@@ -449,18 +472,20 @@ uma oscilação rápida é multiplicada por um fator de variação lenta, com
 $omega_(-) = 2 pi f_(-)$ e $omega_(+) = 2 pi f_(+)$. Essa forma descreve a
 resposta ideal sintonizada com energia inicial no primário. No caso geral,
 a envoltória depende também das amplitudes, fases e taxas de amortecimento
-dos modos. Os mínimos de uma tensão medida não indicam, por si só, que a
-energia total tenha sido dissipada. A @fig-batimentos-energia relaciona as
-oscilações ao balanço de energia.
+dos modos. Como a redução de amplitude pode decorrer da transferência de
+energia entre os circuitos, os mínimos de uma tensão medida não indicam, por
+si só, que a energia total tenha sido dissipada. Essa distinção é representada
+na @fig-batimentos-energia, que relaciona as oscilações ao balanço de energia.
 
 #figura-prevista(
   [Batimentos e transferência de energia entre os circuitos primário e secundário],
   [Painéis com tensões e suas envoltórias, energias dos ressonadores e energia total, contabilizando o termo mútuo. Distinguir a troca entre circuitos da redução da energia total por perdas. Curvas ilustrativas do modelo, sem dados medidos.],
 ) <fig-batimentos-energia>
 
-Para dois RLC acoplados com parâmetros constantes, sem fornecimento externo
-de energia e com perdas representadas por resistências série $R_p$ e $R_s$,
-o balanço energético das equações de malha resulta em
+Para quantificar a dissipação, consideram-se dois RLC acoplados com parâmetros
+constantes, sem fornecimento externo de energia e com perdas representadas
+por resistências série $R_p$ e $R_s$. Nessas condições, o balanço energético
+obtido das equações de malha resulta em
 
 $
   (upright(d) W) / (upright(d) t)
@@ -470,41 +495,50 @@ $ <eq-balanco-energia>
 em que $W$ inclui a energia elétrica dos capacitores e a energia magnética,
 com a contribuição da indutância mútua. As correntes são $i_p$ e $i_s$.
 O termo à direita representa as perdas resistivas e deve ser compatível com
-a variação da energia calculada na simulação. Descargas ativas e resistência
-variável do centelhador exigiriam termos adicionais ao modelo linear.
+a variação da energia calculada na simulação. Já a inclusão de descargas ativas
+e de resistência variável do centelhador exigiria termos adicionais ao modelo
+linear.
 
-Se toda a energia inicial fosse armazenada em $C_s$ em um mesmo instante,
-a conservação da energia imporia o limite
+A conservação da energia também permite estabelecer um limite para a tensão
+secundária. Se toda a energia inicial fosse armazenada em $C_s$ em um mesmo
+instante, esse limite seria
 
 $
   abs(V_s)_max <= abs(V_0) sqrt(C_p / C_s)
   = abs(V_0) sqrt(L_s / L_p),
 $ <eq-limite-tensao>
 
-sendo a última igualdade válida para $L_p C_p = L_s C_s$. O transitório
-pode atingir um valor inferior, conforme a relação entre os modos e as perdas.
+sendo a última igualdade válida para $L_p C_p = L_s C_s$. O valor atingido no
+transitório pode, contudo, ser inferior, conforme a relação entre os modos e
+as perdas.
 Na operação com descargas, o carregamento do secundário e a extinção do
 centelhador também alteram a resposta. O limite da @eq-limite-tensao não
 determina diretamente o comprimento de descarga.
 
 == Amortecimento e fator de qualidade
 
-A análise do amortecimento exige distinguir o decaimento de um ressonador
-da resposta dos modos acoplados. Essa distinção orienta a estimação do fator
-de qualidade e a escolha do modelo de ajuste. Em ambas as configurações,
-o carregamento introduzido pela medição participa das perdas observadas.
+Como a transferência de energia e a dissipação afetam de maneiras diferentes
+a resposta transitória, a análise do amortecimento deve distinguir o
+decaimento de um ressonador da resposta dos modos acoplados. Essa distinção
+orienta a estimação do fator de qualidade e a escolha do modelo de ajuste:
+a envoltória de um sinal com batimentos não pode ser interpretada da mesma
+forma que o decaimento de um único modo. Em ambas as configurações, é preciso
+considerar também o carregamento introduzido pela medição, que participa das
+perdas observadas.
 
 === Resposta livre de um ressonador
 
-Uma resistência equivalente pode representar as perdas do ressonador em uma
-faixa limitada de frequência. Além da resistência em corrente contínua,
+Na descrição de um ressonador isolado, uma resistência equivalente pode
+representar as perdas em uma faixa limitada de frequência. Essa representação
+reúne contribuições que vão além da resistência em corrente contínua, pois
 participam os efeitos pelicular e de proximidade, que alteram a distribuição
 da corrente no enrolamento. A radiação, o ambiente e o carregamento externo
 também afetam o decaimento observado @craven2014. O valor equivalente depende,
 portanto, do modo e da configuração.
 
-Para um RLC série subamortecido com parâmetros constantes, a resposta livre
-de tensão ou corrente tem a forma
+Com as perdas representadas por uma resistência equivalente, a resposta livre
+de tensão ou corrente de um RLC série subamortecido com parâmetros constantes
+tem a forma
 
 $ x(t) = A_0 e^(-alpha t) cos(omega_d t + phi), $ <eq-decaimento-livre>
 
@@ -526,16 +560,17 @@ e a resistência total #cite(<terman1943>, supplement: [p. 135-136, 139]),
 $ Q = (omega_0 L) / R = omega_0 / (2 alpha). $ <eq-q-amortecimento>
 
 Quanto maior Q, mais lento é o decaimento em relação ao período de oscilação.
-A constante de tempo da amplitude é $tau_A = 1 / alpha$. Como a energia
+Para a amplitude, a constante de tempo é $tau_A = 1 / alpha$. Como a energia
 depende do quadrado das tensões e correntes, sua envoltória decai, no regime
 de perdas pequenas, com constante de tempo aproximadamente igual a
-$tau_E = 1 / (2 alpha)$. A estimação de Q deve distinguir esses dois
-decaimentos.
+$tau_E = 1 / (2 alpha)$. Essa diferença deve ser considerada na estimação de Q,
+conforme se utilize o decaimento da amplitude ou o da energia.
 
 === Estimativa por decaimento livre e carregamento da medição
 
-No _ring-down_, observa-se a resposta após retirar a excitação. Quando um
-único modo domina o sinal, pode-se estimar $alpha$ ajustando a envoltória da
+O decaimento descrito pode ser observado pela técnica de _ring-down_, na qual
+se registra a resposta após retirar a excitação. Quando um único modo domina
+o sinal, pode-se estimar $alpha$ ajustando a envoltória da
 @eq-decaimento-livre ou calculando o decréscimo logarítmico. Para módulos de
 picos de mesmo sinal $A_j$ e $A_(j+N)$, separados por $N$ períodos completos,
 
@@ -558,26 +593,28 @@ necessários à leitura do decaimento.
   [Senoide amortecida com envoltórias ±A₀ exp(−αt), período T_d e dois picos de mesmo sinal separados por N períodos. Indicar uma janela de ajuste e a região dominada pelo ruído. Ilustração, não medição do protótipo.],
 ) <fig-ringdown>
 
-No domínio da frequência, Q pode ser estimado pela razão entre a frequência
-central e a largura de banda de meia potência, desde que a ressonância esteja
+Como alternativa à análise temporal, Q pode ser estimado no domínio da
+frequência pela razão entre a frequência central e a largura de banda de meia
+potência, desde que a ressonância esteja
 suficientemente isolada e a resposta seja compatível com esse modelo.
 #cite(<craven2014>, form: "prose") emprega esse método e medições por carta
 de Smith, considerando a influência do gerador e das conexões. O resultado
-inclui o carregamento do arranjo de ensaio. Retirar a excitação no _ring-down_
-reduz uma fonte de carregamento, mas os efeitos do sensor, das conexões e do
+inclui, portanto, o carregamento do arranjo de ensaio. Retirar a excitação no
+_ring-down_ reduz uma fonte de carregamento, mas os efeitos do sensor, das conexões e do
 ambiente permanecem.
 
 Neste trabalho, $Q_s$ será o fator de qualidade do secundário medido com a
-malha primária aberta, sob o carregamento residual do ensaio. A janela de
-ajuste deve conter um trecho compatível com o decaimento de um único modo.
-A presença de outras oscilações ou do ruído ao fim do sinal pode comprometer
-a estimativa.
+malha primária aberta, sob o carregamento
+residual do ensaio. Para estimá-lo, a janela de ajuste deve conter um trecho
+compatível com o decaimento de um único modo. Caso outras oscilações estejam
+presentes, ou o trecho escolhido alcance a região dominada pelo ruído ao fim
+do sinal, a estimativa pode ser comprometida.
 
 === Amortecimento dos modos acoplados
 
-Com a malha primária fechada, as perdas dos dois circuitos contribuem para os
-polos do sistema acoplado. Para o par complexo conjugado de cada modo $r$,
-definem-se
+Quando a malha primária está fechada, a análise passa a considerar os modos do
+sistema acoplado, cujos polos dependem das perdas dos dois circuitos. Para o
+par complexo conjugado de cada modo $r$, definem-se
 
 $
   s_r^(plus.minus) = -alpha_r plus.minus j omega_(d,r),
@@ -589,47 +626,56 @@ em que $r$ identifica o modo inferior ou superior, $alpha_r > 0$ e $j^2 = -1$.
 O fator $Q_r$ é definido pela razão de amortecimento do par de polos. Em geral,
 $Q_(-)$ e $Q_(+)$ diferem de $Q_s$ e dos fatores dos RLC isolados. Os batimentos
 da resposta acoplada também impedem ajustar sua envoltória completa por uma
-única exponencial de perdas. A caracterização modal exige um ajuste que
-considere a superposição; o _ring-down_ do secundário será analisado com a
-malha primária aberta.
+única exponencial de perdas, pois a variação de amplitude inclui a contribuição
+da superposição dos modos. Por isso, a caracterização modal exige um ajuste que
+considere essa superposição, enquanto o _ring-down_ do secundário será analisado
+com a malha primária aberta.
 
 == Capacitância própria, terminal capacitivo e influência do ambiente
 
 As capacitâncias do secundário estão distribuídas entre espiras, terminal
 e objetos próximos. Como o potencial varia ao longo do enrolamento, o valor
-equivalente $C_s$ depende do modo e das condições de contorno. Ele não é
-necessariamente a soma das capacitâncias das partes medidas isoladamente.
+equivalente $C_s$ depende do modo e das condições de contorno. Sua determinação
+deve, portanto, considerar o conjunto nessa configuração, pois a soma das
+capacitâncias das partes medidas isoladamente não corresponde necessariamente
+ao valor equivalente do ressonador.
 
-O terminal superior, ou _top-load_, acrescenta capacitância e modifica o campo
-elétrico na extremidade da bobina. Para uma mesma indutância equivalente,
-o aumento de capacitância reduz a frequência natural. A forma e os raios de
-curvatura do terminal também afetam o início de corona e de descargas, efeitos
-discutidos por #cite(<craven2014>, form: "prose"). O ponto de descarga
-(_breakout_) concentra o campo em uma região definida. Sua instalação altera
-a geometria e deve ser registrada tanto na caracterização sem descargas como
-na operação funcional.
+Entre essas contribuições, o terminal superior, ou _top-load_, acrescenta
+capacitância e modifica o campo elétrico na extremidade da bobina. Para uma
+mesma indutância equivalente, esse acréscimo reduz a frequência natural.
+O efeito do terminal também depende de sua forma e de seus raios de curvatura,
+que afetam o início de corona e de descargas, conforme discutido por
+#cite(<craven2014>, form: "prose"). Já o ponto de descarga (_breakout_)
+concentra o campo em uma região definida. Como sua instalação altera a
+geometria do conjunto, ela deve ser registrada tanto na caracterização sem
+descargas como na operação funcional.
 
-Para pequenas variações de capacitância e indutância constante, a
-diferenciação da @eq-frequencias-desacopladas fornece
+A influência da capacitância sobre a frequência pode ser estimada para
+pequenas variações e indutância constante. Nessas condições, a diferenciação
+da @eq-frequencias-desacopladas fornece
 
 $ (Delta f_(0 s)) / f_(0 s) approx -1 / 2 (Delta C_s) / C_s. $ <eq-sensibilidade-capacitancia>
 
 A relação é válida dentro da aproximação LC; mudanças na distribuição dos
-campos também podem alterar os parâmetros efetivos. No ressonador estudado
-por Voitkāns e Voitkāns (#cite(<voitkans2014>, form: "year")), a frequência
+campos também podem alterar os parâmetros efetivos. Um exemplo da influência
+do carregamento capacitivo aparece no ressonador estudado por Voitkāns e
+Voitkāns (#cite(<voitkans2014>, form: "year")), cuja frequência
 fundamental passou de 1,635 MHz sem carga adicionada para 1,362 MHz com uma
 esfera de capacitância declarada de 3,62 pF. Os autores observaram influência
 mesmo ao conectar capacitâncias da ordem de 1 pF, o que limita a medição
 direta por sondas.
 
+Essa sensibilidade também exige cuidado com o ambiente e com a instrumentação.
 A altura em relação ao plano de referência, a proximidade de condutores e a
-posição da instrumentação fazem parte da configuração elétrica do ensaio.
-Essas condições devem ser mantidas ou registradas nas comparações. Uma sonda
-pode deslocar a frequência e introduzir perdas, mesmo com alta resistência
-de entrada, devido ao carregamento capacitivo.
+posição dos instrumentos fazem parte da configuração elétrica do ensaio e
+devem ser mantidas ou registradas nas comparações. No caso das sondas, a alta
+resistência de entrada não elimina a influência sobre o ressonador, pois o
+carregamento capacitivo pode deslocar a frequência e introduzir perdas.
 
-O JavaTC define a capacitância efetiva com as contribuições distribuídas
-referidas ao terminal @javatc-ces. A documentação também distingue a indutância
+Essas particularidades também precisam ser consideradas na comparação com
+ferramentas de cálculo. O JavaTC define a capacitância efetiva com as
+contribuições distribuídas referidas ao terminal @javatc-ces. A documentação
+também distingue a indutância
 medida em baixa frequência da indutância série efetiva em ressonância, que
 considera a corrente não uniforme no enrolamento @javatc-les. Assim, calcular
 $C_s$ com uma frequência medida e uma indutância de baixa frequência não
@@ -638,128 +684,147 @@ comparação entre cálculo e medição exige definições compatíveis dos par�
 
 == Modelos concentrados e distribuídos
 
-O modelo concentrado descreve a SGTC por duas malhas RLC acopladas pela
-indutância mútua. O centelhador em condução é substituído por uma ligação que
-fecha a malha primária, e as perdas são reunidas em parâmetros equivalentes.
-As cargas dos dois capacitores e as correntes dos enrolamentos formam quatro
-variáveis de estado. O sistema tem ordem quatro e pode apresentar dois pares
-de polos complexos conjugados.
+A distinção entre parâmetros equivalentes e grandezas distribuídas está
+relacionada à forma de representar o secundário. No modelo concentrado, a SGTC
+é descrita por duas malhas RLC acopladas pela indutância mútua. Nessa
+representação, o centelhador em condução é substituído por uma ligação que fecha
+a malha primária, e as perdas são reunidas em parâmetros equivalentes. Como as
+cargas dos dois capacitores e as correntes dos enrolamentos constituem as
+quatro variáveis de estado, o sistema tem ordem quatro e pode apresentar dois
+pares de polos complexos conjugados.
 
-Essa descrição permite calcular os transitórios e os parâmetros modais sem
-resolver a distribuição espacial do campo. Nos modelos distribuídos, tensão
-e corrente dependem também da posição. O enrolamento pode ser dividido em
-seções com indutâncias e capacitâncias, incluindo interações entre elas,
-ou aproximado por uma linha de transmissão. A @fig-modelos-secundario
-contrapõe essas representações e indica as contribuições do terminal e do
-ambiente.
+Com essa simplificação, é possível calcular os transitórios e os parâmetros
+modais sem resolver a distribuição espacial do campo. Já nos modelos
+distribuídos, a tensão e a corrente dependem também da posição ao longo do
+enrolamento. Para representar essa dependência, o enrolamento pode ser dividido
+em seções com indutâncias e capacitâncias, incluindo as interações entre elas,
+ou aproximado por uma linha de transmissão. Essas representações são
+comparadas na @fig-modelos-secundario, que também indica as contribuições do
+terminal e do ambiente.
 
 #figura-prevista(
   [Representações concentrada e distribuída do secundário e suas contribuições capacitivas],
   [Comparar um RLC equivalente com um enrolamento dividido em seções. Indicar capacitâncias entre espiras, para o terminal e para o ambiente, além de perfis qualitativos de tensão e corrente no modo fundamental.],
 ) <fig-modelos-secundario>
 
-Denicolai (#cite(<denicolai2001>, form: "year")) obtém parâmetros equivalentes
-a partir da distribuição de corrente e potencial do secundário.
-Craven (#cite(<craven2014>, form: "year")) investiga modos superiores e
-alterações no sentido de enrolamento com modelos espaciais. Sua análise
-também relaciona a aplicabilidade do modelo concentrado ao carregamento
-capacitivo e à frequência de operação em relação às ressonâncias do
-enrolamento. Voitkāns e Voitkāns (#cite(<voitkans2014>, form: "year"))
-adotam uma linha monocondutora equivalente, inicialmente homogênea e sem
+Essa relação entre as representações aparece no trabalho de Denicolai
+(#cite(<denicolai2001>, form: "year")), que obtém parâmetros equivalentes a
+partir da distribuição de corrente e potencial do secundário. Com modelos
+espaciais, Craven (#cite(<craven2014>, form: "year")) investiga os modos
+superiores e as alterações no sentido de enrolamento. O autor também relaciona
+a aplicabilidade do modelo concentrado ao carregamento capacitivo e à
+frequência de operação em relação às ressonâncias do enrolamento. Outra
+abordagem é a de Voitkāns e Voitkāns (#cite(<voitkans2014>, form: "year")),
+que adotam uma linha monocondutora equivalente, inicialmente homogênea e sem
 perdas, e comparam ressonâncias e distribuições de tensão com medições.
 
-Os modos superiores do secundário têm distribuições espaciais diferentes
-das do modo fundamental, podem existir com a malha primária aberta e não
-precisam ter frequências múltiplas inteiras da fundamental. Eles diferem do
-par $f_(-)$ e $f_(+)$, que decorre da interação entre os dois ressonadores na
-faixa considerada. Vários picos em um espectro podem, portanto, ter origens
-distintas.
+Ao considerar a distribuição espacial, é necessário distinguir os modos
+superiores do secundário dos dois modos do sistema acoplado. Os primeiros têm
+distribuições espaciais diferentes das do modo fundamental, podem existir com
+a malha primária aberta e não precisam ter frequências múltiplas inteiras da
+fundamental. O par $f_(-)$ e $f_(+)$, por sua vez, decorre da interação entre
+os dois ressonadores na faixa considerada. Assim, a identificação de vários
+picos em um espectro exige avaliar sua origem, pois eles podem corresponder
+a fenômenos distintos.
 
-Neste trabalho, o modelo concentrado será avaliado na faixa de frequência
-e nas configurações ensaiadas. As descrições distribuídas auxiliarão a
-discussão das discrepâncias, sem validação espacial do enrolamento. A
-concordância na fundamental não assegura concordância nos modos superiores,
-com outro terminal ou na operação com descargas.
+Neste trabalho, portanto, o modelo concentrado será avaliado na faixa de
+frequência e nas configurações ensaiadas, enquanto as descrições distribuídas
+auxiliarão a discussão das discrepâncias, sem validação espacial do enrolamento.
+A concordância na fundamental ficará restrita a essas condições e não
+assegurará concordância nos modos superiores, com outro terminal ou na operação
+com descargas.
 
 = Metodologia
 
 A pesquisa compreenderá o dimensionamento, a construção e a caracterização
 experimental de uma SGTC. A avaliação do modelo linear será realizada em baixa
 energia, sem descargas no secundário, mediante comparação entre previsões e
-medições de frequência e amortecimento. A operação com centelhador e descargas
-constituirá uma etapa distinta, destinada à demonstração funcional e ao registro
-complementar do desempenho.
+medições de frequência e amortecimento. Essa separação das condições de ensaio
+permitirá avaliar o modelo sem incluir a dinâmica não linear das descargas.
+A operação com centelhador e descargas constituirá, por sua vez, uma etapa
+distinta, destinada à demonstração funcional e ao registro complementar do
+desempenho.
 
 == Estratégia e etapas da pesquisa
 
 O estudo terá caráter experimental e quantitativo. O dimensionamento analítico
 será comparado com as estimativas do JavaTC e do WinTesla para a mesma
 geometria, respeitando as definições dos parâmetros de cada ferramenta.
-A implementação numérica será verificada pela solução analítica e pelos
-casos desacoplado e sem perdas, antes da comparação com as medições.
+Antes da comparação com as medições, a implementação numérica será verificada
+pela solução analítica e pelos casos desacoplado e sem perdas. Com isso,
+eventuais diferenças decorrentes da implementação poderão ser examinadas
+separadamente daquelas observadas na avaliação experimental do modelo.
 
-As previsões nominais serão arquivadas antes da coleta. Após a construção,
-serão registradas as dimensões reais e as alterações do projeto, seguidas da
-medição dos componentes, da identificação dos modos acoplados e do decaimento
-livre do secundário. Ensaios preliminares orientarão a escolha das faixas de
-excitação, das posições do primário e das condições de aquisição. O número
-de repetições e os critérios de análise serão definidos antes da série
-principal. A demonstração funcional ocorrerá em etapa posterior, sob liberação
-específica para alta tensão.
+As previsões nominais serão arquivadas antes da coleta, para que permaneçam
+distintas das previsões posteriormente atualizadas ou ajustadas. Após a
+construção, serão registradas as dimensões reais e as alterações do projeto.
+Em seguida, serão medidos os componentes e caracterizados os modos acoplados
+e o decaimento livre do secundário. Para preparar essa caracterização, ensaios
+preliminares orientarão a escolha das faixas de excitação, das posições do
+primário e das condições de aquisição. O número de repetições e os critérios
+de análise serão definidos antes da série principal, enquanto a demonstração
+funcional ficará para uma etapa posterior, sob liberação específica para
+alta tensão.
 
 == Grandezas investigadas e configurações de referência
 
 Serão investigados $L_p$, $L_s$, $C_p$, $C_s$, $M$ e $k$, além das
 frequências amortecidas, das taxas de amortecimento e dos fatores de qualidade.
-O fator $Q_s$ será determinado com a malha primária aberta, separadamente dos
-fatores dos modos acoplados definidos na @eq-q-modal.
+Como essas últimas grandezas dependem da configuração dos circuitos, o fator
+$Q_s$ será determinado com a malha primária aberta, separadamente dos fatores
+dos modos acoplados definidos na @eq-q-modal.
 
 Nos ensaios de baixa energia, a fonte de alta tensão permanecerá fisicamente
 desconectada. Para identificar os modos acoplados, o centelhador será
 substituído por uma ligação condutora que mantenha a malha primária fechada.
-A configuração de referência terá altura e tomada do primário, terminal
-capacitivo e presença ou ausência do ponto de descarga definidos. Mudanças
-nesses elementos serão registradas, assim como a posição dos sensores, as
-conexões e as condições ambientais disponíveis.
+Nesses ensaios, será adotada uma configuração de referência com altura e
+tomada do primário, terminal capacitivo e presença ou ausência do ponto de
+descarga definidos. Para relacionar cada resultado à montagem correspondente,
+serão registradas as mudanças nesses elementos, assim como a posição dos
+sensores, as conexões e as condições ambientais disponíveis.
 
 == Instrumentação, condições de ensaio e segurança
 
 A instrumentação prevista compreende medidor de resistência, indutância e
 capacitância, gerador de sinais, osciloscópio digital e instrumentos
 dimensionais. Modelos, acessórios, faixas e situação de calibração serão
-registrados após a confirmação dos equipamentos disponíveis. A aquisição
-deverá resolver as oscilações e seu decaimento, sem saturação. Serão avaliados
-o carregamento dos sensores e a dependência das estimativas com a amplitude
-de excitação, pois o arranjo de medição pode alterar a frequência e o fator
-de qualidade @craven2014.
+registrados após a confirmação dos equipamentos disponíveis. A escolha das
+condições de aquisição deverá permitir resolver as oscilações e seu decaimento
+sem saturação. Como o próprio arranjo de medição pode alterar a frequência e
+o fator de qualidade, serão avaliados o carregamento dos sensores e a
+dependência das estimativas com a amplitude de excitação @craven2014.
 
 Os ensaios dependerão de análise de risco, autorização e supervisão, conforme
-os procedimentos do laboratório e a NR-10 @nr10-2019. Serão previstos
-barreiras, controle de acesso, parada e proteções elétricas. Os limites de
-excitação considerarão a elevação ressonante e a energia armazenada.
+os procedimentos do laboratório e a NR-10 @nr10-2019. O planejamento incluirá
+barreiras, controle de acesso, parada e proteções elétricas, com limites de
+excitação que considerem a elevação ressonante e a energia armazenada.
 Intervenções na montagem exigirão desenergização, impedimento de reenergização,
 descarga e verificação de ausência de tensão, com dispositivos adequados
 @illinois-electrical-safety. Na operação em alta tensão, haverá acompanhamento
 presencial, sem contato humano com as descargas, e avaliação dos riscos
 elétricos, térmicos, acústicos, ópticos, de gases e de interferência.
-A proteção de terra dos instrumentos será mantida; sondas comuns não serão
-ligadas aos pontos de alta tensão. Condições fora da liberação ou falhas de
-proteção determinarão a interrupção do ensaio e sua reavaliação antes da retomada.
+Quanto à instrumentação, a proteção de terra será mantida, e sondas comuns não
+serão ligadas aos pontos de alta tensão. Se forem constatadas condições fora
+da liberação ou falhas de proteção, o ensaio será interrompido e reavaliado
+antes da retomada.
 
 == Procedimentos de caracterização em baixa energia
 
 As indutâncias serão medidas com os capacitores externos desconectados e o
 outro enrolamento aberto, registrando-se a frequência de teste e compensando-se
-os cabos conforme o manual do medidor. A capacitância primária será medida no
-banco utilizado no protótipo. As leituras de baixa frequência serão
-diferenciadas dos parâmetros efetivos em ressonância, conforme discutido no
+os cabos conforme o manual do medidor. Já a capacitância primária será medida
+no banco utilizado no protótipo. Na interpretação dessas leituras, os valores
+de baixa frequência serão diferenciados dos parâmetros efetivos em ressonância,
+conforme discutido no
 capítulo anterior @javatc-ces @javatc-les. Se $C_s$ for inferida da frequência
 e do amortecimento do secundário pelas relações do RLC, o resultado será
 identificado como parâmetro ajustado, com o valor de $L_s$ utilizado explícito.
 
-A indutância mútua será obtida por medição independente das frequências modais.
-Será empregado o método de associação dos enrolamentos em série, com as
-polaridades em concordância e em oposição, em frequência compatível com a
+A indutância mútua será obtida por medição independente das frequências modais,
+para que essas frequências possam ser posteriormente comparadas com a
+previsão do modelo. Para isso, será empregado o método de associação dos
+enrolamentos em série, com as polaridades em concordância e em oposição, em
+frequência compatível com a
 aproximação indutiva. Dessas leituras, serão calculados
 
 $
@@ -769,76 +834,91 @@ $ <eq-k-serie>
 
 O uso da associação em série para levantar o acoplamento em função da altura
 tem precedente em #cite(<denicolai2001>, form: "prose", supplement: [p. 64-65]).
-A resolução da diferença entre leituras será verificada; se insuficiente,
-será avaliado o método de tensão induzida no secundário aberto, com medição da
-corrente primária e avaliação do carregamento dos instrumentos.
+Como o cálculo depende da diferença entre as duas leituras, será verificado
+se a resolução é suficiente para determiná-la. Caso não seja, será avaliado
+o método de tensão induzida no secundário aberto, com medição da corrente
+primária e avaliação do carregamento dos instrumentos.
 
 Varreduras de frequência localizarão as ressonâncias dos circuitos isolados
-e do sistema acoplado. Os picos orientarão a identificação, sem serem
-automaticamente equiparados às frequências dos polos. Após retirar a excitação,
-os transitórios acoplados serão ajustados por mínimos quadrados à soma de duas
-senoides amortecidas, obtendo-se $f_(d,-)$, $f_(d,+)$ e as respectivas taxas
-de amortecimento. A estabilidade dos parâmetros e os resíduos serão examinados;
-batimentos não serão ajustados por uma única exponencial de perdas.
+e do sistema acoplado. Os picos observados orientarão a identificação, mas não
+serão automaticamente equiparados às frequências dos polos. Para estimar os
+parâmetros modais, os transitórios registrados após a retirada da excitação
+serão ajustados por mínimos quadrados à soma de duas senoides amortecidas,
+obtendo-se $f_(d,-)$, $f_(d,+)$ e as respectivas taxas de amortecimento.
+A avaliação do ajuste incluirá a estabilidade dos parâmetros e o exame dos
+resíduos. Dessa forma, a superposição dos modos será considerada na análise,
+sem ajustar os batimentos por uma única exponencial de perdas.
 
-A altura do primário será variada, mantendo-se a concentricidade, a tomada,
-o capacitor e o terminal de referência. Em cada posição serão medidos $k$ e
+Com esse procedimento de identificação, será investigada a influência do
+acoplamento sobre as frequências modais. Para isso, a altura do primário será
+variada, mantendo-se a concentricidade, a tomada, o capacitor e o terminal de
+referência. Em cada posição serão medidos $k$ e
 as frequências modais, com verificação da sintonia. As curvas
 $f_(d,-)(k)$ e $f_(d,+)(k)$ e a separação
 $Delta f_d = f_(d,+) - f_(d,-)$ serão comparadas com as previsões para os
-parâmetros de cada posição. Eventual ressintonia por mudança de tomada
-constituirá uma série distinta. As medições serão repetidas, incluindo o
-retorno à posição de referência para avaliar o reposicionamento.
+parâmetros de cada posição. Caso seja realizada uma ressintonia por mudança
+de tomada, as medições correspondentes constituirão uma série distinta.
+As medições serão repetidas, incluindo o retorno à posição de referência para
+avaliar o reposicionamento.
 
-O _ring-down_ do secundário será realizado com a malha primária aberta e
-captação de fraco acoplamento. Uma senoide amortecida será ajustada ao trecho
-posterior à retirada da excitação e anterior ao domínio do ruído, fornecendo
+Para caracterizar o secundário separadamente, seu _ring-down_ será realizado
+com a malha primária aberta e captação de fraco acoplamento. Uma senoide
+amortecida será ajustada ao trecho posterior à retirada da excitação e anterior
+ao domínio do ruído, fornecendo
 $f_(d,s)$ e $alpha_s$. O fator $Q_s$ será calculado pela combinação da
 @eq-parametros-decaimento com a @eq-q-amortecimento, com verificação pelo
 decréscimo logarítmico quando os picos forem resolvidos. O resultado incluirá
-o carregamento residual da medição. Decaimentos dos ressonadores isolados
-também poderão fornecer perdas equivalentes por $R = 2 L alpha$, para posterior
+o carregamento residual da medição. Além dessa caracterização, os decaimentos
+dos ressonadores isolados também poderão fornecer perdas equivalentes por
+$R = 2 L alpha$, para posterior
 comparação com novos transitórios acoplados.
 
-Por fim, serão comparados o secundário sem terminal adicional, com o terminal
-de referência e com esse terminal acrescido do ponto de descarga. Serão
-mantidas as demais condições de montagem e avaliadas as diferenças de
-frequência, amortecimento e $Q_s$. Todos esses ensaios ocorrerão sem corona ou
-descargas ativas, avaliando o efeito da geometria do terminal e do ponto de
-descarga. Modos ou decaimentos não resolvidos serão registrados como limitações
-da identificação.
+Por fim, a influência do terminal será investigada pela comparação entre o
+secundário sem terminal adicional, com o terminal de referência e com esse
+terminal acrescido do ponto de descarga. Mantidas as demais condições de
+montagem, serão avaliadas as diferenças de frequência, amortecimento e $Q_s$.
+Como o objetivo dessa comparação é avaliar o efeito da geometria do terminal
+e do ponto de descarga, todos esses ensaios ocorrerão sem corona ou descargas
+ativas. Se algum modo ou decaimento não puder ser resolvido, essa condição
+será registrada como limitação da identificação.
 
 == Demonstração funcional e caracterização complementar das descargas
 
 A montagem final será operada com o centelhador para demonstrar o funcionamento
 e registrar as descargas, respeitando as condições autorizadas de alimentação
-e duração. O comprimento será estimado por imagens com escala e geometria de
-câmera documentadas, sem exposição de pessoas à região energizada. Serão
-explicitados o critério de comprimento, as limitações de perspectiva e a
-distinção entre descargas livres e até um alvo condutor. Os registros incluirão
-a duração da observação e a repetibilidade, além dos eventos de maior extensão.
+e duração. Nessa etapa, o comprimento será estimado por imagens com escala e
+geometria de câmera documentadas, sem exposição de pessoas à região energizada.
+Para interpretar essas estimativas, serão explicitados o critério de
+comprimento, as limitações de perspectiva e a distinção entre descargas livres
+e até um alvo condutor. Além dos eventos de maior extensão, os registros
+incluirão a duração da observação e a repetibilidade, permitindo discutir o
+desempenho nas condições documentadas.
 
 A taxa média de disparos será estimada por contagem óptica em intervalo
 conhecido, após verificar a resolução temporal e a ausência de contagens
-duplicadas ou eventos perdidos. Essa taxa será diferenciada das frequências
-de oscilação. A meta de aproximadamente 1 m será avaliada como desempenho
-complementar, sem integrar a validação linear ou justificar operação fora dos
-limites liberados. A impossibilidade de demonstrar o funcionamento será
-registrada no atendimento dos objetivos.
+duplicadas ou eventos perdidos. Como essa contagem descreve a repetição dos
+disparos, seu resultado será diferenciado das frequências de oscilação dos
+circuitos. Já a meta de aproximadamente 1 m será avaliada como desempenho
+complementar, sem integrar a validação linear nem justificar operação fora
+dos limites liberados. Caso não seja possível demonstrar o funcionamento,
+essa limitação será registrada na avaliação do atendimento dos objetivos.
 
 == Tratamento, rastreabilidade e preservação dos dados
 
 Os dados brutos serão preservados com identificadores que relacionem cada
-aquisição à configuração e à repetição. Os registros incluirão instrumentos,
-faixas, excitação, conexões e condições de ensaio. O processamento será
-realizado por rotinas versionadas, com documentação das conversões, janelas
-e ajustes. Dados rejeitados permanecerão arquivados com justificativa; uma
-discrepância em relação ao modelo não será motivo suficiente para exclusão.
+aquisição à configuração e à repetição correspondentes. Para manter esse
+vínculo, os registros incluirão instrumentos, faixas, excitação, conexões e
+condições de ensaio. O processamento será realizado por rotinas versionadas,
+com documentação das conversões, janelas e ajustes, de modo que os resultados
+possam ser relacionados aos dados de origem. Mesmo os dados rejeitados
+permanecerão arquivados com justificativa, e uma discrepância em relação ao
+modelo não será motivo suficiente para exclusão.
 
 Serão mantidos separadamente os conjuntos de previsões nominais, atualizadas
-com parâmetros medidos e obtidas por ajuste, identificando os dados utilizados.
-Cópias de segurança e instruções de reprodução da análise permitirão recuperar
-os registros e reavaliar os resultados, conforme a orientação do GUM
+com parâmetros medidos e obtidas por ajuste, com identificação dos dados
+utilizados em cada conjunto. Essa organização, acompanhada de cópias de
+segurança e instruções de reprodução da análise, permitirá recuperar os
+registros e reavaliar os resultados, conforme a orientação do GUM
 #cite(<jcgm100-2008>, supplement: [seção 7]).
 
 == Erros relativos e orçamento de incerteza conforme o GUM
@@ -851,15 +931,16 @@ $
 $ <eq-erro-relativo-metodos>
 
 expresso em porcentagem, sem tratar a medição como valor verdadeiro exato.
-Para valores nulos ou não distinguíveis de zero, será utilizada a diferença
-absoluta. Na verificação entre solução analítica e numérica, a referência
-será o valor analítico.
+Quando o valor medido for nulo ou não distinguível de zero, será utilizada a
+diferença absoluta. Já na verificação entre solução analítica e numérica, a
+referência será o valor analítico.
 
 O orçamento seguirá o GUM @jcgm100-2008, com avaliações do tipo A pelas
 repetições e do tipo B por calibração, especificações e resolução dos
-instrumentos. Serão considerados ainda o posicionamento, o carregamento e
-a sensibilidade dos ajustes. Para $Y = g(X_1, dots, X_m)$, a incerteza-padrão
-combinada será calculada por
+instrumentos. Além dessas contribuições, serão considerados o posicionamento,
+o carregamento e a sensibilidade dos ajustes. Essas contribuições serão
+propagadas pelo modelo de medição: para
+$Y = g(X_1, dots, X_m)$, a incerteza-padrão combinada será calculada por
 
 $
   u_c^2(y) = sum_(i=1)^m c_i^2 u^2(x_i)
@@ -869,38 +950,42 @@ $
 $ <eq-incerteza-combinada>
 
 com os coeficientes de sensibilidade avaliados nas estimativas das entradas.
-Serão preservadas as correlações entre parâmetros de um mesmo ajuste e entre
-previsões e medições que compartilhem dados. A adequação da propagação de
-primeira ordem será verificada nas expressões não lineares. A incerteza da
-diferença incluirá as contribuições da previsão e da medição e sua covariância.
+Como parâmetros de um mesmo ajuste e previsões e medições que compartilhem
+dados podem estar correlacionados, essas correlações serão preservadas na
+avaliação. Também será verificada a adequação da propagação de primeira ordem
+nas expressões não lineares. Ao calcular a incerteza da diferença entre
+previsão e medição, serão incluídas as contribuições de ambas e sua covariância.
 
 A incerteza expandida será $U = k_"abr" u_c$, com probabilidade de abrangência
 pretendida de aproximadamente 95% e fator justificado pela distribuição e
 pelos graus de liberdade aplicáveis. $k_"abr"$ será distinguido do acoplamento
-$k$. Cada resultado apresentará estimativa, unidade, incerteza e fator de
-abrangência, com as fontes e contribuições documentadas no orçamento.
+$k$. Na apresentação de cada resultado, constarão a estimativa, a unidade,
+a incerteza e o fator de abrangência, com as fontes e contribuições documentadas
+no orçamento.
 
 == Critérios de comparação e interpretação das discrepâncias
 
 A comparação utilizará grandezas com a mesma definição e configuração.
-As frequências amortecidas serão confrontadas com o módulo da parte imaginária
-dos polos dividido por $2 pi$, e as taxas de amortecimento, com o módulo da
-parte real. Picos de varredura serão comparados à resposta forçada, enquanto
-as expressões ideais de sintonia ficarão restritas às suas hipóteses.
+Assim, as frequências amortecidas serão confrontadas com o módulo da parte
+imaginária dos polos dividido por $2 pi$, e as taxas de amortecimento, com o
+módulo da parte real. Essa correspondência também será mantida nas varreduras:
+seus picos serão comparados à resposta forçada, enquanto as expressões ideais
+de sintonia ficarão restritas às suas hipóteses.
 
 Será adotada a regra $abs(Delta x) <= U_(Delta x)$ para indicar compatibilidade
 pontual, sendo $U_(Delta x)$ a incerteza expandida da diferença. Essa escolha
-da pesquisa não constitui critério universal de validação do GUM.
-Discrepâncias serão examinadas quanto à dessintonia, ao carregamento, às
-perdas e aos limites do modelo concentrado. A interpretação considerará
-também as tendências da curva modal e os resíduos dos ajustes; resultados
-sem resolução ou incerteza adequadas serão classificados como inconclusivos.
+da pesquisa não constitui critério universal de validação do GUM. Além dessa
+verificação pontual, a interpretação considerará as tendências da curva modal
+e os resíduos dos ajustes. As discrepâncias serão
+examinadas quanto à dessintonia, ao carregamento, às perdas e aos limites do
+modelo concentrado, enquanto os resultados sem resolução ou incerteza
+adequadas serão classificados como inconclusivos.
 
 As conclusões distinguirão previsões nominais, atualizadas e ajustadas.
-A reprodução dos dados usados para identificar parâmetros não será considerada
-validação independente. A adequação do modelo ficará limitada às configurações
-e grandezas ensaiadas em baixa energia, sem extensão automática à operação
-com descargas.
+Essa distinção é necessária porque a reprodução dos dados usados para
+identificar parâmetros não será considerada validação independente. A
+adequação do modelo ficará, assim, limitada às configurações e grandezas
+ensaiadas em baixa energia, sem extensão automática à operação com descargas.
 
 = Modelagem matemática e simulação
 

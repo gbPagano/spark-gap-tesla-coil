@@ -54,6 +54,17 @@ queiroz2006:
 # no PDF original; indutância em série e curva k versus altura do primário.
 # A medição nas duas polaridades é proposta do protocolo deste trabalho,
 # derivada do modelo indutivo, não transcrição do procedimento de Denicolai.
+# MOD.2.1 (22/10/2026): §§4.2–4.3, p. 25–26, eqs. 4-2 a 4-8,
+# reconsultadas por extração do PDF; eqs. 4-7/4-8 também conferidas visualmente.
+# Finalidade: reprodução de Wheeler e soma capacitiva aproximada; fórmula
+# empírica do toroide creditada pelo autor a Bert Pool, não a Medhurst.
+# Não fornece erro certificado para duto corrugado com forma central nem
+# torna a soma uma capacitância efetiva modal. Não é nova leitura integral.
+# MOD.2.2/2.3 (22/10/2026): reconsulta por extração do final de §2.4 e
+# §2.5.1, p. 12–13, e §§4.4–4.5, p. 26–28. Finalidade: CC/carga ressonante,
+# capacitor, espiral plana e conversão da adaptação de Wheeler; exemplo
+# de 9 espiras/85,8 µH usado como teste numérico. Não importar 100 nF da Thor,
+# circuito trifásico, folgas ou filtro empírico como projeto para os LG.
 denicolai2001:
   type: Thesis
   author: "Denicolai, Marco"
@@ -189,6 +200,12 @@ tanwar2024:
 # não tubo de 1/4 pol: este último é o strike rail, descrito na p. 38.
 # Não atribuir o desempenho ao diâmetro isoladamente nem generalizar a frase
 # do autor sobre perdas do gap dominarem em qualquer circunstância.
+# MOD.2.2/2.3 (22/10/2026): §§3.3.3–3.3.4, p. 32–40, reconsultadas por
+# extração do PDF. MMC de 36 x 942C20P1K-F, 100 nF/2 kV: duas placas
+# 6s3p em série, equivalente ideal 25 nF e soma CC de 24 kV; não comprova
+# tensão RF admissível ou margem para falha de disparo. Não importar a
+# descrição incorreta de raio médio como diferença entre raios, nem garantia
+# de ausência de arco em primário plano. Dimensionamento dos LG permanece aberto.
 wasatonic2013:
   type: Thesis
   author: "Wasatonic, Eric B."
@@ -399,6 +416,9 @@ tesla1892:
 
 # Referência primária da fórmula de indutância; metadados conferidos no IEEE/ADS.
 # Leitura integral pendente nesta revisão.
+# MOD.2.1 (22/10/2026): original não recuperado. Fórmula de camada única
+# e unidades conferidas em Denicolai (2001), p. 25, e lux2001-wheeler;
+# não se atribui leitura direta nem erro garantido de 1% ao protótipo.
 wheeler1928:
   type: Article
   author: "Wheeler, Harold A."
@@ -415,7 +435,13 @@ wheeler1928:
   url: { value: "https://ieeexplore.ieee.org/document/1669896", date: 2026-10-12 }
 
 # Duas partes de Medhurst; metadados/digitalizações localizados no G3YNH.
-# Leitura integral pendente; não são estudos independentes.
+# MOD.1 (22/10/2026): reconsulta dirigida das p. 35–37 da parte de fevereiro,
+# por OCR da digitalização; resistência em RF, geometria e limites das fórmulas
+# de Butterworth. Não é leitura integral nem conferência de todas as tabelas.
+# Finalidade: distinguir resistência RF do fio reto/DC e perdas do enrolamento;
+# não adotar os números de Butterworth reproduzidos como resultados de Medhurst.
+# Pendência: faixa de validade para o secundário construído e perdas dielétricas.
+# As duas partes não são estudos independentes.
 medhurst1947a:
   type: Article
   author: "Medhurst, R. G."
@@ -427,8 +453,20 @@ medhurst1947a:
     type: Periodical
     title: "Wireless Engineer"
     volume: 24
-  url: { value: "https://g6yb.com/g3ynh/zdocs/refs/Medhurst/Med35-43.pdf", date: 2026-10-12 }
+  url: { value: "https://g6yb.com/g3ynh/zdocs/refs/Medhurst/Med35-43.pdf", date: 2026-10-22 }
 
+# MOD.1 (22/10/2026): leitura dirigida por OCR das p. 80–82, seção 9;
+# p. 82 também conferida visualmente. Finalidade: capacitância das conexões,
+# método com capacitâncias adicionais e equivalente de reatância das bobinas.
+# Não é leitura integral; concordância de reatância não comprova representação
+# energética exata do secundário distribuído (contraponto: mcguyer2014-drude).
+# Pendência: não equiparar a autocapacitância empírica à capacitância modal
+# referida ao terminal ou aplicar a correção de fios ao protótipo sem análise.
+# MOD.2.1 (22/10/2026): p. 83–84, §§9.5–9.6 e Tabela V conferidas
+# visualmente na digitalização. K = 0,77 / 0,81 / 0,92 para h/D = 4,5 / 5 / 6.
+# Faixa experimental informada: D = 0,675–6,36 cm, N = 10–aprox. 636,
+# h/D = 0,163–29,2. O protótipo nominal de 10 cm e 1.100 espiras excede
+# D/N estudados; não importar a indicação de erro de 5% como incerteza do lote.
 medhurst1947b:
   type: Article
   author: "Medhurst, R. G."
@@ -440,7 +478,7 @@ medhurst1947b:
     type: Periodical
     title: "Wireless Engineer"
     volume: 24
-  url: { value: "https://g6yb.com/g3ynh/zdocs/refs/Medhurst/Med80-92.pdf", date: 2026-10-12 }
+  url: { value: "https://g6yb.com/g3ynh/zdocs/refs/Medhurst/Med80-92.pdf", date: 2026-10-22 }
 
 # Autocapacitância/modelos: PDF, folha de rosto e resumo conferidos.
 # Relatório do autor, não artigo de periódico; leitura integral pendente.
@@ -759,6 +797,8 @@ wilson-design-construction:
 # por pares nem instrução de montagem segura. Pendências: validar dados no
 # datasheet do modelo exato; não reproduzir improvisações construtivas,
 # associações, multiplicadores ou materiais de isolação descritos no relato.
+# MOD.2.3 (22/10/2026): texto reconsultado para distinguir saída pulsada do
+# dobrador de barramento CC estabilizado; esquema em imagem não auditado.
 hunter-mot-power-supply:
   type: Web
   author: "Hunter, Gregory R."
@@ -884,6 +924,8 @@ hunter-vacuum-gap:
 # Leitura: texto da página; esquemas/imagens não auditados. Finalidade:
 # histórico de falhas de diodos e retrabalho da fonte. Pendências: versão
 # distinta da fonte MOTDOC; não fundir dados nem adotar o circuito como projeto.
+# MOD.2.3 (22/10/2026): texto reconsultado para falha de diodos e retrabalho
+# de filtro/limitação; relato de VA não convertido em potência ativa útil.
 hunter-mark-iii:
   type: Web
   author: "Hunter, Gregory R."
@@ -1162,6 +1204,9 @@ neil-uk2020-mot-tesla:
 # pode superar o pico da fonte, e o capacitor requer especificação para pulsos,
 # reversão e corrente RF. Pendências: não fornece dimensionamento do nosso MOT;
 # limites empíricos e construções descritas não constituem aprovação de projeto.
+# MOD.2.2/2.3 (22/10/2026): reconsulta do texto da seção do capacitor;
+# reversão, corrente, perdas e falha de disparo. Não adotar as afirmações
+# históricas sobre impossibilidade de acionamento semicondutor como atuais.
 burnett-tesla-components:
   type: Web
   author: "Burnett, Richie"
@@ -1610,6 +1655,46 @@ ufu-tutorial-trabalhos-academicos:
   title: "Trabalhos acadêmicos"
   language: pt-BR
   url: { value: "https://bibliotecas.ufu.br/sites/bibliotecas.ufu.br/files/media/documento/tutorial_trabalhos_academicos_fev_2026.pdf", date: 2026-10-12 }
+
+# === Redação e coesão textual: apoio à revisão, sem citação na monografia ===
+
+# Origem: pesquisa de orientações de redação solicitada em 22/10/2026.
+# Finalidade: organização dos parágrafos, progressão das ideias, retomadas e
+# escolha de conectivos, preservando a consistência dos termos técnicos.
+# Leitura dirigida do PDF original: identificação e seções "Outline do artigo",
+# "Organização de cada parágrafo" e "Concisão, clareza e elementos de ligação",
+# além das tabelas 2 e 3; não é leitura integral. A tabela de conectivos não foi
+# adotada como classificação normativa. Sem pendências para esse uso editorial;
+# outras recomendações do artigo exigem consulta específica antes de adoção.
+silveira-romeiro-noll2022-escrita:
+  type: Article
+  author: ["Silveira, Erika Aparecida", "Romeiro, Amanda Maria de Sousa", "Noll, Matias"]
+  title: "Um guia de escrita científica: como evitar erros comuns em um artigo científico"
+  date: 2022
+  page-range: 341-352
+  language: pt-BR
+  serial-number: { doi: "10.36311/jhgd.v32.13791" }
+  parent:
+    type: Periodical
+    title: "Journal of Human Growth and Development"
+    volume: 32
+    issue: 3
+  url: { value: "https://revistas.marilia.unesp.br/index.php/jhgd/article/download/13791/9993", date: 2026-10-22 }
+
+# Origem: mesma pesquisa editorial, 22/10/2026; portal oficial da SME de Goiânia.
+# Finalidade: retomada referencial e encadeamento entre informações conhecidas
+# e novas. Texto expositivo e quadro de autoria consultados; atividades e
+# materiais externos não foram usados como base da revisão.
+# Marlon Santos consta como autor. Data de publicação da página não confirmada;
+# datas de acesso citadas no conteúdo não foram tratadas como publicação.
+# Pendência: confirmar a data apenas se necessária a uma futura citação.
+santos-progressao-tematica:
+  type: Web
+  author: "Santos, Marlon"
+  title: "Língua Portuguesa – A progressão temática do texto"
+  organization: "Goiânia. Secretaria Municipal de Educação"
+  language: pt-BR
+  url: { value: "https://sme.goiania.go.gov.br/conexaoescola/ensino_fundamental/lingua-portuguesa-a-progressao-tematica-do-texto/", date: 2026-10-22 }
 
 # === Firmware da enroladora: bibliotecas e geração de pulsos ===
 
@@ -2911,6 +2996,11 @@ corfio-fio-esmaltado:
 # máximo 0,445 / 0,467 / 0,487 mm para graus 1 / 2 / 3, respectivamente.
 # Esses limites dimensionais não são medições do lote nem passos nominais.
 # O catálogo não identifica a oferta do pesquisador; data/edição não verificadas.
+# MOD.2.1 (22/10/2026): linha AWG 26 reconsultada visualmente na p. 4
+# impressa (quinta do PDF), recuperado por https://corfio.com.br/documentos/catalogo_esmaltado.pdf.
+# Cobre nominal/mín./máx. = 0,404/0,400/0,409 mm; acréscimo diametral
+# mínimo grau 2 = 0,042 mm, externo máximo = 0,467 mm. Envelope inferior
+# de cálculo = 0,442 mm; não é medição nem grau confirmado do fio comprado.
 corfio-catalogo-esmaltados:
   type: Report
   author: { name: "Corfio" }
@@ -3099,6 +3189,8 @@ lau-foam-toroid:
 # de primário, que não devem ser fundidas numa única configuração.
 # Publicação não verificada. Pendências: corrente RF, perdas, dimensões,
 # metragem e conexão do nosso protótipo; não é especificação homologada.
+# MOD.2.2 (22/10/2026): texto das versões cônica/plana/duas camadas
+# reconsultado, incluindo problemas de arco; não aprova nossas folgas.
 lau-primary:
   type: Web
   author: "Lau, Gary"
@@ -3137,6 +3229,9 @@ burnett-tesla-components-continued:
 # multiplicador e carga ressonante com reator/diodo. Não é leitura integral do
 # projeto nem validação de valores, isolação ou ausência de ballast na entrada.
 # Publicação não verificada; pendência: avaliar topologia própria para os LG.
+# MOD.2.3 (22/10/2026): texto reconsultado para separar multiplicação de
+# tensão, barramento e carga ressonante; não adotar operação sem ballast
+# externo nem a isolação dos reatores descrita pelo construtor.
 conner-tesla-two-charging:
   type: Web
   author: "Conner, Steve"
@@ -3250,6 +3345,9 @@ burnett-demo-coil-spec:
 # Finalidade: ajuste conjunto de Lb e Cp para temporização, potência e fator
 # de potência; efeitos de Fr muito alta/baixa. Não transportar automaticamente
 # os ajustes sugeridos para MOTs não caracterizados; publicação não verificada.
+# MOD.2.3 (22/10/2026): texto reconsultado, sem auditoria dos gráficos;
+# frequência natural varia com 1/sqrt(Lb Cp), não com 1/(Lb Cp) como uma
+# frase abreviada da página sugere. Não se adotou FP ou Fr ótimo dos exemplos.
 burnett-externally-ballasted:
   type: Web
   author: "Burnett, Richie"
@@ -3280,3 +3378,286 @@ capital-refrigeracao-tubo-cobre-tres-dezesseis:
   title: "Tubo cobre flex. panqueca 15 m (B) 3/16 (4,76 mm) 1/32 AC/REFRIG"
   language: pt-BR
   url: { value: "https://www.capitalrefrigeracao.com.br/tubo-cobre-flexb-316-4,76-mm-132-acrefrig", date: 2026-10-20 }
+
+# === Ampliação das fontes da MOD.1: consulta em 22/10/2026 ===
+
+# Origem: busca de base didática independente das teses de SGTC; OpenStax.
+# Autores, editora, local e publicação em 06/10/2016 conferidos no bloco de
+# citação da seção 1-introduction; não usar a atualização de 2026 como edição.
+# Leitura dirigida das seções 14.1 (M, reciprocidade e fem induzida) e 14.6
+# (RLC livre, dissipação e frequência amortecida), em páginas oficiais.
+# Finalidade: base física das equações; não constitui leitura integral do livro
+# ou validação de um equivalente distribuído. Pendência: parametrização real.
+ling-moebs-sanny2016-v2:
+  type: Book
+  author: ["Ling, Samuel J.", "Moebs, William", "Sanny, Jeff"]
+  title: "University Physics Volume 2"
+  date: 2016-10-06
+  publisher: "OpenStax"
+  location: "Houston, Texas"
+  language: en
+  url: { value: "https://openstax.org/books/university-physics-volume-2/pages/1-introduction", date: 2026-10-22 }
+
+# Origem: MIT OpenCourseWare, curso 6.071J/22.071, Spring 2006; o PDF atribui
+# as notas a Chaniotakis e Cory; nomes conferidos na página oficial do curso.
+# Leitura dirigida por extração: p. 2 e 12 (continuidade), p. 7 e 16 (energia),
+# p. 8 e 17 (ESR, resistência do fio e não idealidades em alta frequência).
+# Finalidade: relações constitutivas, energia e perdas dos componentes.
+# Não é modelo específico de SGTC nem leitura integral do curso. Pendências:
+# obter ESR e perdas RF dos componentes adquiridos, sem importar valores típicos.
+chaniotakis-cory2006-capacitores-indutores:
+  type: Report
+  author: ["Chaniotakis, Manos", "Cory, David"]
+  title: "Capacitors and inductors"
+  date: 2006
+  organization: "Massachusetts Institute of Technology"
+  language: en
+  url: { value: "https://ocw.mit.edu/courses/6-071j-introduction-to-electronics-signals-and-measurement-spring-2006/eac1995aca830cfd0de6bab60a8abf10_capactr_inductr.pdf", date: 2026-10-22 }
+
+# Origem: MIT OpenCourseWare, 6.011, Spring 2018, Lecture 5. Consulta dirigida
+# ao PDF, slides 1–5: título/ano, estados associados ao armazenamento e
+# equações de evolução/saída. O PDF não individualiza autoria; os nomes dos
+# docentes do curso não foram convertidos em autoria presumida destes slides.
+# Finalidade: fundamentar escolha de cargas/correntes e representação em estados.
+# Material didático institucional, não artigo de SGTC. Não é leitura integral
+# do curso; pendência: a matriz específica é derivação própria em docs/.
+mit2018-estados-aula5:
+  type: Report
+  author: { name: "Massachusetts Institute of Technology" }
+  title: "State-Space Models, Equilibrium, Linearization"
+  date: 2018
+  organization: "MIT OpenCourseWare"
+  language: en
+  url: { value: "https://ocw.mit.edu/courses/6-011-signals-systems-and-inference-spring-2018/f3e2660d22e2d57ebbf62fbe77cc156f_MIT6_011S18lec5.pdf", date: 2026-10-22 }
+
+# Origem: artigo aberto recuperado no PubMed Central (PMC4277289), com DOI,
+# autoria e metadados editoriais conferidos na página do texto original.
+# Leitura dirigida: Drude's Prediction, Misrepresentation of energy,
+# Transformation to other equivalent circuits, Tesla transformers e Discussion.
+# Equações da página aparecem como imagens: não se atribui conferência algébrica
+# integral. Finalidade: limites de M recíproco e da identificação simultânea de
+# energia, corrente de base e tensão superior em equivalentes distribuídos.
+# Não prediz não reciprocidade física dos enrolamentos. Pendências: verificar
+# compatibilidade energética dos parâmetros e saídas do protótipo com top-load;
+# não transferir correções do exemplo sem carga capacitiva ao toroide montado.
+mcguyer2014-drude:
+  type: Article
+  author: "McGuyer, Bart"
+  title: "Paul Drude's Prediction of Nonreciprocal Mutual Inductance for Tesla Transformers"
+  date: 2014-12-26
+  number: "e115397"
+  language: en
+  serial-number: { doi: "10.1371/journal.pone.0115397" }
+  parent:
+    type: Periodical
+    title: "PLOS ONE"
+    volume: 9
+    issue: 12
+  url: { value: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4277289/", date: 2026-10-22 }
+
+# Origem: busca de limites do RLC com descarga; texto e suplemento recuperados
+# na conversão ar5iv do preprint arXiv:1808.06706. Leitura dirigida: discussão
+# do carregamento, suplemento I.3–I.5, ajustes variáveis e ressalvas dos dados.
+# Metadados editoriais conferidos também no PubMed (30184667) e registro arXiv.
+# A data dinâmica do cabeçalho ar5iv não é a data de publicação do artigo.
+# Finalidade: justificar limites de R/C constantes e cuidado com atribuição
+# causal de mudanças do sinal. Experimento com gerador Marx, não valida SGTC;
+# o autor não isolou tendência reprodutível devida à descarga nos seus dados.
+# Não transcrever fórmulas da conversão sem conferir o PDF se forem usadas.
+# Pendência: caracterizar separadamente a operação com descargas deste projeto.
+mcguyer2018-marx:
+  type: Article
+  author: "McGuyer, B. H."
+  title: "Note: Investigation of a Marx generator imitating a Tesla transformer"
+  date: 2018-08-06
+  number: "086102"
+  language: en
+  serial-number: { doi: "10.1063/1.5035286" }
+  parent:
+    type: Periodical
+    title: "Review of Scientific Instruments"
+    volume: 89
+    issue: 8
+  url: { value: "https://arxiv.org/abs/1808.06706", date: 2026-10-22 }
+
+# Origem: referências de McGuyer (2014), registro Crossref recuperado para o DOI
+# e menção independente de De Queiroz na TCML (1999/January/msg00269.html).
+# Leitura: somente metadados e citações secundárias. PDF editorial retornou 403;
+# texto original não recuperado. Usam-se iniciais S. A. Scott, pois a expansão
+# do prenome no Crossref é inconsistente com as demais fontes recuperadas.
+# Finalidade: candidato a base primária de modelo e construção de SGTC.
+# Pendência: recuperar o artigo e conferir equações antes de citá-lo como lido.
+skeldon-grant-scott1997:
+  type: Article
+  author: ["Skeldon, Kenneth D.", "Grant, Alastair I.", "Scott, S. A."]
+  title: "A high potential Tesla coil impulse generator for lecture demonstrations and science exhibitions"
+  date: 1997-08-01
+  page-range: 744-754
+  language: en
+  serial-number: { doi: "10.1119/1.18645" }
+  parent:
+    type: Periodical
+    title: "American Journal of Physics"
+    volume: 65
+    issue: 8
+  url: { value: "https://doi.org/10.1119/1.18645", date: 2026-10-22 }
+
+# Origem: referências de McGuyer (2014) e registro PubMed 22852736.
+# Leitura: apenas resumo e metadados; não houve acesso ao texto integral.
+# Finalidade: investigar amortecimento na arquitetura de dois enrolamentos.
+# Pendências: recuperar original e avaliar hipóteses antes de usar equações,
+# a perda percentual do resumo ou a proposta de três enrolamentos no projeto.
+reed2012-amortecimento:
+  type: Article
+  author: "Reed, J. L."
+  title: "Note: Tesla transformer damping"
+  date: 2012-07
+  number: "076101"
+  language: en
+  serial-number: { doi: "10.1063/1.4732811" }
+  parent:
+    type: Periodical
+    title: "Review of Scientific Instruments"
+    volume: 83
+    issue: 7
+  url: { value: "https://pubmed.ncbi.nlm.nih.gov/22852736/", date: 2026-10-22 }
+
+# Origem: registro institucional Xi'an Jiaotong University com resumo do artigo.
+# Autores, título, DOI, volume/número e identificador conferidos na página.
+# Leitura: metadados e resumo, sem recuperação do texto original completo.
+# Finalidade: candidato para discriminar perdas em capacitor, contatos, gap
+# e enrolamentos. Arquitetura com núcleo magnético aberto e primário coaxial:
+# não é o mesmo protótipo de núcleo de ar deste TCC. Pendências: ler original
+# e avaliar transferibilidade; não importar resistências ou percentuais do resumo.
+he2018-perdas-ohmicas:
+  type: Article
+  author: ["He, Shi", "Li, Jun Na", "Guo, Fan", "Chen, Zhi Qiang", "Chen, Wei Qing", "Qiu, Ai Ci"]
+  title: "Analysis of ohmic losses in Tesla transformers utilizing the open magnetic-core"
+  date: 2018-08-01
+  number: "085216"
+  language: en
+  serial-number: { doi: "10.1063/1.5037182" }
+  parent:
+    type: Periodical
+    title: "AIP Advances"
+    volume: 8
+    issue: 8
+  url: { value: "https://scholar.xjtu.edu.cn/en/publications/analysis-of-ohmic-losses-in-tesla-transformers-utilizing-the-open", date: 2026-10-22 }
+
+# === MOD.2.1: terminal isolado e reprodução de Wheeler, 22/10/2026 ===
+
+# Origem: busca sobre capacitância de terminais toroidais; PDF institucional
+# recuperado em victoria.ac.nz (a rota wgtn.ac.nz retornou 410). Metadados,
+# DOI e publicação em 20/03/2009 conferidos no próprio PDF.
+# Leitura dirigida por extração: introdução, p. 477–478, e §3, p. 481.
+# Finalidade: disco fino isolado, conversão para SI e comparação com esfera
+# envolvente. A família exata de toroides fechados do artigo não representa
+# automaticamente duto circular com forma central; suas fórmulas particulares
+# não foram usadas para dimensionar esse conjunto. Não é leitura integral.
+# Pendências: geometria e ambiente reais; não somar disco isolado e anel.
+lekner2009-toroides:
+  type: Article
+  author: "Lekner, John"
+  title: "Electrostatics of a family of conducting toroids"
+  date: 2009-03-20
+  page-range: 477-486
+  language: en
+  serial-number: { doi: "10.1088/0143-0807/30/3/006" }
+  parent:
+    type: Periodical
+    title: "European Journal of Physics"
+    volume: 30
+    issue: 3
+  url: { value: "https://www.victoria.ac.nz/scps/about/staff/pdf/Electrostatics_of_a_family_of_conducting_toroids.pdf", date: 2026-10-22 }
+
+# Origem: busca da fórmula de Wheeler; página técnica preservada em espelho.
+# Leitura: texto da página, incluindo fórmula de camada única, unidades e
+# rodapé com autoria Jim Lux e data 10/01/2001; não consulta dos links externos.
+# Finalidade: reprodução secundária para conferir unidades, junto de Denicolai.
+# Não adotar a atribuição institucional a Wheeler feita pela página nem tratar
+# sua indicação geral de exatidão como tolerância do protótipo.
+# Pendência: recuperação/leitura do artigo primário wheeler1928.
+lux2001-wheeler:
+  type: Web
+  author: "Lux, Jim"
+  title: "Wheeler Formulas for Inductance"
+  date: 2001-01-10
+  language: en
+  url: { value: "https://pe2bz.philpem.me.uk/Power/-%20-%20Power-Design%20-%20-/HighVoltage/wheeler.htm", date: 2026-10-22 }
+
+# === MOD.2.2/2.3: ballast, MMC e descarga, consulta em 22/10/2026 ===
+
+# Origem: link da seção de transformadores de burnett-tesla-components.
+# Leitura dirigida do texto das seções resistiva/indutiva: posição na entrada
+# ou AT, referência por a², perdas, saturação e interação com recarga.
+# Finalidade: comparação de alternativas; esquemas/gráficos em imagem não
+# auditados e simulações não reproduzidas. Publicação não estabelecida.
+# Pendências: circuito próprio, modelo dos LG, correntes e falhas; não adotar
+# ensaios de ligação direta ou a classificação idealizada de curto como seguro.
+burnett-ballasting:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Ballasting"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/ballast.html", date: 2026-10-22 }
+
+# Origem: MMC de Wasatonic §3.3.4 e busca do fabricante dos códigos usados.
+# PDF oficial, p. 1–3 por extração; tabela p. 3 conferida visualmente.
+# Construção híbrida PP/folha/metalização, condições de temperatura/vida e
+# curvas de tensão RMS por frequência (p. 4–5) identificadas; não houve
+# interpolação ou qualificação para 198,4 kHz. Ano editorial não estabelecido.
+# Finalidade: comparar 942C20P1K-F e 942C20P15K-F por dV/dt, I pico/RMS,
+# ESR e ESL. RMS a 70 °C/100 kHz, ESR típica a 100 kHz; 500 Vac a 60 Hz.
+# Pendências: esforços reais/reversão, derating/vida, arranjo, procedência,
+# disponibilidade e custo; soma de tensões CC não é tensão RF aprovada.
+cde-942-pulso:
+  type: Report
+  author: { name: "Cornell Dubilier" }
+  title: "Type 942, Polypropylene Capacitors, for High Pulse, Snubber"
+  language: en
+  url: { value: "https://www.cde.com/resources/catalogs/942.pdf", date: 2026-10-22 }
+
+# Origem: busca dirigida de alternativa com especificação de pulso oficial.
+# Leitura: texto de construção, tabelas de pulso/condições e derating da página;
+# não avaliação quantitativa das curvas em imagem nem seleção de código completo.
+# Finalidade: comparar PP com folha e conexão interna metalizada, inclusive
+# autorregeneração; 0,1–0,22 µF/2 kV: 11000 V/µs, TA < 40 °C.
+# Publicação não estabelecida. Pendências: código, RF/térmica/reversão, RMS,
+# estoque/custo e vida sob forma de onda real; não transferir tensão CA <1 kHz
+# ou vida declarada em 0,5 Ur/40 °C para o tanque de SGTC.
+wima-fkp1-pulso:
+  type: Web
+  author: { name: "WIMA" }
+  title: "WIMA FKP 1: Polypropylene (PP) Capacitors for Pulse Applications with Metal Foil Electrodes and Metallized Internal Series Connection"
+  language: en
+  url: { value: "https://www.wima.de/en/our-product-range/pulse-capacitors/fkp-1/", date: 2026-10-22 }
+
+# Origem: comparação com WIMA FKP 1 na página oficial da família de pulsos.
+# Leitura: texto de construção, tabelas de pulso/condições e derating;
+# curvas em imagem e códigos completos não avaliados quantitativamente.
+# Finalidade: PP com eletrodos metalizados de dupla face; 0,1–0,22 µF/2 kV:
+# 1800 V/µs, TA < 40 °C, não equivalente direto ao FKP 1 pela tensão CC.
+# Publicação não estabelecida. Pendências: esforços, RF/térmica/reversão,
+# corrente RMS, vida na aplicação e disponibilidade/custo; sem seleção de compra.
+wima-mkp10-pulso:
+  type: Web
+  author: { name: "WIMA" }
+  title: "WIMA MKP 10: Polypropylene (PP) Capacitors for Pulse Applications with Double-Sided Metallized Electrodes"
+  language: en
+  url: { value: "https://www.wima.de/en/our-product-range/pulse-capacitors/mkp-10/", date: 2026-10-22 }
+
+# Origem: busca de resistores de AT para descarga/equalização do MMC.
+# PDF oficial, documento 28907, revisão 03/06/2025; p. 1 conferida visualmente,
+# p. 2 e condição de pulso da p. 5 consultadas por extração. Não é leitura
+# integral nem dimensionamento pelas curvas. Finalidade: distinguir potência,
+# tensão máxima, isolação e ensaio de pulso (1 nF, condições específicas).
+# Pendências: código, R, tensão/energia/forma de onda, margens, falhas,
+# temperatura e custo; bleeders não substituem descarga/verificação independente.
+vishay-vr25-vr37-vr68:
+  type: Report
+  author: { name: "Vishay BCcomponents" }
+  title: "VR25, VR37, VR68: High Ohmic / High Voltage Metal Glaze Leaded Resistors"
+  date: 2025-06-03
+  number: "28907"
+  language: en
+  url: { value: "https://www.vishay.com/docs/28907/vr25vr37vr68.pdf", date: 2026-10-22 }
