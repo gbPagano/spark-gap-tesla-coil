@@ -50,6 +50,10 @@ queiroz2006:
 # discussão de parâmetros equivalentes do secundário, sem chamadas repetidas
 # para álgebra elementar. A remoção das antigas seções 2.8–2.9 não apaga
 # os registros históricos de leitura e não altera o cadastro das obras.
+# Capítulo 3 (20/10/2026): reconsulta dirigida de §6.2.2, p. 64–65,
+# no PDF original; indutância em série e curva k versus altura do primário.
+# A medição nas duas polaridades é proposta do protocolo deste trabalho,
+# derivada do modelo indutivo, não transcrição do procedimento de Denicolai.
 denicolai2001:
   type: Thesis
   author: "Denicolai, Marco"
@@ -180,6 +184,11 @@ tanwar2024:
 # Comparação de fontes (18/10/2026): leitura dirigida de §4.3, p. 84;
 # máximo de 70 cm na série de descarga livre, limitado por streamers laterais.
 # Não interpretar esse resultado como limite universal de NST 15 kV / 60 mA.
+# Primário (20/10/2026): §3.3.3, p. 36–38, e §7.1, p. 131, conferidos
+# no PDF extraído. Enrolamento de fio maciço nu AWG 8 (128 mil ≈ 3,25 mm),
+# não tubo de 1/4 pol: este último é o strike rail, descrito na p. 38.
+# Não atribuir o desempenho ao diâmetro isoladamente nem generalizar a frase
+# do autor sobre perdas do gap dominarem em qualquer circunstância.
 wasatonic2013:
   type: Thesis
   author: "Wasatonic, Eric B."
@@ -1336,6 +1345,11 @@ courier:
 
 # Introdução (12/10/2026): PDF oficial, §§1, 3.1.1–3.1.2 e 5.2 conferidos;
 # especificação do mensurando, expressão do resultado e correlações.
+# Capítulo 3 (20/10/2026): PDF oficial reconsultado por extração de texto;
+# §§4.2, 4.3.7–4.3.9, 5.1–5.2 e 6–7: repetibilidade, distribuições,
+# propagação com covariâncias, abrangência e apresentação dos resultados.
+# Leitura dirigida, não integral. A regra de compatibilidade da pesquisa é
+# escolha metodológica; não é critério universal de validação atribuído ao GUM.
 jcgm100-2008:
   type: Report
   author: { name: "Joint Committee for Guides in Metrology" }
@@ -1449,6 +1463,10 @@ jcgm-gum5-2026:
 
 # Edição citada no plano. Conferir vigência e exigências institucionais ao usar.
 # docs/seguranca.md registra transição prevista para nova redação em 01/06/2027.
+# Capítulo 3 (20/10/2026): texto oficial de 2019 reconsultado, em particular
+# §§10.5, 10.7.3, 10.11 e 10.12; desenergização, acompanhamento em AT,
+# procedimentos e emergência. Uso como referência, sem certificar conformidade
+# nem substituir procedimento e autorização específicos do local de ensaio.
 nr10-2019:
   type: Report
   author: { name: "Brasil. Ministério do Trabalho e Emprego" }
@@ -1457,6 +1475,11 @@ nr10-2019:
   language: pt-BR
   url: { value: "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/arquivos/normas-regulamentadoras/nr-10-atualizada-2019-1.pdf", date: 2026-10-12 }
 
+# Capítulo 3 (20/10/2026): reconsulta dirigida à página original, seções
+# Capacitors, Standard Operating Procedures for Electrical Hazards e Grounding
+# and Discharge Sticks. Finalidade: energia residual, documentação e adequação
+# dos dispositivos. Não se adotam tempos genéricos, ferramentas improvisadas,
+# tabelas de rede ou arranjos de terra norte-americanos como procedimento da SGTC.
 illinois-electrical-safety:
   type: Web
   author: { name: "University of Illinois Urbana-Champaign. Division of Research Safety" }
@@ -3095,3 +3118,165 @@ deepfriedneon-primary:
   title: "Primary Coil"
   language: en
   url: { value: "https://deepfriedneon.com/tesla_primary.html", date: 2026-10-20 }
+
+# Origem: continuação de burnett-tesla-components, consulta em 20/10/2026.
+# Leitura dirigida do texto: SRSG com motor convertido para operação síncrona;
+# primário de tubo de 1/4 pol, efeito pelicular, tomada, folgas e impedância LC.
+# Finalidade: exemplos e critérios físicos, não levantamento estatístico da
+# comunidade. Imagens não auditadas; publicação não verificada. Pendências:
+# dimensionamento elétrico/mecânico próprio; não adotar limites ou ensaios do relato.
+burnett-tesla-components-continued:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Tesla coil components continued"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/parts2.html", date: 2026-10-20 }
+
+# Origem: Tesla Two, site de Steve Conner. Texto consultado em 20/10/2026;
+# esquema em imagem não auditado. Finalidade: distinguir barramento CC,
+# multiplicador e carga ressonante com reator/diodo. Não é leitura integral do
+# projeto nem validação de valores, isolação ou ausência de ballast na entrada.
+# Publicação não verificada; pendência: avaliar topologia própria para os LG.
+conner-tesla-two-charging:
+  type: Web
+  author: "Conner, Steve"
+  title: "Tesla Two: how it works"
+  language: en
+  url: { value: "https://scopeboy.com/tesla/tc2schem.html", date: 2026-10-20 }
+
+# Origem: página do mesmo projeto, datada 31/01/2003, atualização 17/02/2003.
+# Texto consultado; fotografias e resistência mecânica não avaliadas. Finalidade:
+# precedente de ARSG com pequeno motor de alta rotação; o texto não identifica
+# tipo elétrico/modelo do motor. Não copiar rotor, colagem ou contenção do relato.
+conner2003-propeller-gap:
+  type: Web
+  author: "Conner, Steve"
+  title: "Work begins on Son of Tesla Coil"
+  date: 2003-01-31
+  language: en
+  url: { value: "https://scopeboy.com/tesla/tcpropeller.html", date: 2026-10-20 }
+
+# Origem: página de construtor preservada em ClassicTesla/Hot-Streamer/adam.
+# Texto consultado em 20/10/2026; autoria completa e publicação não verificadas.
+# Finalidade: exemplo de motor Emerson 1/4 HP convertido de 1725 para 1800 rpm
+# e outro SRSG a 1800 rpm. Não é indicação de potência para o nosso rotor.
+# Fotos não avaliadas; não homologar usinagem, mandril ou eletrodos toriados.
+hotstreamer-adam-spark-gap:
+  type: Web
+  title: "Spark Gap"
+  language: en
+  parent: { type: Web, title: "ClassicTesla: Hot-Streamer archive" }
+  url: { value: "https://www.classictesla.com/hot-streamer/adam/gap.htm", date: 2026-10-20 }
+
+# Origem: TCML, resposta de Marc Metlicka e pergunta citada de Mark.
+# Texto consultado em 20/10/2026. Finalidade: motores CC de esteira sugeridos
+# e ARSG com esmerilhadeira relatado na comunidade; não prova prevalência,
+# compatibilidade de qualquer motor nem segurança de dimmer/variac improvisado.
+# Pendências: características do exemplar, controlador, eixo e contenção.
+metlicka2002-async-rotary-motor:
+  type: Post
+  author: "Metlicka, Marc"
+  title: "Re: async rotary control"
+  date: 2002-08-26
+  language: en
+  parent: { type: Thread, title: "Tesla Coil Mailing List" }
+  url: { value: "https://www.pupman.com/listarchives/2002/August/msg01424.html", date: 2026-10-20 }
+
+# Origem: catálogo oficial Termomecanica, PDF extraído em 20/10/2026.
+# Leitura dirigida às tabelas de dimensões/estado recozido de tubos pancake;
+# não é leitura integral. Finalidade: DE, parede e apresentação comercial.
+# Data editorial não estabelecida; 2019 no nome do arquivo não foi usado como
+# data de publicação. Pendência: ficha/lote da compra e perdas em RF; catálogo
+# de refrigeração não certifica capacidade elétrica para uma bobina de Tesla.
+termomecanica-catalogo-refrigeracao:
+  type: Report
+  author: { name: "Termomecanica" }
+  title: "Tubos de cobre pancake, drysealed, ranhurado: catálogo de refrigeração"
+  language: pt-BR
+  url: { value: "https://www.termomecanica.com.br/download/conteudo_tecnico/catalogo_de_tubos_de_refrigeracao_2019_af.pdf", date: 2026-10-20 }
+
+# Origem: página comercial, descrição/preços consultados em 20/10/2026.
+# Finalidade: localizar tubo recozido 6,35 x 0,79 mm em rolo; não é compra.
+# Título anuncia 15 m e descrição 15,24 m: confirmar comprimento, marca,
+# continuidade, disponibilidade e frete. Publicação não verificada; fornecedor
+# não homologa o produto para SGTC. Produtos relacionados incluem 5/16 pol.
+refritron-tubo-cobre-um-quarto-rolo:
+  type: Web
+  author: { name: "Refritron" }
+  title: "Tubo de cobre flexível 1/4 6,35 mm 0,79 mm: panqueca rolo com 15 metros"
+  language: pt-BR
+  url: { value: "https://www.refritron.com.br/tubo-de-cobre-flexivel-14-6-35mm-0-123-panqueca", date: 2026-10-20 }
+
+# Origem: página comercial, descrição consultada em 20/10/2026.
+# Finalidade: localizar tubo recozido Eluma 5/16 pol, 7,94 x 0,79 mm, a metro.
+# Não é compra nem confirmação de entrega; solicitar trecho contínuo, ficha,
+# preço final e disponibilidade. Publicação não verificada; uso em RF não validado.
+refritron-tubo-cobre-cinco-dezesseis-metro:
+  type: Web
+  author: { name: "Refritron" }
+  title: "Tubo de cobre flexível de 5/16 7,94 mm: cobre metro"
+  language: pt-BR
+  url: { value: "https://www.refritron.com.br/material-para-instalacao-e-manutencao-de-ar/tubos-de-cobre-e-conexoes/tubo-de-cobre-flexivel-de-516-7-94mm-0-158-cobre-metro", date: 2026-10-20 }
+
+# Origem: página comercial, descrição consultada em 20/10/2026.
+# Finalidade: alternativa de fornecedor de tubo Termomecanica 1/4 pol em rolo.
+# Venda em kg, múltiplo de 1,86: não interpretar preço exibido como preço do
+# rolo inteiro. Publicação não verificada; confirmar unidade, lote, frete e
+# estoque real; não é compra nem aprovação para uso em alta tensão/RF.
+capital-refrigeracao-tubo-cobre-um-quarto:
+  type: Web
+  author: { name: "Capital Refrigeração" }
+  title: "Tubo cobre flex. panqueca 15 m (C) 1/4 (6,35 mm) 1/32 AC/REFRIG"
+  language: pt-BR
+  url: { value: "https://www.capitalrefrigeracao.com.br/tubo-cobre-flexc-14-6,35-mm-132-acrefrig", date: 2026-10-20 }
+
+# Origem: link da galeria burnett-pictures; texto/tabela consultados em
+# 20/10/2026. Finalidade: cruzar secundário 4,32 x 21,3 pol, primário de tubo
+# de 1/4 pol, SRSG 200 BPS e máximo declarado 72 pol. A segunda linha
+# "Secondary diameter" de 21,3 pol é interpretada como comprimento, coerente
+# com 1500 espiras / 70,4 espiras por polegada; o rótulo da página está repetido.
+# Potência de entrada declarada 2550 W; não fundir com os ensaios de 1800 W
+# da galeria. Máximo sem protocolo/categoria livre-alvo explicitados na ficha;
+# não é recorde universal nem validação independente. Publicação não verificada.
+burnett-demo-coil-spec:
+  type: Web
+  author: "Burnett, Richie"
+  title: "4 inch Demo Coil Spec."
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/spec.html", date: 2026-10-20 }
+
+# Origem: continuação de burnett-async; texto consultado em 20/10/2026,
+# sem reprodução das simulações ou auditoria das imagens dos gráficos.
+# Finalidade: ajuste conjunto de Lb e Cp para temporização, potência e fator
+# de potência; efeitos de Fr muito alta/baixa. Não transportar automaticamente
+# os ajustes sugeridos para MOTs não caracterizados; publicação não verificada.
+burnett-externally-ballasted:
+  type: Web
+  author: "Burnett, Richie"
+  title: "Rotary gap analysis (continued): externally ballasted supplies"
+  language: en
+  url: { value: "https://www.richieburnett.co.uk/external.html", date: 2026-10-20 }
+
+# Origem: catálogo comercial Multifrio, texto e tabela consultados em
+# 20/10/2026. Finalidade: disponibilidade anunciada de tubos flexíveis de
+# 3/16 a 3/4 pol, DE e parede de 0,79 mm, rolos de 15 m. Não é compra,
+# estoque confirmado ou homologação elétrica; confirmar lote, estado recozido,
+# metragem contínua e frete. Data de publicação não verificada.
+multifrio-tubo-cobre-flexivel:
+  type: Web
+  author: { name: "Multifrio Refrigeração" }
+  title: "Tubo de Cobre Flexível"
+  language: pt-BR
+  url: { value: "https://www.multifrio.com.br/conteudo/tubo-de-cobre-flexivel.html", date: 2026-10-20 }
+
+# Origem: página comercial Capital Refrigeração, texto consultado em
+# 20/10/2026. Finalidade: confirmar oferta brasileira de tubo Termomecanica
+# 3/16 pol, DE 4,76 mm, rolo de 15 m. Venda em kg, múltiplo 1,32; preço
+# exibido não é preço do rolo. Não é compra nem aprovação para SGTC;
+# publicação não verificada, estoque/lote/frete dependem de confirmação.
+capital-refrigeracao-tubo-cobre-tres-dezesseis:
+  type: Web
+  author: { name: "Capital Refrigeração" }
+  title: "Tubo cobre flex. panqueca 15 m (B) 3/16 (4,76 mm) 1/32 AC/REFRIG"
+  language: pt-BR
+  url: { value: "https://www.capitalrefrigeracao.com.br/tubo-cobre-flexb-316-4,76-mm-132-acrefrig", date: 2026-10-20 }

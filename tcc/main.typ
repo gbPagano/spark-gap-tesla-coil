@@ -4,8 +4,8 @@
 #import "template/citacoes.typ": citacao-longa
 #import "template/titulos.typ": titulo-sem-numero
 
-// Introdução e fundamentação redigidas, sujeitas à revisão do pesquisador;
-// os demais capítulos permanecem em esqueleto.
+// Introdução, fundamentação e metodologia redigidas, sujeitas à revisão;
+// os capítulos seguintes permanecem em esqueleto.
 // Resumo e abstract permanecem vazios; os avisos do template indicam
 // os requisitos de preenchimento para a versão final.
 #show: conf.with(
@@ -683,33 +683,224 @@ com outro terminal ou na operação com descargas.
 
 = Metodologia
 
+A pesquisa compreenderá o dimensionamento, a construção e a caracterização
+experimental de uma SGTC. A avaliação do modelo linear será realizada em baixa
+energia, sem descargas no secundário, mediante comparação entre previsões e
+medições de frequência e amortecimento. A operação com centelhador e descargas
+constituirá uma etapa distinta, destinada à demonstração funcional e ao registro
+complementar do desempenho.
+
 == Estratégia e etapas da pesquisa
+
+O estudo terá caráter experimental e quantitativo. O dimensionamento analítico
+será comparado com as estimativas do JavaTC e do WinTesla para a mesma
+geometria, respeitando as definições dos parâmetros de cada ferramenta.
+A implementação numérica será verificada pela solução analítica e pelos
+casos desacoplado e sem perdas, antes da comparação com as medições.
+
+As previsões nominais serão arquivadas antes da coleta. Após a construção,
+serão registradas as dimensões reais e as alterações do projeto, seguidas da
+medição dos componentes, da identificação dos modos acoplados e do decaimento
+livre do secundário. Ensaios preliminares orientarão a escolha das faixas de
+excitação, das posições do primário e das condições de aquisição. O número
+de repetições e os critérios de análise serão definidos antes da série
+principal. A demonstração funcional ocorrerá em etapa posterior, sob liberação
+específica para alta tensão.
 
 == Grandezas investigadas e configurações de referência
 
+Serão investigados $L_p$, $L_s$, $C_p$, $C_s$, $M$ e $k$, além das
+frequências amortecidas, das taxas de amortecimento e dos fatores de qualidade.
+O fator $Q_s$ será determinado com a malha primária aberta, separadamente dos
+fatores dos modos acoplados definidos na @eq-q-modal.
+
+Nos ensaios de baixa energia, a fonte de alta tensão permanecerá fisicamente
+desconectada. Para identificar os modos acoplados, o centelhador será
+substituído por uma ligação condutora que mantenha a malha primária fechada.
+A configuração de referência terá altura e tomada do primário, terminal
+capacitivo e presença ou ausência do ponto de descarga definidos. Mudanças
+nesses elementos serão registradas, assim como a posição dos sensores, as
+conexões e as condições ambientais disponíveis.
+
 == Instrumentação, condições de ensaio e segurança
+
+A instrumentação prevista compreende medidor de resistência, indutância e
+capacitância, gerador de sinais, osciloscópio digital e instrumentos
+dimensionais. Modelos, acessórios, faixas e situação de calibração serão
+registrados após a confirmação dos equipamentos disponíveis. A aquisição
+deverá resolver as oscilações e seu decaimento, sem saturação. Serão avaliados
+o carregamento dos sensores e a dependência das estimativas com a amplitude
+de excitação, pois o arranjo de medição pode alterar a frequência e o fator
+de qualidade @craven2014.
+
+Os ensaios dependerão de análise de risco, autorização e supervisão, conforme
+os procedimentos do laboratório e a NR-10 @nr10-2019. Serão previstos
+barreiras, controle de acesso, parada e proteções elétricas. Os limites de
+excitação considerarão a elevação ressonante e a energia armazenada.
+Intervenções na montagem exigirão desenergização, impedimento de reenergização,
+descarga e verificação de ausência de tensão, com dispositivos adequados
+@illinois-electrical-safety. Na operação em alta tensão, haverá acompanhamento
+presencial, sem contato humano com as descargas, e avaliação dos riscos
+elétricos, térmicos, acústicos, ópticos, de gases e de interferência.
+A proteção de terra dos instrumentos será mantida; sondas comuns não serão
+ligadas aos pontos de alta tensão. Condições fora da liberação ou falhas de
+proteção determinarão a interrupção do ensaio e sua reavaliação antes da retomada.
 
 == Procedimentos de caracterização em baixa energia
 
-=== Medição de indutâncias e capacitâncias
+As indutâncias serão medidas com os capacitores externos desconectados e o
+outro enrolamento aberto, registrando-se a frequência de teste e compensando-se
+os cabos conforme o manual do medidor. A capacitância primária será medida no
+banco utilizado no protótipo. As leituras de baixa frequência serão
+diferenciadas dos parâmetros efetivos em ressonância, conforme discutido no
+capítulo anterior @javatc-ces @javatc-les. Se $C_s$ for inferida da frequência
+e do amortecimento do secundário pelas relações do RLC, o resultado será
+identificado como parâmetro ajustado, com o valor de $L_s$ utilizado explícito.
 
-=== Determinação da indutância mútua e do coeficiente de acoplamento
+A indutância mútua será obtida por medição independente das frequências modais.
+Será empregado o método de associação dos enrolamentos em série, com as
+polaridades em concordância e em oposição, em frequência compatível com a
+aproximação indutiva. Dessas leituras, serão calculados
 
-=== Varredura de frequência e identificação dos modos
+$
+  abs(M) = (L_"conc" - L_"op") / 4,
+  quad k = abs(M) / sqrt(L_p L_s).
+$ <eq-k-serie>
 
-=== Variação da altura do primário e levantamento da separação modal
+O uso da associação em série para levantar o acoplamento em função da altura
+tem precedente em #cite(<denicolai2001>, form: "prose", supplement: [p. 64-65]).
+A resolução da diferença entre leituras será verificada; se insuficiente,
+será avaliado o método de tensão induzida no secundário aberto, com medição da
+corrente primária e avaliação do carregamento dos instrumentos.
 
-=== Decaimento livre (ring-down), amortecimento e fator de qualidade do secundário
+Varreduras de frequência localizarão as ressonâncias dos circuitos isolados
+e do sistema acoplado. Os picos orientarão a identificação, sem serem
+automaticamente equiparados às frequências dos polos. Após retirar a excitação,
+os transitórios acoplados serão ajustados por mínimos quadrados à soma de duas
+senoides amortecidas, obtendo-se $f_(d,-)$, $f_(d,+)$ e as respectivas taxas
+de amortecimento. A estabilidade dos parâmetros e os resíduos serão examinados;
+batimentos não serão ajustados por uma única exponencial de perdas.
 
-=== Comparação das configurações de terminal capacitivo e ponto de descarga
+A altura do primário será variada, mantendo-se a concentricidade, a tomada,
+o capacitor e o terminal de referência. Em cada posição serão medidos $k$ e
+as frequências modais, com verificação da sintonia. As curvas
+$f_(d,-)(k)$ e $f_(d,+)(k)$ e a separação
+$Delta f_d = f_(d,+) - f_(d,-)$ serão comparadas com as previsões para os
+parâmetros de cada posição. Eventual ressintonia por mudança de tomada
+constituirá uma série distinta. As medições serão repetidas, incluindo o
+retorno à posição de referência para avaliar o reposicionamento.
+
+O _ring-down_ do secundário será realizado com a malha primária aberta e
+captação de fraco acoplamento. Uma senoide amortecida será ajustada ao trecho
+posterior à retirada da excitação e anterior ao domínio do ruído, fornecendo
+$f_(d,s)$ e $alpha_s$. O fator $Q_s$ será calculado pela combinação da
+@eq-parametros-decaimento com a @eq-q-amortecimento, com verificação pelo
+decréscimo logarítmico quando os picos forem resolvidos. O resultado incluirá
+o carregamento residual da medição. Decaimentos dos ressonadores isolados
+também poderão fornecer perdas equivalentes por $R = 2 L alpha$, para posterior
+comparação com novos transitórios acoplados.
+
+Por fim, serão comparados o secundário sem terminal adicional, com o terminal
+de referência e com esse terminal acrescido do ponto de descarga. Serão
+mantidas as demais condições de montagem e avaliadas as diferenças de
+frequência, amortecimento e $Q_s$. Todos esses ensaios ocorrerão sem corona ou
+descargas ativas, avaliando o efeito da geometria do terminal e do ponto de
+descarga. Modos ou decaimentos não resolvidos serão registrados como limitações
+da identificação.
 
 == Demonstração funcional e caracterização complementar das descargas
 
+A montagem final será operada com o centelhador para demonstrar o funcionamento
+e registrar as descargas, respeitando as condições autorizadas de alimentação
+e duração. O comprimento será estimado por imagens com escala e geometria de
+câmera documentadas, sem exposição de pessoas à região energizada. Serão
+explicitados o critério de comprimento, as limitações de perspectiva e a
+distinção entre descargas livres e até um alvo condutor. Os registros incluirão
+a duração da observação e a repetibilidade, além dos eventos de maior extensão.
+
+A taxa média de disparos será estimada por contagem óptica em intervalo
+conhecido, após verificar a resolução temporal e a ausência de contagens
+duplicadas ou eventos perdidos. Essa taxa será diferenciada das frequências
+de oscilação. A meta de aproximadamente 1 m será avaliada como desempenho
+complementar, sem integrar a validação linear ou justificar operação fora dos
+limites liberados. A impossibilidade de demonstrar o funcionamento será
+registrada no atendimento dos objetivos.
+
 == Tratamento, rastreabilidade e preservação dos dados
+
+Os dados brutos serão preservados com identificadores que relacionem cada
+aquisição à configuração e à repetição. Os registros incluirão instrumentos,
+faixas, excitação, conexões e condições de ensaio. O processamento será
+realizado por rotinas versionadas, com documentação das conversões, janelas
+e ajustes. Dados rejeitados permanecerão arquivados com justificativa; uma
+discrepância em relação ao modelo não será motivo suficiente para exclusão.
+
+Serão mantidos separadamente os conjuntos de previsões nominais, atualizadas
+com parâmetros medidos e obtidas por ajuste, identificando os dados utilizados.
+Cópias de segurança e instruções de reprodução da análise permitirão recuperar
+os registros e reavaliar os resultados, conforme a orientação do GUM
+#cite(<jcgm100-2008>, supplement: [seção 7]).
 
 == Erros relativos e orçamento de incerteza conforme o GUM
 
+Para cada grandeza comparável $x$, será adotada a diferença
+$Delta x = x_"prev" - x_"med"$ e o erro relativo assinado
+
+$
+  e_x = 100 (x_"prev" - x_"med") / x_"med",
+$ <eq-erro-relativo-metodos>
+
+expresso em porcentagem, sem tratar a medição como valor verdadeiro exato.
+Para valores nulos ou não distinguíveis de zero, será utilizada a diferença
+absoluta. Na verificação entre solução analítica e numérica, a referência
+será o valor analítico.
+
+O orçamento seguirá o GUM @jcgm100-2008, com avaliações do tipo A pelas
+repetições e do tipo B por calibração, especificações e resolução dos
+instrumentos. Serão considerados ainda o posicionamento, o carregamento e
+a sensibilidade dos ajustes. Para $Y = g(X_1, dots, X_m)$, a incerteza-padrão
+combinada será calculada por
+
+$
+  u_c^2(y) = sum_(i=1)^m c_i^2 u^2(x_i)
+    + 2 sum_(i=1)^(m-1) sum_(j=i+1)^m
+      c_i c_j op("cov")(x_i, x_j),
+  quad c_i = (∂ g) / (∂ x_i),
+$ <eq-incerteza-combinada>
+
+com os coeficientes de sensibilidade avaliados nas estimativas das entradas.
+Serão preservadas as correlações entre parâmetros de um mesmo ajuste e entre
+previsões e medições que compartilhem dados. A adequação da propagação de
+primeira ordem será verificada nas expressões não lineares. A incerteza da
+diferença incluirá as contribuições da previsão e da medição e sua covariância.
+
+A incerteza expandida será $U = k_"abr" u_c$, com probabilidade de abrangência
+pretendida de aproximadamente 95% e fator justificado pela distribuição e
+pelos graus de liberdade aplicáveis. $k_"abr"$ será distinguido do acoplamento
+$k$. Cada resultado apresentará estimativa, unidade, incerteza e fator de
+abrangência, com as fontes e contribuições documentadas no orçamento.
+
 == Critérios de comparação e interpretação das discrepâncias
+
+A comparação utilizará grandezas com a mesma definição e configuração.
+As frequências amortecidas serão confrontadas com o módulo da parte imaginária
+dos polos dividido por $2 pi$, e as taxas de amortecimento, com o módulo da
+parte real. Picos de varredura serão comparados à resposta forçada, enquanto
+as expressões ideais de sintonia ficarão restritas às suas hipóteses.
+
+Será adotada a regra $abs(Delta x) <= U_(Delta x)$ para indicar compatibilidade
+pontual, sendo $U_(Delta x)$ a incerteza expandida da diferença. Essa escolha
+da pesquisa não constitui critério universal de validação do GUM.
+Discrepâncias serão examinadas quanto à dessintonia, ao carregamento, às
+perdas e aos limites do modelo concentrado. A interpretação considerará
+também as tendências da curva modal e os resíduos dos ajustes; resultados
+sem resolução ou incerteza adequadas serão classificados como inconclusivos.
+
+As conclusões distinguirão previsões nominais, atualizadas e ajustadas.
+A reprodução dos dados usados para identificar parâmetros não será considerada
+validação independente. A adequação do modelo ficará limitada às configurações
+e grandezas ensaiadas em baixa energia, sem extensão automática à operação
+com descargas.
 
 = Modelagem matemática e simulação
 
