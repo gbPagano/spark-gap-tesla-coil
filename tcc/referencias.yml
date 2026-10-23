@@ -571,6 +571,9 @@ lau-design:
   language: en
   url: { value: "https://www.laushaus.com/tesla/howtodesign.htm", date: 2026-10-12 }
 
+# Reconsulta em 22/10/2026 para os encaixes FreeCAD: texto sobre tampões,
+# inserto roscado local e barreira isolante interna; não copiar dimensões
+# imperiais nem apresentar o relato como qualificação elétrica/mecânica.
 lau-secondary:
   type: Web
   author: "Lau, Gary"
@@ -3182,6 +3185,93 @@ lau-foam-toroid:
   language: en
   url: { value: "https://www.laushaus.com/tesla/foamtoroid.htm", date: 2026-10-19 }
 
+# Origem: consulta de adesivo para unir duto e forma de alumínio, 22/10/2026.
+# Leitura: texto indexado da página oficial, incluindo indicação explícita de
+# alumínio e apresentação Pesilox incolor de 20 g; acesso direto retornou 403.
+# Finalidade: compatibilidade declarada pelo fabricante, não ensaio de adesão
+# do nosso conjunto. Não confundir Fix Tudo Pesilox com MS Fixa Tudo.
+# Publicação não estabelecida. Pendências: produto exato, preparo, junta,
+# retenção mecânica e contato elétrico separado; sem qualificação em AT/RF.
+tekbond-fix-tudo:
+  type: Web
+  author: { name: "Tekbond" }
+  title: "Fix Tudo"
+  language: pt-BR
+  url: { value: "https://www.tekbond.com.br/produtos/colas-e-adesivos/cola-multiuso/fix-tudo", date: 2026-10-22 }
+
+# Origem: mesma consulta; texto da ficha oficial recuperado pelo índice de
+# busca. O PDF não foi aberto integralmente: acesso direto retornou 403.
+# Leitura: composição (poliéter siloxano), cura pela umidade, flexibilidade,
+# aplicação e profundidades de cura nas condições de 23 °C e 55% UR.
+# Finalidade: distinguir formação de película de cura da junta; não transferir
+# resistência à tração do material para capacidade de carga da colagem.
+# Data de publicação/revisão não confirmada; não inferir da pasta da URL.
+# Pendências: conferir ficha/rótulo do produto comprado, aderência real e
+# cura entre superfícies não porosas; não é isolação de AT certificada.
+tekbond-fix-tudo-pesilox-ficha:
+  type: Report
+  author: { name: "Tekbond" }
+  title: "Fix Tudo Pesilox: ficha técnica"
+  language: pt-BR
+  url: { value: "https://www.tekbond.com.br/sites/Tekbond.com.br/files/media/downloadable/2025-10/Fix_Tudo-BRFU000-ficha_tecnica_01.pdf", date: 2026-10-22 }
+
+# === Tutoriais de montagem do terminal: consulta em 22/10/2026 ===
+# Origem: busca de vídeo próximo ao conjunto duto + forma metálica + fita.
+# Descoberto em https://opentesla.org/how-to-build-a-tesla-coil-at-home-dual-mot-tesla-coil-toroid-build/;
+# página e HTML consultados, link do vídeo extraído do embed e título/canal
+# confirmados via oEmbed do YouTube. Descrição reproduzida informa duto de
+# alumínio de 120 mm, tampa de panela, cola quente e fita de alumínio; duração
+# de 7:27 informada pelo agregador. Vídeo não assistido integralmente, sem
+# timestamps verificados. A data de 09/08/2026 é da página do agregador, não
+# publicação do vídeo confirmada; por isso não é atribuída ao vídeo.
+# Finalidade: candidato visual próximo da montagem com uma peça central.
+# Pendências: verificar sequência, encaixe, contato elétrico e desempenho;
+# relato de construção não qualifica adesivo nem autoriza operação em AT.
+neurodivergence-toroid-build:
+  type: Video
+  author: { name: "Neurodivergence and High Voltage" }
+  title: "How to Build a Tesla Coil at Home, Dual MOT Tesla coil Toroid build"
+  language: en
+  url: { value: "https://www.youtube.com/watch?v=5K_KSDw1UW0", date: 2026-10-22 }
+
+# Origem: mesma busca; página no Hotstreamer recuperada e texto lido.
+# Fotografias disponíveis, não examinadas nesta consulta. Finalidade: relato
+# de montagem com duas formas parafusadas pelos fundos, duto de 4 ou 6 pol,
+# fechamento com fita de alumínio, encaixe comprimido e cordão de cola quente.
+# Autoria completa não confirmada: site identificado apenas como Rob's Tesla
+# Coil Site; publicação não estabelecida. Pendências: dimensões e materiais
+# próprios, continuidade e retenção; cola quente não é solução certificada.
+rob-toroids:
+  type: Web
+  title: "Toroids"
+  language: en
+  parent: { type: Web, title: "Rob's Tesla Coil Site" }
+  url: { value: "https://hotstreamer.deanostoybox.com/rob/toroids.htm", date: 2026-10-22 }
+
+# Origem: mesma busca; texto da página recuperado. Finalidade: montagem
+# semelhante com quatro formas (duas sobrepostas de cada lado), duto, fita
+# na emenda e aperto central por haste roscada. Fotografia/desenho não
+# examinados nesta consulta. Autoria completa e publicação não confirmadas.
+# Pendências: não extrapolar a haste local para condutor longo no secundário;
+# conferir encaixe, rigidez e contato elétrico no nosso conjunto.
+jonathon-toroid:
+  type: Web
+  title: "My 6 Inch Tesla Coil: Toroid"
+  language: en
+  url: { value: "https://hotstreamer.deanostoybox.com/jonathon/Tesla/6/components/toroid.html", date: 2026-10-22 }
+
+# Origem: mesma busca; candidato adicional. Título e canal conferidos via
+# oEmbed, mas descrição, materiais e sequência não recuperados; vídeo não
+# assistido. Data de 23/10/2018 indicada pelo índice, não confirmada no vídeo,
+# portanto omitida. Finalidade: guardar candidato para avaliação visual.
+# Pendência: confirmar se usa duto e forma antes de recomendar como montagem
+# equivalente; não apresentar metadados como tutorial já examinado.
+wyrtap-cheap-toroid:
+  type: Video
+  author: { name: "WyrTap" }
+  title: "Making a cheap toroid for tesla coils"
+  url: { value: "https://www.youtube.com/watch?v=8SIXrSOBkGc", date: 2026-10-22 }
+
 # === Material do primário: consulta em 20/10/2026 ===
 # Origem: página técnica de Gary Lau. Texto consultado, não análise das fotos
 # ou leitura integral do site. Finalidade: precedente de tubo de cobre de
@@ -3661,3 +3751,95 @@ vishay-vr25-vr37-vr68:
   number: "28907"
   language: en
   url: { value: "https://www.vishay.com/docs/28907/vr25vr37vr68.pdf", date: 2026-10-22 }
+
+# === Referências dos encaixes e pedestal FreeCAD: consulta em 22/10/2026 ===
+# Origem: site oficial Franzoli Electronics. Texto da página consultado:
+# PVC de 100 x 341 mm, terminal esqueleto e gabinete impresso. Finalidade:
+# contexto de modularidade e porte, não transplante elétrico de DRSSTC para
+# SGTC. Imagem desta versão não examinada. Publicação indicada na página.
+# Pendências: não há desenho cotado ou especificação dos encaixes consultada.
+franzoli2021-alpha-dr:
+  type: Web
+  author: { name: "Franzoli Electronics" }
+  title: "Alpha-DR"
+  date: 2021-03-28
+  language: en
+  url: { value: "https://franzolielectronics.com/alpha-dr/", date: 2026-10-22 }
+
+# Origem: mesma pesquisa. Texto da página e fotografia principal
+# 1010395-scaled.jpg examinados. Finalidade: inspiração visual do pedestal
+# central com cintura e apoio alargado sob o terminal; não reprodução do CAD.
+# A foto não revela roscas, material do pedestal, dimensões ou fixação interna.
+# A descrição de PETG refere-se ao gabinete, não comprova material do pedestal.
+# Publicação conferida no HTML. Pendências: carga, material e isolação próprios.
+franzoli2021-alpha-dr-mark-ii:
+  type: Web
+  author: { name: "Franzoli Electronics" }
+  title: "Alpha-DR Mark II"
+  date: 2021-04-20
+  language: en
+  url: { value: "https://franzolielectronics.com/alpha-dr-mark-ii/", date: 2026-10-22 }
+
+# Origem: site oficial. Texto da ficha do projeto consultado: terminal com
+# estrutura impressa e secundário de 250 x 1100 mm. Finalidade: precedente
+# de integração mecânica impressa, não dimensionamento do nosso suporte.
+# Fotos desta versão não examinadas; não há CAD dos encaixes consultado.
+# Publicação indicada na página. Pendências: massa e esforços no nosso conjunto;
+# controles/proteções da DRSSTC não são transferíveis automaticamente à SGTC.
+franzoli2022-drsstc-iv:
+  type: Web
+  author: { name: "Franzoli Electronics" }
+  title: "DRSSTC IV"
+  date: 2022-07-11
+  language: en
+  url: { value: "https://franzolielectronics.com/drsstc-iv/", date: 2026-10-22 }
+
+# Origem: imagem de desenho técnico enviada pelo usuário durante o desenho
+# do suporte FreeCAD. Leitura visual da imagem parcial: vistas frontal e
+# corte A-A, título, número 001-A, revisão 00, unidades mm e escala 1:10.
+# Finalidade: referência de forma (coluna nervurada, flanges e cubo), não
+# adoção das cotas de 300/450 mm nem validação estrutural/elétrica.
+# Pendências: obter o desenho original, autoria, data e origem recuperável;
+# a imagem fornecida no chat não está arquivada no repositório. Não inventar
+# URL, autor ou publicação. Não constitui leitura do projeto completo.
+suporte-topload-desenho-001a:
+  type: Report
+  title: "Suporte - conjunto geral"
+  number: "001-A"
+  language: pt-BR
+
+# Origem: tabela da bancada Fasteners instalada, confrontada com o CSV do
+# repositorio publico. Leitura dirigida da linha M6: pescoco ate 6,48 mm,
+# comprimento ate 4,6 mm e cabeca ate 16,55 mm; b1 = 18 mm de rosca.
+# Finalidade: alojamento antirrotacao inferior e limites do modelo nominal.
+# Nao constitui leitura da norma DIN 603. Publicacao/autoria individual nao
+# verificadas. Pendencias: medir ferragem real e validar tolerancias impressas.
+fasteners-din603-tabela:
+  type: Web
+  title: "Fasteners Workbench: DIN603def"
+  language: en
+  url: { value: "https://raw.githubusercontent.com/shaise/FreeCAD_FastenersWB/master/FsData/din603def.csv", date: 2026-10-23 }
+
+# Origem: catalogo Dapco; texto, tabela metrica M6 e codigo 2PFM6X50 lidos.
+# Finalidade: confirmar variante francesa M6 x 50 de ROSCA INTEIRA, necessaria
+# para a porca alcancar o rebaixo. Nao e compra nem estoque confirmado; imagens
+# nao examinadas. Medidas declaradas orientativas. Publicacao nao verificada.
+# Pendencias: fornecedor/lote, rosca efetiva, medidas e ajuste no material impresso.
+dapco-frances-rosca-inteira-din603:
+  type: Web
+  author: { name: "Dapco" }
+  title: "Parafuso Francês Rosca Inteira Inox 304 (A2): DIN 603"
+  language: pt-BR
+  url: { value: "https://www.dapco.com.br/produto/parafuso-frances-rosca-inteira-inox-304-a2/din-603", date: 2026-10-23 }
+
+# Origem: pagina comercial Mega Lojista; descricao e tabela do FR6X5088BC
+# consultadas. Finalidade: contraponto de M6 x 50 com rosca PARCIAL de 18 mm,
+# inadequado para a porca rebaixada do nosso encaixe. Fotos nao examinadas.
+# Publicacao nao verificada. Nao usar o torque anunciado como torque admissivel
+# do plastico impresso; nao e recomendacao de compra nem validacao estrutural.
+megalojista-frances-m6x50-parcial:
+  type: Web
+  author: { name: "Mega Lojista" }
+  title: "Parafuso Francês Sem Porca M6 1,00 MA x 50 DIN 603 Aço Carbono Classe 8.8 Bicromatizado"
+  language: pt-BR
+  url: { value: "https://www.megalojista.com.br/parafuso-franc-s-sem-porca-m6-1-00-ma-x-50-din-603-aco-carbono-classe-8-8-bicromatizado.html", date: 2026-10-23 }

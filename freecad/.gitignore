@@ -1,0 +1,6 @@
+# Backups locais do FreeCAD; preservar em disco sem versionar.
+*.FCBak
+*.FCStd1
+
+# Macros locais de geracao dos modelos.
+*.FCMacro
